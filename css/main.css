@@ -714,15 +714,24 @@ pre .javascript .function {
   box-sizing: border-box;
   padding: 0 3px;
   border: none;
-  margin: 0 auto;
 }
-.post-body .group-picture-row {
+.post .group-picture-row {
   overflow: hidden;
-  margin-bottom: 6px;
+  margin-top: 6px;
 }
-.post-body .group-picture-column {
+.post .group-picture-row:first-child {
+  margin-top: 0;
+}
+.post .group-picture-column {
   float: left;
-  margin-bottom: 10px;
+}
+.page-post-detail .post-body .group-picture-column {
+  float: none;
+  margin-top: 10px;
+  width: auto !important;
+}
+.page-post-detail .post-body .group-picture-column img {
+  margin: 0 auto;
 }
 .page-archive .group-picture-container {
   overflow: hidden;
@@ -1799,7 +1808,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3c8620;
+  background: #25ff3e;
 }
 .feed-link,
 .chat {
@@ -2156,6 +2165,10 @@ pre .javascript .function {
   top: 50%;
   transform: translate(-50%, -50%);
   color: #ccc;
+}
+.has-jax {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .page-archive .archive-page-counter {
   position: relative;
