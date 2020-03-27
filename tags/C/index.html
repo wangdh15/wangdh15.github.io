@@ -98,7 +98,7 @@
 <meta name="keywords" content="EE">
 <meta property="og:type" content="website">
 <meta property="og:title" content="wangdh&#39;blogs">
-<meta property="og:url" content="http://yoursite.com/tags/c/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/C/index.html">
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="Nothing">
 <meta property="og:locale" content="en">
@@ -112,7 +112,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/tags/c/">
+  <link rel="canonical" href="http://yoursite.com/tags/C/">
 
 
 
@@ -122,7 +122,7 @@
   };
 </script>
 
-  <title>Tag: c++ | wangdh'blogs</title>
+  <title>Tag: C++ | wangdh'blogs</title>
   
 
 
@@ -367,7 +367,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>c++<small>Tag</small>
+        <h1>C++<small>Tag</small>
         </h1>
       </div>
 
@@ -379,16 +379,16 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2020/03/26/位运算/" itemprop="url">
+          <a class="post-title-link" href="/2020/03/26/高精度/" itemprop="url">
             
-              <span itemprop="name">位运算</span>
+              <span itemprop="name">高精度</span>
             
           </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-03-26T23:31:04+08:00" content="2020-03-26">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-26T18:59:53+08:00" content="2020-03-26">
           03-26
         </time>
       </div>
@@ -405,16 +405,16 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2020/03/26/双指针/" itemprop="url">
+          <a class="post-title-link" href="/2020/03/26/二分代码模板/" itemprop="url">
             
-              <span itemprop="name">双指针</span>
+              <span itemprop="name">二分代码模板</span>
             
           </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-03-26T23:00:19+08:00" content="2020-03-26">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-26T15:42:18+08:00" content="2020-03-26">
           03-26
         </time>
       </div>
@@ -431,16 +431,16 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2020/03/26/一维二维前缀和、查分/" itemprop="url">
+          <a class="post-title-link" href="/2020/03/26/快排、归并排序代码模板/" itemprop="url">
             
-              <span itemprop="name">一维二维前缀和、查分</span>
+              <span itemprop="name">快排、归并排序代码模板</span>
             
           </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-03-26T20:44:06+08:00" content="2020-03-26">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-26T01:05:48+08:00" content="2020-03-26">
           03-26
         </time>
       </div>
@@ -498,7 +498,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1188,6 +1188,83 @@
 
 </body>
 </html>
+);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
