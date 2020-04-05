@@ -103,7 +103,7 @@
 <meta property="og:description" content="1. DP&amp;#x95EE;&amp;#x9898;&amp;#x5206;&amp;#x6790; &amp;#x72B6;&amp;#x6001;&amp;#x8868;&amp;#x793A;  &amp;#x6574;&amp;#x4E2A;&amp;#x95EE;&amp;#x9898;&amp;#x9700;&amp;#x8981;&amp;#x51E0;&amp;#x7EF4;&amp;#x6765;&amp;#x8868;&amp;#x793A;&amp;#x95EE;&amp;#x9898; &amp;#x6BCF;&amp;#x4E2A;&amp;#x72B6">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2020/03/27/背包类问题总结/01.png">
-<meta property="og:updated_time" content="2020-03-27T14:28:46.512Z">
+<meta property="og:updated_time" content="2020-03-28T04:25:45.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="背包类问题总结">
 <meta name="twitter:description" content="1. DP&amp;#x95EE;&amp;#x9898;&amp;#x5206;&amp;#x6790; &amp;#x72B6;&amp;#x6001;&amp;#x8868;&amp;#x793A;  &amp;#x6574;&amp;#x4E2A;&amp;#x95EE;&amp;#x9898;&amp;#x9700;&amp;#x8981;&amp;#x51E0;&amp;#x7EF4;&amp;#x6765;&amp;#x8868;&amp;#x793A;&amp;#x95EE;&amp;#x9898; &amp;#x6BCF;&amp;#x4E2A;&amp;#x72B6">
@@ -403,13 +403,23 @@
                 
               
 
-              <time title="Created: 2020-03-27 18:16:18 / Modified: 22:28:46" itemprop="dateCreated datePublished" datetime="2020-03-27T18:16:18+08:00">2020-03-27</time>
+              <time title="Created: 2020-03-27 18:16:18" itemprop="dateCreated datePublished" datetime="2020-03-27T18:16:18+08:00">2020-03-27</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-03-28 12:25:45" itemprop="dateModified" datetime="2020-03-28T12:25:45+08:00">2020-03-28</time>
+              </span>
             
           
 
@@ -519,6 +529,10 @@
 <p>&#x548C;01&#x80CC;&#x5305;&#x7684;&#x601D;&#x8DEF;&#x4E00;&#x6837;&#xFF0C;&#x904D;&#x5386;&#x6BCF;&#x4E00;&#x7EC4;&#x91CC;&#x9762;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x7269;&#x54C1;&#xFF0C;&#x7136;&#x540E;&#x53BB;&#x6700;&#x5927;&#x503C;&#x3002;&#x76EE;&#x524D;&#x6CA1;&#x6709;&#x4F18;&#x5316;&#x65B9;&#x6848;&#x3002;</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">120</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, V;</span><br><span class="line"><span class="keyword">int</span> w[N][N], v[N][N], s[N];</span><br><span class="line"><span class="keyword">int</span> dp[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; V;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++){</span><br><span class="line">        <span class="keyword">int</span> t;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">        s[i] = t;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; t; j ++){</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; w[i][j] &gt;&gt; v[i][j]; </span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++){</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = V; j &gt;= <span class="number">0</span>; j --){</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; s[i]; k ++){   <span class="comment">// &#x5BF9;&#x7B2C;i&#x5206;&#x7EC4;&#x7684;&#x6240;&#x6709;&#x7269;&#x54C1;&#x904D;&#x5386;</span></span><br><span class="line">                <span class="keyword">if</span>(j &gt;= w[i][k]) dp[j] = max(dp[j], dp[j - w[i][k]] + v[i][k]);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dp[V];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 
+<h3 id="5-&#x6DF7;&#x5408;&#x80CC;&#x5305;&#x95EE;&#x9898;"><a href="#5-&#x6DF7;&#x5408;&#x80CC;&#x5305;&#x95EE;&#x9898;" class="headerlink" title="5. &#x6DF7;&#x5408;&#x80CC;&#x5305;&#x95EE;&#x9898;"></a>5. &#x6DF7;&#x5408;&#x80CC;&#x5305;&#x95EE;&#x9898;</h3><p>&#x95EE;&#x9898;&#x4E2D;&#x540C;&#x65F6;&#x5B58;&#x5728;01&#x80CC;&#x5305;&#xFF0C;&#x5B8C;&#x5168;&#x80CC;&#x5305;&#xFF0C;&#x591A;&#x91CD;&#x80CC;&#x5305;&#x7269;&#x54C1;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6309;&#x7167;&#x7C7B;&#x578B;&#x8C03;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x5373;&#x53EF;&#x3002;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> V_max = <span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> n, V;</span><br><span class="line"><span class="keyword">int</span> dp[V_max];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; V;</span><br><span class="line">    <span class="keyword">while</span>(n--){   <span class="comment">// &#x8BFB;&#x5165;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5C31;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x6570;&#x636E;</span></span><br><span class="line">        <span class="keyword">int</span> a, b, c;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">        <span class="keyword">if</span>(c &lt; <span class="number">0</span>){   <span class="comment">// 01&#x80CC;&#x5305;&#x95EE;&#x9898;&#xFF0C;&#x9006;&#x5E8F;&#x626B;&#x63CF;</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = V; j &gt;= a; j --)</span><br><span class="line">                dp[j] = max(dp[j], dp[j - a] + b);</span><br><span class="line">        }<span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="number">0</span>){  <span class="comment">// &#x5B8C;&#x5168;&#x80CC;&#x5305;&#x95EE;&#x9898;&#xFF0C;&#x987A;&#x5E8F;&#x626B;&#x63CF;</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = a; j &lt;= V; j ++){</span><br><span class="line">                dp[j] = max(dp[j], dp[j - a] + b);</span><br><span class="line">            }</span><br><span class="line">        }<span class="keyword">else</span>{  <span class="comment">// &#x591A;&#x91CD;&#x80CC;&#x5305;&#x95EE;&#x9898;&#xFF0C;&#x62C6;&#x5206;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x6743;&#x91CD;&#x7269;&#x54C1;&#xFF0C;01&#x80CC;&#x5305;</span></span><br><span class="line">            <span class="keyword">int</span> k = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(c &gt;= k){</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = V; j &gt;= k * a; j --)</span><br><span class="line">                    dp[j] = max(dp[j], dp[j  -k * a] + k * b);</span><br><span class="line">                    c -= k;</span><br><span class="line">                    k *= <span class="number">2</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span>(c){</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = V; j &gt;= c * a; j --)</span><br><span class="line">                    dp[j] = max(dp[j], dp[j - c * a] + c * b);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dp[V];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<p>### </p>
 
       
     </div>
@@ -569,6 +583,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/27/线性DP/" rel="prev" title="线性DP">
+                线性DP <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -641,7 +659,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -713,7 +731,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -777,7 +799,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-DP问题分析"><span class="nav-number">1.</span> <span class="nav-text">1. DP问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-背包问题"><span class="nav-number">2.</span> <span class="nav-text">2. 背包问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-01背包"><span class="nav-number">2.1.</span> <span class="nav-text">1. 01背包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-完全背包"><span class="nav-number">2.2.</span> <span class="nav-text">2. 完全背包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-多重背包问题"><span class="nav-number">2.3.</span> <span class="nav-text">3. 多重背包问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-分组背包问题"><span class="nav-number">2.4.</span> <span class="nav-text">4. 分组背包问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-DP问题分析"><span class="nav-number">1.</span> <span class="nav-text">1. DP问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-背包问题"><span class="nav-number">2.</span> <span class="nav-text">2. 背包问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-01背包"><span class="nav-number">2.1.</span> <span class="nav-text">1. 01背包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-完全背包"><span class="nav-number">2.2.</span> <span class="nav-text">2. 完全背包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-多重背包问题"><span class="nav-number">2.3.</span> <span class="nav-text">3. 多重背包问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-分组背包问题"><span class="nav-number">2.4.</span> <span class="nav-text">4. 分组背包问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-混合背包问题"><span class="nav-number">2.5.</span> <span class="nav-text">5. 混合背包问题</span></a></li></ol></li></ol></div>
             
 
           </div>
