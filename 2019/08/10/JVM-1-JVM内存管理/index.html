@@ -94,24 +94,24 @@
 
 
 
-  <meta name="description" content="1. JVM&amp;#x5185;&amp;#x5B58;&amp;#x7ED3;&amp;#x6784;Java &amp;#x865A;&amp;#x62DF;&amp;#x673A;&amp;#x5728;&amp;#x8FD0;&amp;#x884C; Java &amp;#x7A0B;&amp;#x5E8F; &amp;#x65F6;&amp;#xFF0C;&amp;#x628A;&amp;#x5B83;&amp;#x6240;&amp;#x7BA1;&amp;#x7406;&amp;#x7684;&amp;#x5185;&amp;#x5B58;&amp;#x521">
+  <meta name="description" content="1. JVM内存结构Java 虚拟机在运行 Java 程序 时，把它所管理的内存划分为若干个不同的数据区域，主要包括以下五个部分：程序计数器、Java 堆、Java 虚拟机栈、方法区和本地方法栈。   1. 程序计数器程序计数器是当前线程所执行的字节码的行号指示器，它会指出下一条将要执行的指令的地址，字节码解释器就是通过改变计数器的值来选取程序接下来执行的操作。 程序计数器是线程私有的一小块内存，">
 <meta name="keywords" content="Java,JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM-1.JVM内存管理">
 <meta property="og:url" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/index.html">
 <meta property="og:site_name" content="wangdh&#39;blogs">
-<meta property="og:description" content="1. JVM&amp;#x5185;&amp;#x5B58;&amp;#x7ED3;&amp;#x6784;Java &amp;#x865A;&amp;#x62DF;&amp;#x673A;&amp;#x5728;&amp;#x8FD0;&amp;#x884C; Java &amp;#x7A0B;&amp;#x5E8F; &amp;#x65F6;&amp;#xFF0C;&amp;#x628A;&amp;#x5B83;&amp;#x6240;&amp;#x7BA1;&amp;#x7406;&amp;#x7684;&amp;#x5185;&amp;#x5B58;&amp;#x521">
+<meta property="og:description" content="1. JVM内存结构Java 虚拟机在运行 Java 程序 时，把它所管理的内存划分为若干个不同的数据区域，主要包括以下五个部分：程序计数器、Java 堆、Java 虚拟机栈、方法区和本地方法栈。   1. 程序计数器程序计数器是当前线程所执行的字节码的行号指示器，它会指出下一条将要执行的指令的地址，字节码解释器就是通过改变计数器的值来选取程序接下来执行的操作。 程序计数器是线程私有的一小块内存，">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/01.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/02.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/03.jpeg">
-<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/04.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/05.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/03.jpeg">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/04.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/05.png">
 <meta property="og:updated_time" content="2019-08-11T07:09:33.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM-1.JVM内存管理">
-<meta name="twitter:description" content="1. JVM&amp;#x5185;&amp;#x5B58;&amp;#x7ED3;&amp;#x6784;Java &amp;#x865A;&amp;#x62DF;&amp;#x673A;&amp;#x5728;&amp;#x8FD0;&amp;#x884C; Java &amp;#x7A0B;&amp;#x5E8F; &amp;#x65F6;&amp;#xFF0C;&amp;#x628A;&amp;#x5B83;&amp;#x6240;&amp;#x7BA1;&amp;#x7406;&amp;#x7684;&amp;#x5185;&amp;#x5B58;&amp;#x521">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/01.png">
+<meta name="twitter:description" content="1. JVM内存结构Java 虚拟机在运行 Java 程序 时，把它所管理的内存划分为若干个不同的数据区域，主要包括以下五个部分：程序计数器、Java 堆、Java 虚拟机栈、方法区和本地方法栈。   1. 程序计数器程序计数器是当前线程所执行的字节码的行号指示器，它会指出下一条将要执行的指令的地址，字节码解释器就是通过改变计数器的值来选取程序接下来执行的操作。 程序计数器是线程私有的一小块内存，">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/01.png">
 
 
 
@@ -494,76 +494,76 @@
       
 
       
-        <h2 id="1-JVM&#x5185;&#x5B58;&#x7ED3;&#x6784;"><a href="#1-JVM&#x5185;&#x5B58;&#x7ED3;&#x6784;" class="headerlink" title="1. JVM&#x5185;&#x5B58;&#x7ED3;&#x6784;"></a>1. JVM&#x5185;&#x5B58;&#x7ED3;&#x6784;</h2><p><code>Java</code> &#x865A;&#x62DF;&#x673A;&#x5728;&#x8FD0;&#x884C; <code>Java</code> &#x7A0B;&#x5E8F; &#x65F6;&#xFF0C;&#x628A;&#x5B83;&#x6240;&#x7BA1;&#x7406;&#x7684;&#x5185;&#x5B58;&#x5212;&#x5206;&#x4E3A;&#x82E5;&#x5E72;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x533A;&#x57DF;&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x4E94;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#x3001;<code>Java</code> &#x5806;&#x3001;<code>Java</code> &#x865A;&#x62DF;&#x673A;&#x6808;&#x3001;&#x65B9;&#x6CD5;&#x533A;&#x548C;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x3002;</p>
-<p><img src="/2019/08/10/JVM-1-JVM&#x5185;&#x5B58;&#x7BA1;&#x7406;/01.png" alt="img"></p>
-<p><img src="/2019/08/10/JVM-1-JVM&#x5185;&#x5B58;&#x7BA1;&#x7406;/02.png" alt="image-20190811142627782"></p>
-<h3 id="1-&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;"><a href="#1-&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;" class="headerlink" title="1. &#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;"></a>1. &#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;</h3><p>&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#x662F;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6240;&#x6267;&#x884C;&#x7684;&#x5B57;&#x8282;&#x7801;&#x7684;&#x884C;&#x53F7;&#x6307;&#x793A;&#x5668;&#xFF0C;&#x5B83;&#x4F1A;&#x6307;&#x51FA;&#x4E0B;&#x4E00;&#x6761;&#x5C06;&#x8981;&#x6267;&#x884C;&#x7684;&#x6307;&#x4EE4;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5B57;&#x8282;&#x7801;&#x89E3;&#x91CA;&#x5668;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x6539;&#x53D8;&#x8BA1;&#x6570;&#x5668;&#x7684;&#x503C;&#x6765;&#x9009;&#x53D6;&#x7A0B;&#x5E8F;&#x63A5;&#x4E0B;&#x6765;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
-<p>&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#x662F;&#x7EBF;&#x7A0B;&#x79C1;&#x6709;&#x7684;&#x4E00;&#x5C0F;&#x5757;&#x5185;&#x5B58;&#xFF0C;&#x6BCF;&#x6761;&#x7EBF;&#x7A0B;&#x90FD;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x4EE5;&#x4F7F;&#x7EBF;&#x7A0B;&#x5207;&#x6362;&#x540E;&#x6062;&#x590D;&#x5230;&#x6B63;&#x786E;&#x7684;&#x6267;&#x884C;&#x4F4D;&#x7F6E;&#x3002;</p>
+        <h2 id="1-JVM内存结构"><a href="#1-JVM内存结构" class="headerlink" title="1. JVM内存结构"></a>1. JVM内存结构</h2><p><code>Java</code> 虚拟机在运行 <code>Java</code> 程序 时，把它所管理的内存划分为若干个不同的数据区域，主要包括以下五个部分：程序计数器、<code>Java</code> 堆、<code>Java</code> 虚拟机栈、方法区和本地方法栈。</p>
+<p><img src="JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/01.png" alt="img"></p>
+<p><img src="JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/02.png" alt="image-20190811142627782"></p>
+<h3 id="1-程序计数器"><a href="#1-程序计数器" class="headerlink" title="1. 程序计数器"></a>1. 程序计数器</h3><p>程序计数器是当前线程所执行的字节码的行号指示器，它会指出下一条将要执行的指令的地址，字节码解释器就是通过改变计数器的值来选取程序接下来执行的操作。</p>
+<p>程序计数器是线程私有的一小块内存，每条线程都要有一个独立的程序计数器，以使线程切换后恢复到正确的执行位置。</p>
 <ul>
-<li>&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x6B63;&#x5728;&#x6267;&#x884C; <code>Java</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x8BA1;&#x6570;&#x5668;&#x8BB0;&#x5F55;&#x7684;&#x662F;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x865A;&#x62DF;&#x673A;&#x5B57;&#x8282;&#x7801;&#x6307;&#x4EE4;&#x7684;&#x5730;&#x5740;</li>
-<li>&#x5982;&#x679C;&#x6267;&#x884C; <code>native</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x8BA1;&#x6570;&#x5668;&#x4E3A;&#x7A7A;</li>
+<li>如果线程正在执行 <code>Java</code>方法，则计数器记录的是正在执行的虚拟机字节码指令的地址</li>
+<li>如果执行 <code>native</code>方法，则计数器为空</li>
 </ul>
-<p>&#x5B83;&#x4E5F;&#x662F;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0; <code>OutOfMemoryError</code>&#x7684;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x3002;</p>
-<h3 id="2-Java&#x865A;&#x62DF;&#x673A;&#x6808;"><a href="#2-Java&#x865A;&#x62DF;&#x673A;&#x6808;" class="headerlink" title="2. Java&#x865A;&#x62DF;&#x673A;&#x6808;"></a>2. Java&#x865A;&#x62DF;&#x673A;&#x6808;</h3><p>&#x4E0E;&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#x4E00;&#x6837;&#xFF0C;<code>Java</code>&#x865A;&#x62DF;&#x673A;&#x6808;&#x4E5F;&#x662F;&#x7EBF;&#x7A0B;&#x79C1;&#x6709;&#x7684;&#xFF0C;&#x5728;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x65F6; <code>Java</code>&#x6808;&#x4F1A;&#x88AB;&#x521B;&#x5EFA;&#xFF0C;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x5728;&#x5728;&#x6267;&#x884C;&#x7684;&#x540C;&#x65F6;&#x90FD;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6808;&#x5E27;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#xFF0C;&#x64CD;&#x4F5C;&#x6570;&#x6808;&#xFF0C;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#xFF0C;&#x65B9;&#x6CD5;&#x51FA;&#x53E3;&#x7B49;&#x4FE1;&#x606F;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4ECE;&#x8C03;&#x7528;&#x76F4;&#x81F3;&#x6267;&#x884C;&#x5B8C;&#x6210;&#xFF0C;&#x90FD;&#x5BF9;&#x5E94;&#x7740;&#x4E00;&#x4E2A;&#x6808;&#x5E27;&#x5728;&#x865A;&#x62DF;&#x673A;&#x6808;&#x4E2D;&#x5165;&#x6808;&#x5230;&#x51FA;&#x6808;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
-<p>&#x4E00;&#x822C;&#x6240;&#x8C13;&#x7684;&#x201C;&#x6808;&#x201D;&#xFF0C;&#x6307;&#x7684;&#x662F;&#x865A;&#x62DF;&#x673A;&#x6808;&#x4E2D;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#x90E8;&#x5206;&#xFF0C;&#x5176;&#x4E2D;&#x5B58;&#x653E;&#x4E86;&#x5404;&#x79CD;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;( <code>8</code>&#x79CD;)&#xFF0C;&#x5BF9;&#x8C61;&#x5F15;&#x7528;(<code>reference</code>&#x7C7B;&#x578B;) &#x548C; <code>returnAddress</code>&#x7C7B;&#x578B;&#x3002;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#x6240;&#x9700;&#x7684;&#x7A7A;&#x95F4;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x5C31;&#x5DF2;&#x7ECF;&#x786E;&#x5B9A;&#x5E76;&#x5B8C;&#x6210;&#x5206;&#x914D;&#xFF0C;&#x5728;&#x65B9;&#x6CD5;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x4E0D;&#x4F1A;&#x88AB;&#x6539;&#x53D8;&#x3002;</p>
-<p><code>Java</code>&#x865A;&#x62DF;&#x6808;&#x4E2D;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x4E24;&#x79CD;&#x5F02;&#x5E38;&#xFF1A;</p>
+<p>它也是唯一一个不会出现 <code>OutOfMemoryError</code>的内存区域。</p>
+<h3 id="2-Java虚拟机栈"><a href="#2-Java虚拟机栈" class="headerlink" title="2. Java虚拟机栈"></a>2. Java虚拟机栈</h3><p>与程序计数器一样，<code>Java</code>虚拟机栈也是线程私有的，在线程创建时 <code>Java</code>栈会被创建，每个方法在在执行的同时都会创建一个栈帧，用于存放局部变量表，操作数栈，动态链接，方法出口等信息。每一个方法从调用直至执行完成，都对应着一个栈帧在虚拟机栈中入栈到出栈的过程。</p>
+<p>一般所谓的“栈”，指的是虚拟机栈中局部变量表部分，其中存放了各种基本数据类型( <code>8</code>种)，对象引用(<code>reference</code>类型) 和 <code>returnAddress</code>类型。局部变量表所需的空间在编译期就已经确定并完成分配，在方法运行期间不会被改变。</p>
+<p><code>Java</code>虚拟栈中可能出现两种异常：</p>
 <ul>
-<li><code>StackOverflowError</code>&#xFF1A;&#x7EBF;&#x7A0B;&#x8BF7;&#x6C42;&#x7684;&#x6808;&#x6DF1;&#x5EA6;&#x5927;&#x4E8E;&#x865A;&#x62DF;&#x673A;&#x6240;&#x5141;&#x8BB8;&#x7684;&#x6DF1;&#x5EA6;</li>
-<li><code>OutOfMemoryError</code>&#xFF1A;&#x865A;&#x62DF;&#x673A;&#x6808;&#x6269;&#x5C55;&#x65F6;&#x65E0;&#x6CD5;&#x7533;&#x8BF7;&#x5230;&#x8DB3;&#x591F;&#x7684;&#x5185;&#x5B58;</li>
+<li><code>StackOverflowError</code>：线程请求的栈深度大于虚拟机所允许的深度</li>
+<li><code>OutOfMemoryError</code>：虚拟机栈扩展时无法申请到足够的内存</li>
 </ul>
-<h3 id="3-&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;"><a href="#3-&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;" class="headerlink" title="3. &#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;"></a>3. &#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;</h3><p>&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x4E0E; <code>Java</code>&#x865A;&#x62DF;&#x673A;&#x6808;&#x7684;&#x4F5C;&#x7528;&#x7C7B;&#x4F3C;&#xFF0C;&#x533A;&#x522B;&#x662F; <code>Java</code>&#x865A;&#x62DF;&#x673A;&#x6808;&#x4E3A;&#x865A;&#x62DF;&#x673A;&#x6267;&#x884C; <code>Java</code>&#x65B9;&#x6CD5;&#x670D;&#x52A1;&#xFF0C;&#x800C;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x4E3A;&#x865A;&#x62DF;&#x673A;&#x6267;&#x884C; <code>Native</code>&#x65B9;&#x6CD5;&#x670D;&#x52A1;&#x3002;&#x6709;&#x7684;&#x865A;&#x62DF;&#x673A;&#xFF08;&#x4F8B;&#x5982; <code>HotSpot</code>&#x865A;&#x62DF;&#x673A;&#xFF09;&#x76F4;&#x63A5;&#x628A;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x548C; <code>Java</code>&#x865A;&#x62DF;&#x673A;&#x6808;&#x5408;&#x5E76;&#x5728;&#x4E00;&#x8D77;&#x3002;</p>
-<p>&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x4E5F;&#x53EF;&#x80FD;&#x4F1A;&#x629B;&#x51FA; <code>StackOverflowError</code>&#x548C; <code>OutOfMemoryError</code>&#x5F02;&#x5E38;&#x3002;</p>
-<p><strong>Native&#x65B9;&#x6CD5;&#x662F;Java&#x4E2D;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;C</strong></p>
-<h3 id="4-Java-&#x5806;"><a href="#4-Java-&#x5806;" class="headerlink" title="4. Java &#x5806;"></a>4. Java &#x5806;</h3><p><code>Java</code>&#x5806;&#x662F;&#x662F;&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x3002;&#x5B83;&#x4E3A;&#x7EBF;&#x7A0B;&#x5171;&#x4EAB;&#xFF0C;&#x5728;&#x865A;&#x62DF;&#x673A;&#x542F;&#x52A8;&#x65F6;&#x521B;&#x5EFA;&#xFF0C;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x90FD;&#x5B58;&#x50A8;&#x5728; <code>Java</code>&#x5806;&#x4E2D;&#x3002;</p>
-<p><code>Java</code>&#x5806;&#x4E5F;&#x88AB;&#x79F0;&#x4F5C; <code>&quot;GC&quot;</code>&#x5806;&#x3002;&#x4ECE;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x89D2;&#x5EA6;&#x770B;&#xFF0C;&#x53EF;&#x5206;&#x4E3A;&#x65B0;&#x751F;&#x4EE3;&#x548C;&#x8001;&#x5E74;&#x4EE3;&#x3002;&#x800C;&#x65B0;&#x751F;&#x4EE3;&#x53C8;&#x53EF;&#x5206;&#x4E3A; <code>Eden</code>&#x533A;&#x3001;<code>From Survivor</code>&#x533A;&#x3001;<code>To Survivor</code>&#x533A;&#x7B49;&#x3002;</p>
-<p><code>Java</code>&#x5806;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E3A;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x6269;&#x5C55;&#x7684;&#x3002;&#x5F53;&#x524D;&#x865A;&#x62DF;&#x673A;&#x90FD;&#x6309;&#x7167;&#x53EF;&#x6269;&#x5C55;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x901A;&#x8FC7; <code>-Xmx</code>&#x548C; <code>-Xms</code>&#x63A7;&#x5236;&#x5806;&#x5927;&#x5C0F;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x5806;&#x4E2D;&#x6CA1;&#x6709;&#x5185;&#x5B58;&#x5E76;&#x4E14;&#x4E5F;&#x65E0;&#x6CD5;&#x518D;&#x6269;&#x5C55;&#x65F6;&#xFF0C;&#x4F1A;&#x629B;&#x51FA; <code>OutOfMemeoryError</code>&#x5F02;&#x5E38;&#x3002;</p>
-<p>&#x5728;Java&#x4E2D;&#x4F7F;&#x7528;<code>new</code>&#x5173;&#x952E;&#x5B57;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x4E00;&#x822C;&#x653E;&#x5728;&#x5806;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x5F15;&#x7528;&#x662F;&#x5728;<code>Java&#x865A;&#x62DF;&#x673A;&#x6808;</code>&#x4E2D;&#x3002;</p>
-<h3 id="5-&#x65B9;&#x6CD5;&#x533A;"><a href="#5-&#x65B9;&#x6CD5;&#x533A;" class="headerlink" title="5. &#x65B9;&#x6CD5;&#x533A;"></a>5. &#x65B9;&#x6CD5;&#x533A;</h3><p>&#x65B9;&#x6CD5;&#x533A;&#x4E0E; <code>Java</code> &#x5806;&#x4E00;&#x6837;&#xFF0C;&#x4E3A;&#x7EBF;&#x7A0B;&#x5171;&#x4EAB;&#x3002;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5DF2;&#x88AB;&#x865A;&#x62DF;&#x673A;&#x52A0;&#x8F7D;&#x7684;<strong>&#x7C7B;&#x4FE1;&#x606F;</strong>&#xFF0C;<strong>&#x5E38;&#x91CF;</strong>&#xFF0C;<strong>&#x9759;&#x6001;&#x53D8;&#x91CF;</strong>&#xFF0C;&#x5373;&#x65F6;&#x7F16;&#x8BD1;&#x5668;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x7B49;&#x6570;&#x636E;&#x3002;&#x4E5F;&#x53EB;&#x4F5C; <code>Non-Heap</code>&#xFF08;&#x975E;&#x5806;&#xFF09;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x65B9;&#x6CD5;&#x533A;&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;&#x5185;&#x5B58;&#x5206;&#x914D;&#x9700;&#x6C42;&#xFF0C;&#x4F1A;&#x629B;&#x51FA; <code>OutOfMemoryError</code> &#x5F02;&#x5E38;&#x3002;</p>
-<p>JVM&#x52A0;&#x8F7D;<code>Class</code>&#x6587;&#x4EF6;&#x4E4B;&#x540E;&#x5BF9;&#x6BCF;&#x4E2A;&#x7C7B;&#x751F;&#x6210;&#x7684;class&#x5BF9;&#x8C61;&#x5B58;&#x653E;&#x5728;&#x8FD9;&#x4E2A;&#x533A;&#x57DF;&#x3002;</p>
-<h3 id="6-&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;"><a href="#6-&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;" class="headerlink" title="6. &#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;"></a>6. &#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;</h3><p>&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#x662F;&#x65B9;&#x6CD5;&#x533A;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;<code>Class</code>&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5E38;&#x91CF;&#x6C60;&#x7528;&#x4E8E;&#x7F16;&#x8BD1;&#x671F;&#x751F;&#x6210;&#x7684;&#x5404;&#x79CD;&#x5B57;&#x9762;&#x91CF;&#x548C;&#x7B26;&#x53F7;&#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x5728;&#x7C7B;&#x52A0;&#x8F7D;&#x540E;&#x88AB;&#x5B58;&#x5165;&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#x3002;</p>
-<p>&#x52A8;&#x6001;&#x6027;&#x662F;&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#x76F8;&#x5BF9;&#x4E8E; <code>Class</code>&#x6587;&#x4EF6;&#x5E38;&#x91CF;&#x6C60;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7279;&#x5F81;&#xFF0C;&#x5373;&#x4E0D;&#x8981;&#x6C42;&#x5E38;&#x91CF;&#x4E00;&#x5B9A;&#x53EA;&#x6709;&#x7F16;&#x8BD1;&#x671F;&#x624D;&#x80FD;&#x4EA7;&#x751F;&#xFF0C;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x4E5F;&#x53EF;&#x80FD;&#x5C06;&#x65B0;&#x7684;&#x5E38;&#x91CF;&#x653E;&#x5165;&#x6C60;&#x4E2D;&#x3002;</p>
-<p>&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#x53D7;&#x5230;&#x65B9;&#x6CD5;&#x533A;&#x5185;&#x5B58;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x5982;&#x679C;&#x5E38;&#x91CF;&#x6C60;&#x65E0;&#x6CD5;&#x518D;&#x7533;&#x8BF7;&#x5185;&#x5B58;&#xFF0C;&#x5C31;&#x4F1A;&#x629B;&#x51FA; <code>OutOfMemoryError</code>&#x5F02;&#x5E38;&#x3002;</p>
-<h3 id="7-&#x76F4;&#x63A5;&#x5185;&#x5B58;"><a href="#7-&#x76F4;&#x63A5;&#x5185;&#x5B58;" class="headerlink" title="7. &#x76F4;&#x63A5;&#x5185;&#x5B58;"></a>7. &#x76F4;&#x63A5;&#x5185;&#x5B58;</h3><p>&#x76F4;&#x63A5;&#x5185;&#x5B58;&#x5E76;&#x4E0D;&#x7531; <code>JVM</code>&#x7BA1;&#x7406;&#xFF0C;&#x5B83;&#x662F;&#x5229;&#x7528; <code>Native</code>&#x51FD;&#x6570;&#x5E93;&#x5728; <code>Java</code>&#x5806;&#x5916;&#x7533;&#x8BF7;&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#x533A;&#x57DF;&#xFF0C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x5728; <code>Java</code>&#x5806;&#x548C; <code>Native</code>&#x5806;&#x4E2D;&#x590D;&#x5236;&#x6570;&#x636E;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3002;</p>
-<p>&#x4F8B;&#x5982; <code>NIO</code>&#x4E2D;&#x7684; <code>DirectByteBuffer</code>&#x5C31;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8FD9;&#x5757;&#x5185;&#x5B58;&#x7684;&#x5F15;&#x7528;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x76F4;&#x63A5;&#x5185;&#x5B58;&#x3002;</p>
-<h2 id="2-&#x865A;&#x62DF;&#x673A;&#x5BF9;&#x8C61;"><a href="#2-&#x865A;&#x62DF;&#x673A;&#x5BF9;&#x8C61;" class="headerlink" title="2. &#x865A;&#x62DF;&#x673A;&#x5BF9;&#x8C61;"></a>2. &#x865A;&#x62DF;&#x673A;&#x5BF9;&#x8C61;</h2><p>&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x7684;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<h3 id="3-本地方法栈"><a href="#3-本地方法栈" class="headerlink" title="3. 本地方法栈"></a>3. 本地方法栈</h3><p>本地方法栈与 <code>Java</code>虚拟机栈的作用类似，区别是 <code>Java</code>虚拟机栈为虚拟机执行 <code>Java</code>方法服务，而本地方法栈为虚拟机执行 <code>Native</code>方法服务。有的虚拟机（例如 <code>HotSpot</code>虚拟机）直接把本地方法栈和 <code>Java</code>虚拟机栈合并在一起。</p>
+<p>本地方法栈也可能会抛出 <code>StackOverflowError</code>和 <code>OutOfMemoryError</code>异常。</p>
+<p><strong>Native方法是Java中使用其他语言实现的方法，如C</strong></p>
+<h3 id="4-Java-堆"><a href="#4-Java-堆" class="headerlink" title="4. Java 堆"></a>4. Java 堆</h3><p><code>Java</code>堆是是虚拟机中最主要的内存区域。它为线程共享，在虚拟机启动时创建，几乎所有的对象实例都存储在 <code>Java</code>堆中。</p>
+<p><code>Java</code>堆也被称作 <code>&quot;GC&quot;</code>堆。从内存回收角度看，可分为新生代和老年代。而新生代又可分为 <code>Eden</code>区、<code>From Survivor</code>区、<code>To Survivor</code>区等。</p>
+<p><code>Java</code>堆的实现，既可以实现为固定的，也可以是扩展的。当前虚拟机都按照可扩展来实现，通过 <code>-Xmx</code>和 <code>-Xms</code>控制堆大小。</p>
+<p>如果堆中没有内存并且也无法再扩展时，会抛出 <code>OutOfMemeoryError</code>异常。</p>
+<p>在Java中使用<code>new</code>关键字创建的对象一般放在堆中，然后引用是在<code>Java虚拟机栈</code>中。</p>
+<h3 id="5-方法区"><a href="#5-方法区" class="headerlink" title="5. 方法区"></a>5. 方法区</h3><p>方法区与 <code>Java</code> 堆一样，为线程共享。用于存储已被虚拟机加载的<strong>类信息</strong>，<strong>常量</strong>，<strong>静态变量</strong>，即时编译器编译后的代码等数据。也叫作 <code>Non-Heap</code>（非堆）。</p>
+<p>如果方法区无法满足内存分配需求，会抛出 <code>OutOfMemoryError</code> 异常。</p>
+<p>JVM加载<code>Class</code>文件之后对每个类生成的class对象存放在这个区域。</p>
+<h3 id="6-运行时常量池"><a href="#6-运行时常量池" class="headerlink" title="6. 运行时常量池"></a>6. 运行时常量池</h3><p>运行时常量池是方法区的一部分。<code>Class</code>文件中的常量池用于编译期生成的各种字面量和符号引用，这部分内容在类加载后被存入运行时常量池。</p>
+<p>动态性是运行时常量池相对于 <code>Class</code>文件常量池的一个重要特征，即不要求常量一定只有编译期才能产生，运行期间也可能将新的常量放入池中。</p>
+<p>运行时常量池受到方法区内存的限制，如果常量池无法再申请内存，就会抛出 <code>OutOfMemoryError</code>异常。</p>
+<h3 id="7-直接内存"><a href="#7-直接内存" class="headerlink" title="7. 直接内存"></a>7. 直接内存</h3><p>直接内存并不由 <code>JVM</code>管理，它是利用 <code>Native</code>函数库在 <code>Java</code>堆外申请分配的内存区域，可以避免在 <code>Java</code>堆和 <code>Native</code>堆中复制数据以提高性能。</p>
+<p>例如 <code>NIO</code>中的 <code>DirectByteBuffer</code>就可以作为这块内存的引用进行操作直接内存。</p>
+<h2 id="2-虚拟机对象"><a href="#2-虚拟机对象" class="headerlink" title="2. 虚拟机对象"></a>2. 虚拟机对象</h2><p>对象创建的过程如下：</p>
 <ol>
-<li>&#x9047;&#x5230;&#x4E00;&#x4E2A;new&#x6307;&#x4EE4;&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x68C0;&#x67E5;&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x7684;&#x53C2;&#x6570;&#x662F;&#x5426;&#x80FD;&#x5728;&#x5E38;&#x91CF;&#x6C60;&#x4E2D;&#x5B9A;&#x4F4D;&#x5230;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x7B26;&#x53F7;&#x5F15;&#x7528;&#xFF0C;&#x68C0;&#x67E5;&#x7B26;&#x53F7;&#x5F15;&#x7528;&#x4EE3;&#x8868;&#x7684;&#x7C7B;&#x662F;&#x5426;&#x88AB;&#x52A0;&#x8F7D;&#x3001;&#x89E3;&#x6790;&#x548C;&#x521D;&#x59CB;&#x5316;&#x3002;&#x6CA1;&#x6709;&#x7684;&#x8BDD;&#x5148;&#x6267;&#x884C;&#x7C7B;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;&#x3002;</li>
-<li>&#x7136;&#x540E;&#x865A;&#x62DF;&#x673A;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x5206;&#x914D;&#xFF0C;&#x5206;&#x914D;&#x5185;&#x5B58;&#x90FD;&#x521D;&#x59CB;&#x5316;&#x4E3A;&#x96F6;(&#x4E0D;&#x5305;&#x62EC;&#x5BF9;&#x8C61;&#x5934;)&#x3002;</li>
-<li>&#x7136;&#x540E;&#x865A;&#x62DF;&#x673A;&#x5BF9;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x5FC5;&#x8981;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x54EA;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3001;&#x5982;&#x4F55;&#x627E;&#x5230;&#x7C7B;&#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;&#x3001;&#x5BF9;&#x8C61;&#x7684;&#x54C8;&#x5E0C;&#x7801;&#x3001;&#x5BF9;&#x8C61;&#x7684;GC&#x5206;&#x4EE3;&#x5E74;&#x9F84;&#x7B49;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x5B58;&#x653E;&#x5728;&#x5BF9;&#x8C61;&#x7684;<code>&#x5BF9;&#x8C61;&#x5934;</code>&#x4E2D;&#x3002;</li>
-<li>&#x4E0A;&#x9762;&#x5DE5;&#x4F5C;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x4ECE;&#x865A;&#x62DF;&#x673A;&#x89D2;&#x5EA6;&#x770B;&#xFF0C;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x5DF2;&#x7ECF;&#x4EA7;&#x751F;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x4ECE;Java&#x7A0B;&#x5E8F;&#x7684;&#x89C6;&#x89D2;&#x770B;&#xFF0C;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x624D;&#x521A;&#x521A;&#x5F00;&#x59CB;&#x3002;&#x4E4B;&#x540E;&#x9700;&#x8981;&#x5236;&#x5B9A;<code>init</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5BF9;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x3002;</li>
+<li>遇到一个new指令时，首先检查这个指令的参数是否能在常量池中定位到一个类的符号引用，检查符号引用代表的类是否被加载、解析和初始化。没有的话先执行类加载过程。</li>
+<li>然后虚拟机进行内存分配，分配内存都初始化为零(不包括对象头)。</li>
+<li>然后虚拟机对对象进行必要的配置，如这个对象是哪个类的实例、如何找到类的元数据信息、对象的哈希码、对象的GC分代年龄等信息。这些信息存放在对象的<code>对象头</code>中。</li>
+<li>上面工作完成之后，从虚拟机角度看，新的对象已经产生了，但是从Java程序的视角看，对象创建才刚刚开始。之后需要制定<code>init</code>方法，对对象进行初始化。</li>
 </ol>
-<h3 id="2-1-&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x5E03;&#x5C40;"><a href="#2-1-&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x5E03;&#x5C40;" class="headerlink" title="2.1 &#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x5E03;&#x5C40;"></a>2.1 &#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x5E03;&#x5C40;</h3><p>&#x5BF9;&#x8C61;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x5E03;&#x5C40;&#x5206;&#x4E3A;&#x4E09;&#x4E2A;&#x533A;&#x57DF;&#xFF1A;</p>
+<h3 id="2-1-对象的内存布局"><a href="#2-1-对象的内存布局" class="headerlink" title="2.1 对象的内存布局"></a>2.1 对象的内存布局</h3><p>对象在内存中布局分为三个区域：</p>
 <ul>
-<li>&#x5BF9;&#x8C61;&#x5934;(Header)</li>
-<li>&#x5B9E;&#x4F8B;&#x6570;&#x636E;(Instance Data)</li>
-<li>&#x5BF9;&#x5176;&#x586B;&#x5145;(Padding)</li>
+<li>对象头(Header)</li>
+<li>实例数据(Instance Data)</li>
+<li>对其填充(Padding)</li>
 </ul>
-<p>&#x5BF9;&#x8C61;&#x5934;&#x5305;&#x62EC;&#x4E24;&#x90E8;&#x5206;&#x4FE1;&#x606F;&#xFF1A;</p>
+<p>对象头包括两部分信息：</p>
 <ol>
-<li>&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#x5431;&#x58F0;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#xFF0C;&#x5B98;&#x65B9;&#x79F0;&#x4E3A;&#x201C;Mark Word&#x201D;<ul>
-<li>&#x54C8;&#x5E0C;&#x7801;</li>
-<li>GC&#x5206;&#x4EE3;&#x5E74;&#x9F84;</li>
-<li>&#x9501;&#x72B6;&#x6001;&#x8868;&#x793A;</li>
-<li>&#x7EBF;&#x7A0B;&#x6301;&#x6709;&#x7684;&#x9501;</li>
+<li>存储对象吱声的运行时数据，官方称为“Mark Word”<ul>
+<li>哈希码</li>
+<li>GC分代年龄</li>
+<li>锁状态表示</li>
+<li>线程持有的锁</li>
 </ul>
 </li>
-<li>&#x7C7B;&#x578B;&#x6307;&#x9488;&#xFF0C;&#x5BF9;&#x8C61;&#x6307;&#x5411;&#x5B83;&#x7684;&#x5143;&#x6570;&#x636E;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x865A;&#x62DF;&#x673A;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x6307;&#x6B63;&#x6765;&#x786E;&#x5B9A;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x54EA;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x662F;&#x4E00;&#x4E2A;Java&#x6570;&#x7EC4;&#xFF0C;&#x5BF9;&#x8C61;&#x5934;&#x4E2D;&#x8FD8;&#x6709;&#x4E00;&#x5757;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x4E3A;&#x865A;&#x62DF;&#x673A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x666E;&#x901A;Java&#x5BF9;&#x8C61;&#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;&#x786E;&#x5B9A;Java&#x5BF9;&#x8C61;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x4F46;&#x662F;&#x4ECE;&#x6570;&#x7EC4;&#x7684;&#x5143;&#x6570;&#x636E;&#x4E2D;&#x65E0;&#x6CD5;&#x786E;&#x5B9A;&#x6570;&#x7EC4;&#x7684;&#x5927;&#x5C0F;&#x3002;</li>
+<li>类型指针，对象指向它的元数据的指针，虚拟机通过这个指正来确定这个对象是哪个类的实例。如果对象是一个Java数组，对象头中还有一块用于记录数组长度的数据，因为虚拟机可以通过普通Java对象的元数据信息确定Java对象的大小。但是从数组的元数据中无法确定数组的大小。</li>
 </ol>
-<p>&#x5BF9;&#x5176;&#x586B;&#x5145;&#x8FD9;&#x90E8;&#x5206;&#x4E0D;&#x662F;&#x5FC5;&#x7136;&#x5B58;&#x5728;&#x7684;&#xFF0C;&#x6CA1;&#x6709;&#x7279;&#x522B;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x53EA;&#x662F;&#x5360;&#x4F4D;&#x7B26;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
-<p><img src="/2019/08/10/JVM-1-JVM&#x5185;&#x5B58;&#x7BA1;&#x7406;/03.jpeg" alt="20170615230126453"></p>
-<h3 id="2-2-&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x5B9A;&#x4F4D;"><a href="#2-2-&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x5B9A;&#x4F4D;" class="headerlink" title="2.2 &#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x5B9A;&#x4F4D;"></a>2.2 &#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x5B9A;&#x4F4D;</h3><p>Java&#x7A0B;&#x5E8F;&#x901A;&#x8FC7;&#x6808;&#x4E0A;&#x7684;<code>reference</code>&#x6570;&#x636E;&#x6765;&#x64CD;&#x4F5C;&#x5806;&#x4E0A;&#x7684;&#x5177;&#x4F53;&#x5BF9;&#x8C61;&#x3002;<code>reference</code>&#x7C7B;&#x578B;&#x5728;Java&#x865A;&#x62DF;&#x673A;&#x89C4;&#x8303;&#x4E2D;&#x53EA;&#x89C4;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x8FD9;&#x4E2A;&#x5F15;&#x7528;&#x5E94;&#x8BE5;&#x901A;&#x8FC7;&#x4F55;&#x79CD;&#x65B9;&#x5F0F;&#x53BB;&#x5B9A;&#x4F4D;&#xFF0C;&#x6240;&#x4EE5;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#x53D6;&#x51B3;&#x4E8E;&#x865A;&#x62DF;&#x673A;&#x5B9E;&#x73B0;&#x800C;&#x5B9A;&#x3002;&#x76EE;&#x524D;&#x4E3B;&#x6D41;&#x7684;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#x6709;<code>&#x53E5;&#x67C4;&#x548C;&#x76F4;&#x63A5;&#x6307;&#x9488;</code>&#x4E24;&#x79CD;&#x3002;</p>
+<p>对其填充这部分不是必然存在的，没有特别的含义，只是占位符的作用。</p>
+<p><img src="JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/03.jpeg" alt="20170615230126453"></p>
+<h3 id="2-2-对象的访问定位"><a href="#2-2-对象的访问定位" class="headerlink" title="2.2 对象的访问定位"></a>2.2 对象的访问定位</h3><p>Java程序通过栈上的<code>reference</code>数据来操作堆上的具体对象。<code>reference</code>类型在Java虚拟机规范中只规定了一个指向对象的引用，没有定义这个引用应该通过何种方式去定位，所以访问方式取决于虚拟机实现而定。目前主流的访问方式有<code>句柄和直接指针</code>两种。</p>
 <ol>
-<li><p>&#x53E5;&#x67C4;&#x8BBF;&#x95EE;&#x7684;&#x8BDD;&#xFF0C;Java&#x5806;&#x4E2D;&#x5212;&#x5206;&#x4E00;&#x5757;&#x5185;&#x5B58;&#x4F5C;&#x4E3A;&#x53E5;&#x67C4;&#x6C60;&#xFF0C;<code>reference</code>&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x53E5;&#x67C4;&#x5730;&#x5740;&#x3002;&#x53E5;&#x67C4;&#x4E2D;&#x5305;&#x542B;&#x5BF9;&#x8C61;&#x7684;&#x5B9E;&#x4F8B;&#x6570;&#x636E;&#x4E0E;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x5404;&#x81EA;&#x7684;&#x5177;&#x4F53;&#x4FE1;&#x606F;&#x3002;</p>
-<p><img src="/2019/08/10/JVM-1-JVM&#x5185;&#x5B58;&#x7BA1;&#x7406;/04.png" alt="image-20190811145634905"></p>
+<li><p>句柄访问的话，Java堆中划分一块内存作为句柄池，<code>reference</code>中存储的是对象的句柄地址。句柄中包含对象的实例数据与类型数据各自的具体信息。</p>
+<p><img src="JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/04.png" alt="image-20190811145634905"></p>
 </li>
-<li><p>&#x76F4;&#x63A5;&#x6307;&#x9488;&#x8BBF;&#x95EE;&#x7684;&#x8BDD;&#xFF0C;Java&#x5806;&#x5BF9;&#x8C61;&#x5E03;&#x5C40;&#x8003;&#x8651;&#x5982;&#x4F55;&#x653E;&#x7F6E;&#x8BBF;&#x95EE;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;<code>reference</code>&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x76F4;&#x63A5;&#x662F;&#x5BF9;&#x8C61;&#x5730;&#x5740;&#x3002;</p>
-<p><img src="/2019/08/10/JVM-1-JVM&#x5185;&#x5B58;&#x7BA1;&#x7406;/05.png" alt="image-20190811145808551"></p>
+<li><p>直接指针访问的话，Java堆对象布局考虑如何放置访问类型数据的相关信息。<code>reference</code>中存储的直接是对象地址。</p>
+<p><img src="JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/05.png" alt="image-20190811145808551"></p>
 </li>
 </ol>
-<p>&#x4F7F;&#x7528;&#x53E5;&#x67C4;&#x7684;&#x597D;&#x5904;&#xFF1A;reference&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x7A33;&#x5B9A;&#x7684;&#x53E5;&#x67C4;&#x5730;&#x5740;&#xFF0C;&#x5BF9;&#x8C61;&#x88AB;&#x79FB;&#x52A8;&#x65F6;&#x53EA;&#x4F1A;&#x6539;&#x53D8;&#x53E5;&#x67C4;&#x6C47;&#x603B;&#x7684;&#x5B9E;&#x4F8B;&#x6570;&#x636E;&#x6307;&#x9488;&#xFF0C;reference&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x3002;</p>
-<p>&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x6307;&#x9488;&#x7684;&#x597D;&#x5904;&#xFF1A;&#x901F;&#x5EA6;&#x66F4;&#x5FEB;&#xFF0C;&#x8282;&#x7701;&#x4E86;&#x4E00;&#x6B21;&#x6307;&#x9488;&#x5B9A;&#x4F4D;&#x7684;&#x65F6;&#x95F4;&#x5F00;&#x9500;&#x3002;</p>
+<p>使用句柄的好处：reference中存储的是稳定的句柄地址，对象被移动时只会改变句柄汇总的实例数据指针，reference不需要修改。</p>
+<p>使用直接指针的好处：速度更快，节省了一次指针定位的时间开销。</p>
 
       
     </div>
@@ -690,7 +690,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -719,7 +719,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -766,7 +768,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">15</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

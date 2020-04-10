@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="&amp;#x533A;&amp;#x95F4;DP&amp;#x533A;&amp;#x95F4;DP&amp;#x7684;&amp;#x72B6;&amp;#x6001;&amp;#x8868;&amp;#x793A;&amp;#x7684;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x533A;&amp;#x95F4;&amp;#x3002;f[i, j] &amp;#x8868;&amp;#x793A;i-j&amp;#x7684;&amp;#x533A;&amp;#x95F4;&amp;#x7684;&amp;#x67D0;&amp;">
+  <meta name="description" content="区间DP区间DP的状态表示的是一个区间。f[i, j] 表示i-j的区间的某个集合。 状态表示的集合是什么，考察的集合的属性是什么。 合并石子题目链接 状态表示: f[i, j] 表示将区间i-j的石子合并的所有可能的方法状态属性： 所有合并方法中的代价的最小值集合划分： 考虑最后一次的边界是什么，因为最后一步的代价是相同的，所以$f[i, j] = min_{k = i}^{j -1} f[i,">
 <meta name="keywords" content="c++,动态规划">
 <meta property="og:type" content="article">
 <meta property="og:title" content="区间DP">
 <meta property="og:url" content="http://yoursite.com/2020/03/29/区间DP/index.html">
 <meta property="og:site_name" content="wangdh&#39;blogs">
-<meta property="og:description" content="&amp;#x533A;&amp;#x95F4;DP&amp;#x533A;&amp;#x95F4;DP&amp;#x7684;&amp;#x72B6;&amp;#x6001;&amp;#x8868;&amp;#x793A;&amp;#x7684;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x533A;&amp;#x95F4;&amp;#x3002;f[i, j] &amp;#x8868;&amp;#x793A;i-j&amp;#x7684;&amp;#x533A;&amp;#x95F4;&amp;#x7684;&amp;#x67D0;&amp;">
+<meta property="og:description" content="区间DP区间DP的状态表示的是一个区间。f[i, j] 表示i-j的区间的某个集合。 状态表示的集合是什么，考察的集合的属性是什么。 合并石子题目链接 状态表示: f[i, j] 表示将区间i-j的石子合并的所有可能的方法状态属性： 所有合并方法中的代价的最小值集合划分： 考虑最后一次的边界是什么，因为最后一步的代价是相同的，所以$f[i, j] = min_{k = i}^{j -1} f[i,">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2020-03-29T05:46:20.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="区间DP">
-<meta name="twitter:description" content="&amp;#x533A;&amp;#x95F4;DP&amp;#x533A;&amp;#x95F4;DP&amp;#x7684;&amp;#x72B6;&amp;#x6001;&amp;#x8868;&amp;#x793A;&amp;#x7684;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x533A;&amp;#x95F4;&amp;#x3002;f[i, j] &amp;#x8868;&amp;#x793A;i-j&amp;#x7684;&amp;#x533A;&amp;#x95F4;&amp;#x7684;&amp;#x67D0;&amp;">
+<meta name="twitter:description" content="区间DP区间DP的状态表示的是一个区间。f[i, j] 表示i-j的区间的某个集合。 状态表示的集合是什么，考察的集合的属性是什么。 合并石子题目链接 状态表示: f[i, j] 表示将区间i-j的石子合并的所有可能的方法状态属性： 所有合并方法中的代价的最小值集合划分： 考虑最后一次的边界是什么，因为最后一步的代价是相同的，所以$f[i, j] = min_{k = i}^{j -1} f[i,">
 
 
 
@@ -478,11 +478,11 @@
       
 
       
-        <h3 id="&#x533A;&#x95F4;DP"><a href="#&#x533A;&#x95F4;DP" class="headerlink" title="&#x533A;&#x95F4;DP"></a>&#x533A;&#x95F4;DP</h3><p>&#x533A;&#x95F4;DP&#x7684;&#x72B6;&#x6001;&#x8868;&#x793A;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x533A;&#x95F4;&#x3002;<code>f[i, j]</code> &#x8868;&#x793A;<code>i-j</code>&#x7684;&#x533A;&#x95F4;&#x7684;&#x67D0;&#x4E2A;&#x96C6;&#x5408;&#x3002;</p>
-<p>&#x72B6;&#x6001;&#x8868;&#x793A;&#x7684;&#x96C6;&#x5408;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x8003;&#x5BDF;&#x7684;&#x96C6;&#x5408;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x4EC0;&#x4E48;&#x3002;</p>
-<h3 id="&#x5408;&#x5E76;&#x77F3;&#x5B50;"><a href="#&#x5408;&#x5E76;&#x77F3;&#x5B50;" class="headerlink" title="&#x5408;&#x5E76;&#x77F3;&#x5B50;"></a>&#x5408;&#x5E76;&#x77F3;&#x5B50;</h3><p><a href="https://www.acwing.com/problem/content/284/" target="_blank" rel="noopener">&#x9898;&#x76EE;&#x94FE;&#x63A5;</a></p>
-<h4 id="&#x72B6;&#x6001;&#x8868;&#x793A;-f-i-j-&#x8868;&#x793A;&#x5C06;&#x533A;&#x95F4;i-j&#x7684;&#x77F3;&#x5B50;&#x5408;&#x5E76;&#x7684;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x65B9;&#x6CD5;"><a href="#&#x72B6;&#x6001;&#x8868;&#x793A;-f-i-j-&#x8868;&#x793A;&#x5C06;&#x533A;&#x95F4;i-j&#x7684;&#x77F3;&#x5B50;&#x5408;&#x5E76;&#x7684;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x65B9;&#x6CD5;" class="headerlink" title="&#x72B6;&#x6001;&#x8868;&#x793A;: f[i, j] &#x8868;&#x793A;&#x5C06;&#x533A;&#x95F4;i-j&#x7684;&#x77F3;&#x5B50;&#x5408;&#x5E76;&#x7684;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x65B9;&#x6CD5;"></a>&#x72B6;&#x6001;&#x8868;&#x793A;: <code>f[i, j]</code> &#x8868;&#x793A;&#x5C06;&#x533A;&#x95F4;<code>i-j</code>&#x7684;&#x77F3;&#x5B50;&#x5408;&#x5E76;&#x7684;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x65B9;&#x6CD5;</h4><h4 id="&#x72B6;&#x6001;&#x5C5E;&#x6027;&#xFF1A;-&#x6240;&#x6709;&#x5408;&#x5E76;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x4EE3;&#x4EF7;&#x7684;&#x6700;&#x5C0F;&#x503C;"><a href="#&#x72B6;&#x6001;&#x5C5E;&#x6027;&#xFF1A;-&#x6240;&#x6709;&#x5408;&#x5E76;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x4EE3;&#x4EF7;&#x7684;&#x6700;&#x5C0F;&#x503C;" class="headerlink" title="&#x72B6;&#x6001;&#x5C5E;&#x6027;&#xFF1A; &#x6240;&#x6709;&#x5408;&#x5E76;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x4EE3;&#x4EF7;&#x7684;&#x6700;&#x5C0F;&#x503C;"></a>&#x72B6;&#x6001;&#x5C5E;&#x6027;&#xFF1A; &#x6240;&#x6709;&#x5408;&#x5E76;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x4EE3;&#x4EF7;&#x7684;&#x6700;&#x5C0F;&#x503C;</h4><h4 id="&#x96C6;&#x5408;&#x5212;&#x5206;&#xFF1A;-&#x8003;&#x8651;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x7684;&#x8FB9;&#x754C;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x56E0;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x7684;&#x4EE3;&#x4EF7;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;-f-i-j-min-k-i-j-1-f-i-k-f-k-1-j-sum-i-j"><a href="#&#x96C6;&#x5408;&#x5212;&#x5206;&#xFF1A;-&#x8003;&#x8651;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x7684;&#x8FB9;&#x754C;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x56E0;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x7684;&#x4EE3;&#x4EF7;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;-f-i-j-min-k-i-j-1-f-i-k-f-k-1-j-sum-i-j" class="headerlink" title="&#x96C6;&#x5408;&#x5212;&#x5206;&#xFF1A; &#x8003;&#x8651;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x7684;&#x8FB9;&#x754C;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x56E0;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x7684;&#x4EE3;&#x4EF7;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;$f[i, j] = min_{k = i}^{j -1} f[i, k] + f[k + 1, j] + sum[i, j]$"></a>&#x96C6;&#x5408;&#x5212;&#x5206;&#xFF1A; &#x8003;&#x8651;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x7684;&#x8FB9;&#x754C;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x56E0;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x7684;&#x4EE3;&#x4EF7;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;$f[i, j] = min_{k = i}^{j -1} f[i, k] + f[k + 1, j] + sum[i, j]$</h4><p>&#x8FD9;&#x6837;&#x5C31;&#x5C06;&#x95EE;&#x9898;&#x5212;&#x5206;&#x4E3A;&#x66F4;&#x5C0F;&#x89C4;&#x6A21;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x7528;DP&#x8FDB;&#x884C;&#x6C42;&#x89E3;&#x3002;</p>
-<h4 id="c-&#x4EE3;&#x7801;"><a href="#c-&#x4EE3;&#x7801;" class="headerlink" title="c++&#x4EE3;&#x7801;"></a>c++&#x4EE3;&#x7801;</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h3 id="区间DP"><a href="#区间DP" class="headerlink" title="区间DP"></a>区间DP</h3><p>区间DP的状态表示的是一个区间。<code>f[i, j]</code> 表示<code>i-j</code>的区间的某个集合。</p>
+<p>状态表示的集合是什么，考察的集合的属性是什么。</p>
+<h3 id="合并石子"><a href="#合并石子" class="headerlink" title="合并石子"></a>合并石子</h3><p><a href="https://www.acwing.com/problem/content/284/" target="_blank" rel="noopener">题目链接</a></p>
+<h4 id="状态表示-f-i-j-表示将区间i-j的石子合并的所有可能的方法"><a href="#状态表示-f-i-j-表示将区间i-j的石子合并的所有可能的方法" class="headerlink" title="状态表示: f[i, j] 表示将区间i-j的石子合并的所有可能的方法"></a>状态表示: <code>f[i, j]</code> 表示将区间<code>i-j</code>的石子合并的所有可能的方法</h4><h4 id="状态属性：-所有合并方法中的代价的最小值"><a href="#状态属性：-所有合并方法中的代价的最小值" class="headerlink" title="状态属性： 所有合并方法中的代价的最小值"></a>状态属性： 所有合并方法中的代价的最小值</h4><h4 id="集合划分：-考虑最后一次的边界是什么，因为最后一步的代价是相同的，所以-f-i-j-min-k-i-j-1-f-i-k-f-k-1-j-sum-i-j"><a href="#集合划分：-考虑最后一次的边界是什么，因为最后一步的代价是相同的，所以-f-i-j-min-k-i-j-1-f-i-k-f-k-1-j-sum-i-j" class="headerlink" title="集合划分： 考虑最后一次的边界是什么，因为最后一步的代价是相同的，所以$f[i, j] = min_{k = i}^{j -1} f[i, k] + f[k + 1, j] + sum[i, j]$"></a>集合划分： 考虑最后一次的边界是什么，因为最后一步的代价是相同的，所以$f[i, j] = min_{k = i}^{j -1} f[i, k] + f[k + 1, j] + sum[i, j]$</h4><p>这样就将问题划分为更小规模的问题，从而使用DP进行求解。</p>
+<h4 id="c-代码"><a href="#c-代码" class="headerlink" title="c++代码"></a>c++代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
       
@@ -610,7 +610,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -639,7 +639,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -686,7 +688,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">15</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

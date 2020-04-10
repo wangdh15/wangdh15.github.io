@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="1. &amp;#x4E8C;&amp;#x5206;&amp;#x67E5;&amp;#x627E;&amp;#x4E8C;&amp;#x5206;&amp;#x67E5;&amp;#x627E;&amp;#x4F7F;&amp;#x7528;&amp;#x7684;&amp;#x8303;&amp;#x56F4;&amp;#x662F;&amp;#xFF0C;&amp;#x7ED9;&amp;#x5B9A;&amp;#x4E00;&amp;#x4E2A;&amp;#x89E3;&amp;#x7684;&amp;#x8303;&amp;#x56F4;&amp;#xFF0C;&amp;#x4E">
-<meta name="keywords" content="代码模板,C++">
+  <meta name="description" content="1. 二分查找二分查找使用的范围是，给定一个解的范围，中间存在一个边界，使得这个边界左边的一边是满足的，另一边是不满足的， 二分能够找到这个边界在什么位置。 比如在一个非递减的数组中查找到某个数字的最左侧的位置或者最右侧的位置。 但是二分查找能够写对是不是很容易的。其实最重要的就是考虑两个元素的时候不能出现死循环。也就是要保证内部迭代每一步 都使得区间长度是严格递减的。 2. 整数二分代码模板每次">
+<meta name="keywords" content="C++,代码模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二分代码模板">
 <meta property="og:url" content="http://yoursite.com/2020/03/26/二分代码模板/index.html">
 <meta property="og:site_name" content="wangdh&#39;blogs">
-<meta property="og:description" content="1. &amp;#x4E8C;&amp;#x5206;&amp;#x67E5;&amp;#x627E;&amp;#x4E8C;&amp;#x5206;&amp;#x67E5;&amp;#x627E;&amp;#x4F7F;&amp;#x7528;&amp;#x7684;&amp;#x8303;&amp;#x56F4;&amp;#x662F;&amp;#xFF0C;&amp;#x7ED9;&amp;#x5B9A;&amp;#x4E00;&amp;#x4E2A;&amp;#x89E3;&amp;#x7684;&amp;#x8303;&amp;#x56F4;&amp;#xFF0C;&amp;#x4E">
+<meta property="og:description" content="1. 二分查找二分查找使用的范围是，给定一个解的范围，中间存在一个边界，使得这个边界左边的一边是满足的，另一边是不满足的， 二分能够找到这个边界在什么位置。 比如在一个非递减的数组中查找到某个数字的最左侧的位置或者最右侧的位置。 但是二分查找能够写对是不是很容易的。其实最重要的就是考虑两个元素的时候不能出现死循环。也就是要保证内部迭代每一步 都使得区间长度是严格递减的。 2. 整数二分代码模板每次">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2020-03-26T08:14:36.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二分代码模板">
-<meta name="twitter:description" content="1. &amp;#x4E8C;&amp;#x5206;&amp;#x67E5;&amp;#x627E;&amp;#x4E8C;&amp;#x5206;&amp;#x67E5;&amp;#x627E;&amp;#x4F7F;&amp;#x7528;&amp;#x7684;&amp;#x8303;&amp;#x56F4;&amp;#x662F;&amp;#xFF0C;&amp;#x7ED9;&amp;#x5B9A;&amp;#x4E00;&amp;#x4E2A;&amp;#x89E3;&amp;#x7684;&amp;#x8303;&amp;#x56F4;&amp;#xFF0C;&amp;#x4E">
+<meta name="twitter:description" content="1. 二分查找二分查找使用的范围是，给定一个解的范围，中间存在一个边界，使得这个边界左边的一边是满足的，另一边是不满足的， 二分能够找到这个边界在什么位置。 比如在一个非递减的数组中查找到某个数字的最左侧的位置或者最右侧的位置。 但是二分查找能够写对是不是很容易的。其实最重要的就是考虑两个元素的时候不能出现死循环。也就是要保证内部迭代每一步 都使得区间长度是严格递减的。 2. 整数二分代码模板每次">
 
 
 
@@ -463,23 +463,23 @@
       
 
       
-        <h3 id="1-&#x4E8C;&#x5206;&#x67E5;&#x627E;"><a href="#1-&#x4E8C;&#x5206;&#x67E5;&#x627E;" class="headerlink" title="1. &#x4E8C;&#x5206;&#x67E5;&#x627E;"></a>1. &#x4E8C;&#x5206;&#x67E5;&#x627E;</h3><p>&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x4F7F;&#x7528;&#x7684;&#x8303;&#x56F4;&#x662F;&#xFF0C;&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x89E3;&#x7684;&#x8303;&#x56F4;&#xFF0C;&#x4E2D;&#x95F4;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x8FB9;&#x754C;&#xFF0C;&#x4F7F;&#x5F97;&#x8FD9;&#x4E2A;&#x8FB9;&#x754C;&#x5DE6;&#x8FB9;&#x7684;&#x4E00;&#x8FB9;&#x662F;&#x6EE1;&#x8DB3;&#x7684;&#xFF0C;&#x53E6;&#x4E00;&#x8FB9;&#x662F;&#x4E0D;&#x6EE1;&#x8DB3;&#x7684;&#xFF0C;</p>
-<p>&#x4E8C;&#x5206;&#x80FD;&#x591F;&#x627E;&#x5230;&#x8FD9;&#x4E2A;&#x8FB9;&#x754C;&#x5728;&#x4EC0;&#x4E48;&#x4F4D;&#x7F6E;&#x3002;</p>
-<p>&#x6BD4;&#x5982;&#x5728;&#x4E00;&#x4E2A;&#x975E;&#x9012;&#x51CF;&#x7684;&#x6570;&#x7EC4;&#x4E2D;&#x67E5;&#x627E;&#x5230;&#x67D0;&#x4E2A;&#x6570;&#x5B57;&#x7684;&#x6700;&#x5DE6;&#x4FA7;&#x7684;&#x4F4D;&#x7F6E;&#x6216;&#x8005;&#x6700;&#x53F3;&#x4FA7;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
-<p>&#x4F46;&#x662F;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x80FD;&#x591F;&#x5199;&#x5BF9;&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x5BB9;&#x6613;&#x7684;&#x3002;&#x5176;&#x5B9E;&#x6700;&#x91CD;&#x8981;&#x7684;&#x5C31;&#x662F;&#x8003;&#x8651;<strong>&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x80FD;&#x51FA;&#x73B0;&#x6B7B;&#x5FAA;&#x73AF;</strong>&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8981;&#x4FDD;&#x8BC1;&#x5185;&#x90E8;&#x8FED;&#x4EE3;&#x6BCF;&#x4E00;&#x6B65;</p>
-<p>&#x90FD;&#x4F7F;&#x5F97;&#x533A;&#x95F4;&#x957F;&#x5EA6;&#x662F;<strong>&#x4E25;&#x683C;&#x9012;&#x51CF;</strong>&#x7684;&#x3002;</p>
-<h3 id="2-&#x6574;&#x6570;&#x4E8C;&#x5206;&#x4EE3;&#x7801;&#x6A21;&#x677F;"><a href="#2-&#x6574;&#x6570;&#x4E8C;&#x5206;&#x4EE3;&#x7801;&#x6A21;&#x677F;" class="headerlink" title="2. &#x6574;&#x6570;&#x4E8C;&#x5206;&#x4EE3;&#x7801;&#x6A21;&#x677F;"></a>2. &#x6574;&#x6570;&#x4E8C;&#x5206;&#x4EE3;&#x7801;&#x6A21;&#x677F;</h3><p>&#x6BCF;&#x6B21;&#x53BB;&#x9664;&#x533A;&#x95F4;&#x7684;&#x4E2D;&#x95F4;&#x503C;<code>mid</code>&#xFF0C;&#x5224;&#x65AD;&#x4E2D;&#x95F4;&#x503C;&#x662F;&#x4E0D;&#x662F;&#x6EE1;&#x8DB3;&#x60C5;&#x51B5;&#x3002;&#x5982;&#x679C;&#x6EE1;&#x8DB3;&#x60C5;&#x51B5;&#x5219;&#x5982;&#x4F55;&#x66F4;&#x65B0;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6EE1;&#x8DB3;&#x60C5;&#x51B5;&#x8BE5;&#x5982;&#x4F55;&#x66F4;&#x65B0;&#x3002;</p>
-<p>&#x7136;&#x540E;&#x518D;&#x6839;&#x636E;&#x66F4;&#x65B0;&#x7684;&#x516C;&#x5F0F;&#x53CD;&#x63A8;&#x4E2D;&#x95F4;&#x503C;<code>mid</code>&#x7684;&#x53D6;&#x6CD5;&#x3002;</p>
-<p>&#x6BD4;&#x5982;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x5DE6;&#x8FB9;&#x754C;&#x3002;&#x90A3;&#x4E48;&#x5F53;<code>a[mid] &gt;= x</code>&#x7684;&#x65F6;&#x5019;&#x66F4;&#x65B0;<code>r = mid</code> , <code>a[mid] &lt; x</code>&#x7684;&#x65F6;&#x5019;&#x66F4;&#x65B0;<code>l = mid + 1</code></p>
-<p>&#x5982;&#x679C;&#x5E0C;&#x671B;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x53F3;&#x8FB9;&#x754C;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;<code>a[mid] &lt;= x</code>&#x7684;&#x65F6;&#x5019;&#x66F4;&#x65B0; <code>l = mid</code>&#xFF0C;<code>a[mid] &gt; x</code>&#x7684;&#x65F6;&#x5019;&#x66F4;&#x65B0;<code>r = mid - 1</code></p>
-<p>&#x7136;&#x540E;&#x5224;&#x65AD;<code>mid</code>&#x7684;&#x53D6;&#x6CD5;&#x662F;<code>l + r &gt;&gt; 1</code> &#x8FD8;&#x662F;<code>l + r + 1 &gt;&gt; 1</code>&#x3002;</p>
-<p>&#x8FD9;&#x4E24;&#x8005;&#x7684;&#x533A;&#x522B;&#x662F;&#xFF0C;&#x5F53;<code>[l, r]</code>&#x4E2D;&#x5305;&#x542B;&#x5947;&#x6570;&#x4E2A;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E24;&#x8005;&#x7684;&#x7ED3;&#x679C;&#x90FD;&#x662F;&#x6700;&#x4E2D;&#x95F4;&#x7684;&#x6811;&#x3002;&#x5F53;<code>[l, r]</code>&#x4E2D;&#x5305;&#x542B;&#x5076;&#x6570;&#x4E2A;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x4E4B;&#x95F4;&#x504F;&#x5DE6;&#x7684;&#x6570;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x6307;&#x5411;&#x4E2D;&#x95F4;&#x504F;&#x53F3;&#x7684;&#x6811;&#x3002;</p>
-<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x66F4;&#x65B0;&#x516C;&#x5F0F;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5F53;&#x533A;&#x95F4;&#x957F;&#x5EA6;&#x5927;&#x4E8E;2&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x54EA;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x9009;&#x5DE6;&#x533A;&#x95F4;&#x8FD8;&#x662F;&#x53F3;&#x533A;&#x95F4;&#xFF0C;&#x533A;&#x95F4;&#x957F;&#x5EA6;&#x90FD;&#x662F;&#x5728;&#x9012;&#x51CF;&#x7684;&#x3002;</p>
-<p>&#x4F46;&#x662F;&#x5728;&#x533A;&#x95F4;&#x957F;&#x5EA6;&#x662F;2&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9009;&#x53D6;&#x5DE6;&#x8FB9;&#x754C;&#x4E2D;&#x6709;&#x4E00;&#x6B65;&#x662F;<code>r = mid</code>&#xFF0C;&#x5982;&#x679C;<code>mid</code>&#x6307;&#x5411;&#x53F3;&#x8FB9;&#x5143;&#x7D20;&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x9677;&#x5165;&#x6B7B;&#x5FAA;&#x73AF;&#xFF0C;&#x533A;&#x95F4;&#x957F;&#x5EA6;&#x59CB;&#x7EC8;&#x4FDD;&#x6301;&#x4E3A;2&#x3002;&#x9009;&#x62E9;&#x53F3;&#x8FB9;&#x754C;&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
-<p>&#x6240;&#x4EE5;&#x5982;&#x679C;&#x662F;<code>l = mid</code>&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>mid = l + r + 1&gt;&gt;1</code>;&#x5982;&#x679C;&#x662F;<code>r = mid</code>, &#x5C31;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>mid = l + r &gt;&gt; 1</code> &#x3002;</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(mid)</span></span>{<span class="comment">/*  */</span>} <span class="comment">// &#x5224;&#x65AD;&#x4E2D;&#x70B9;&#x7684;&#x60C5;&#x51B5;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary_search_1</span><span class="params">( <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>{</span><br><span class="line">  <span class="comment">// &#x53F3;&#x8FB9;&#x754C;&#x632A;&#x5230;&#x4E2D;&#x70B9;&#xFF0C;&#x533A;&#x95F4;&#x5212;&#x5206;&#x4E3A;[l, mid], [mid + 1, r]</span></span><br><span class="line"> 	<span class="keyword">while</span> (l &lt; r){</span><br><span class="line">    mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">   	<span class="keyword">if</span> (check(mid)) r = mid;</span><br><span class="line">    <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> l;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary_search_2</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>{</span><br><span class="line">  <span class="comment">// &#x5DE6;&#x8FB9;&#x754C;&#x632A;&#x5230;&#x4E2D;&#x70B9;, &#x533A;&#x95F4;&#x5212;&#x5206;&#x4E3A;[1, mid - 1], [mid , r]</span></span><br><span class="line">  <span class="keyword">while</span> (l &lt; r){</span><br><span class="line">    mid =  l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (check(mid)) l =  mid;</span><br><span class="line">    <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> l;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+        <h3 id="1-二分查找"><a href="#1-二分查找" class="headerlink" title="1. 二分查找"></a>1. 二分查找</h3><p>二分查找使用的范围是，给定一个解的范围，中间存在一个边界，使得这个边界左边的一边是满足的，另一边是不满足的，</p>
+<p>二分能够找到这个边界在什么位置。</p>
+<p>比如在一个非递减的数组中查找到某个数字的最左侧的位置或者最右侧的位置。</p>
+<p>但是二分查找能够写对是不是很容易的。其实最重要的就是考虑<strong>两个元素的时候不能出现死循环</strong>。也就是要保证内部迭代每一步</p>
+<p>都使得区间长度是<strong>严格递减</strong>的。</p>
+<h3 id="2-整数二分代码模板"><a href="#2-整数二分代码模板" class="headerlink" title="2. 整数二分代码模板"></a>2. 整数二分代码模板</h3><p>每次去除区间的中间值<code>mid</code>，判断中间值是不是满足情况。如果满足情况则如何更新，如果不满足情况该如何更新。</p>
+<p>然后再根据更新的公式反推中间值<code>mid</code>的取法。</p>
+<p>比如如果希望找到一个数的左边界。那么当<code>a[mid] &gt;= x</code>的时候更新<code>r = mid</code> , <code>a[mid] &lt; x</code>的时候更新<code>l = mid + 1</code></p>
+<p>如果希望找到一个数的右边界，那么当<code>a[mid] &lt;= x</code>的时候更新 <code>l = mid</code>，<code>a[mid] &gt; x</code>的时候更新<code>r = mid - 1</code></p>
+<p>然后判断<code>mid</code>的取法是<code>l + r &gt;&gt; 1</code> 还是<code>l + r + 1 &gt;&gt; 1</code>。</p>
+<p>这两者的区别是，当<code>[l, r]</code>中包含奇数个数的时候，两者的结果都是最中间的树。当<code>[l, r]</code>中包含偶数个数的时候，第一个指向之间偏左的数，第二个指向中间偏右的树。</p>
+<p>从上面的更新公式可以看出，当区间长度大于2的时候，不管是哪种情况，不管是选左区间还是右区间，区间长度都是在递减的。</p>
+<p>但是在区间长度是2的时候，选取左边界中有一步是<code>r = mid</code>，如果<code>mid</code>指向右边元素的话，这个时候就会陷入死循环，区间长度始终保持为2。选择右边界也是一样的。</p>
+<p>所以如果是<code>l = mid</code>，那么就需要使用<code>mid = l + r + 1&gt;&gt;1</code>;如果是<code>r = mid</code>, 就需要使用<code>mid = l + r &gt;&gt; 1</code> 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(mid)</span></span>&#123;<span class="comment">/*  */</span>&#125; <span class="comment">// 判断中点的情况</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary_search_1</span><span class="params">( <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">  <span class="comment">// 右边界挪到中点，区间划分为[l, mid], [mid + 1, r]</span></span><br><span class="line"> 	<span class="keyword">while</span> (l &lt; r)&#123;</span><br><span class="line">    mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">   	<span class="keyword">if</span> (check(mid)) r = mid;</span><br><span class="line">    <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary_search_2</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">  <span class="comment">// 左边界挪到中点, 区间划分为[1, mid - 1], [mid , r]</span></span><br><span class="line">  <span class="keyword">while</span> (l &lt; r)&#123;</span><br><span class="line">    mid =  l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (check(mid)) l =  mid;</span><br><span class="line">    <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-&#x6D6E;&#x70B9;&#x6570;&#x4E8C;&#x5206;"><a href="#3-&#x6D6E;&#x70B9;&#x6570;&#x4E8C;&#x5206;" class="headerlink" title="3. &#x6D6E;&#x70B9;&#x6570;&#x4E8C;&#x5206;"></a>3. &#x6D6E;&#x70B9;&#x6570;&#x4E8C;&#x5206;</h3><p>&#x6D6E;&#x70B9;&#x6570;&#x4E8C;&#x5206;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x76F4;&#x63A5;&#x53D6;&#x4E2D;&#x95F4;&#x503C;&#x6765;&#x5224;&#x65AD;&#xFF0C;&#x7136;&#x540E;&#x7EC8;&#x6B62;&#x6761;&#x4EF6;&#x662F;&#x533A;&#x95F4;&#x5927;&#x5C0F;&#x662F;&#x5426;&#x80FD;&#x591F;&#x8FBE;&#x5230;&#x7CBE;&#x5EA6;&#x3002;&#x4E00;&#x822C;&#x4E0D;&#x5B58;&#x5728;&#x8FB9;&#x754C;&#x5904;&#x7406;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<h3 id="3-浮点数二分"><a href="#3-浮点数二分" class="headerlink" title="3. 浮点数二分"></a>3. 浮点数二分</h3><p>浮点数二分比较简单，直接取中间值来判断，然后终止条件是区间大小是否能够达到精度。一般不存在边界处理的情况。</p>
 
       
     </div>
@@ -506,9 +506,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/代码模板/" rel="tag"># 代码模板</a>
-          
             <a href="/tags/C/" rel="tag"># C++</a>
+          
+            <a href="/tags/代码模板/" rel="tag"># 代码模板</a>
           
         </div>
       
@@ -606,7 +606,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -635,7 +635,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -682,7 +684,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">15</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
