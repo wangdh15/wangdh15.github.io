@@ -95,14 +95,14 @@
 
 
   <meta name="description" content="1. LRU机制实现原题链接 解题思路散列表和双向链表联合使用 使用散列表可以在O(1)的时间利用key找到对应的节点，双向链表维护的是节点的访问次序，当访问了一个节点 将其在双向链表中删除，并添加到链表头或者链表尾中， 容量满之后只需要删除链表头或者链表尾的元素即可 时间复杂度O(1)， 空间复杂度O(n) 代码123456789101112131415161718192021222324252">
-<meta name="keywords" content="系统设计,LeetCode">
+<meta name="keywords" content="系统设计,leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LRU、LFU缓存机制">
 <meta property="og:url" content="http://yoursite.com/2020/04/05/LRU、LFU缓存机制/index.html">
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="1. LRU机制实现原题链接 解题思路散列表和双向链表联合使用 使用散列表可以在O(1)的时间利用key找到对应的节点，双向链表维护的是节点的访问次序，当访问了一个节点 将其在双向链表中删除，并添加到链表头或者链表尾中， 容量满之后只需要删除链表头或者链表尾的元素即可 时间复杂度O(1)， 空间复杂度O(n) 代码123456789101112131415161718192021222324252">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-05T14:09:33.362Z">
+<meta property="og:updated_time" content="2020-04-13T11:08:51.716Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LRU、LFU缓存机制">
 <meta name="twitter:description" content="1. LRU机制实现原题链接 解题思路散列表和双向链表联合使用 使用散列表可以在O(1)的时间利用key找到对应的节点，双向链表维护的是节点的访问次序，当访问了一个节点 将其在双向链表中删除，并添加到链表头或者链表尾中， 容量满之后只需要删除链表头或者链表尾的元素即可 时间复杂度O(1)， 空间复杂度O(n) 代码123456789101112131415161718192021222324252">
@@ -417,13 +417,23 @@
                 
               
 
-              <time title="Created: 2020-04-05 22:01:59 / Modified: 22:09:33" itemprop="dateCreated datePublished" datetime="2020-04-05T22:01:59+08:00">2020-04-05</time>
+              <time title="Created: 2020-04-05 22:01:59" itemprop="dateCreated datePublished" datetime="2020-04-05T22:01:59+08:00">2020-04-05</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-04-13 19:08:51" itemprop="dateModified" datetime="2020-04-13T19:08:51+08:00">2020-04-13</time>
+              </span>
             
           
 
@@ -512,6 +522,8 @@
 </ul>
 <p>时间复杂度<code>O(1)</code>, 空间复杂度为<code>O(n)</code></p>
 <h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    双向链表节点类</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, key = None, value = None, freq = <span class="number">0</span>)</span>:</span></span><br><span class="line">        self.key = key</span><br><span class="line">        self.value = value</span><br><span class="line">        self.prev = <span class="literal">None</span></span><br><span class="line">        self.next = <span class="literal">None</span></span><br><span class="line">        self.freq = freq</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkList</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    双向链表类</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.head = Node()</span><br><span class="line">        self.tail = Node()</span><br><span class="line">        self.head.next = self.tail</span><br><span class="line">        self.tail.prev = self.head</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_from_head</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        向链表头添加一个节点</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        node.next = self.head.next</span><br><span class="line">        node.prev = self.head</span><br><span class="line">        node.prev.next = node</span><br><span class="line">        node.next.prev = node</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delete_from_tail</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        删除链表尾部的一个节点</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        t = self.tail.prev</span><br><span class="line">        self.delete(self.tail.prev)</span><br><span class="line">        <span class="keyword">return</span> t</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        将某个节点从其所在的链表中删除</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        node.prev.next = node.next</span><br><span class="line">        node.next.prev = node.prev</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LFUCache</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, capacity: int)</span>:</span></span><br><span class="line">        self.d = &#123;&#125;</span><br><span class="line">        self.freq = &#123;&#125;</span><br><span class="line">        self.min_freq = <span class="number">0</span></span><br><span class="line">        self.cap = capacity</span><br><span class="line">        self.freq[<span class="number">1</span>] = LinkList()</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        访问完一个节点之后对这个节点更新</span></span><br><span class="line"><span class="string">        增加这个节点的freq，维护min_freq</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.freq[node.freq].delete(node)   <span class="comment">#  将节点从之前的链表中删除</span></span><br><span class="line">        node.freq += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> node.freq <span class="keyword">not</span> <span class="keyword">in</span> self.freq:      <span class="comment"># 将节点添加到新的链表中</span></span><br><span class="line">            self.freq[node.freq] = LinkList()</span><br><span class="line">        self.freq[node.freq].add_from_head(node)</span><br><span class="line">        <span class="keyword">if</span> self.freq[self.min_freq].head.next == self.freq[self.min_freq].tail:  <span class="comment"># 维护min_freq</span></span><br><span class="line">            self.min_freq += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        获取某个key对应的value</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> self.d:</span><br><span class="line">            self.update(self.d[key])</span><br><span class="line">            <span class="keyword">return</span> self.d[key].value</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, key: int, value: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        添加某个元素</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> self.cap == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> self.d:</span><br><span class="line">            self.d[key].value = value</span><br><span class="line">            self.update(self.d[key])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> len(self.d) == self.cap:</span><br><span class="line">                t = self.freq[self.min_freq].delete_from_tail()</span><br><span class="line">                <span class="keyword">del</span> self.d[t.key]</span><br><span class="line">            a = Node(key, value, <span class="number">1</span>)</span><br><span class="line">            self.freq[<span class="number">1</span>].add_from_head(a)</span><br><span class="line">            self.min_freq = <span class="number">1</span></span><br><span class="line">            self.d[key] = a</span><br><span class="line"><span class="comment"># Your LFUCache object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = LFUCache(capacity)</span></span><br><span class="line"><span class="comment"># param_1 = obj.get(key)</span></span><br><span class="line"><span class="comment"># obj.put(key,value)</span></span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
@@ -539,7 +551,7 @@
           
             <a href="/tags/系统设计/" rel="tag"># 系统设计</a>
           
-            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
           
         </div>
       
@@ -637,7 +649,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-count">39</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -719,7 +731,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
