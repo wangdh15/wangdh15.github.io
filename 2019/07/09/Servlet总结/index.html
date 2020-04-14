@@ -102,13 +102,13 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="1. ServletServlet(Server Applet)就是就是一个接口，Interface，实现了这个接口中的方法可以看做服务器端的小程序。定义了服务器端小程序需要实现的五个方法。但是光有一个类，服务器并不知道怎么去访问它，所以还需要将这个类放到容器中，如tomcat。然后给每个servlet类配置一个访问路径，这个时候通过路径，tomcat就能够加载相对应的类，然后调用其中的相关方法。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/07/09/Servlet总结/Servlet%E6%80%BB%E7%BB%93/%E4%B8%89%E5%B1%82%E7%BB%93%E6%9E%84.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/07/09/Servlet总结/Servlet%E6%80%BB%E7%BB%93/Servlet%E6%B5%81%E7%A8%8B.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/09/Servlet总结/%E4%B8%89%E5%B1%82%E7%BB%93%E6%9E%84.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/09/Servlet总结/Servlet%E6%B5%81%E7%A8%8B.jpg">
 <meta property="og:updated_time" content="2019-07-11T02:34:33.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet总结">
 <meta name="twitter:description" content="1. ServletServlet(Server Applet)就是就是一个接口，Interface，实现了这个接口中的方法可以看做服务器端的小程序。定义了服务器端小程序需要实现的五个方法。但是光有一个类，服务器并不知道怎么去访问它，所以还需要将这个类放到容器中，如tomcat。然后给每个servlet类配置一个访问路径，这个时候通过路径，tomcat就能够加载相对应的类，然后调用其中的相关方法。">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/09/Servlet总结/Servlet%E6%80%BB%E7%BB%93/%E4%B8%89%E5%B1%82%E7%BB%93%E6%9E%84.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/09/Servlet总结/%E4%B8%89%E5%B1%82%E7%BB%93%E6%9E%84.jpg">
 
 
 
@@ -508,7 +508,7 @@
 
       
         <h2 id="1-Servlet"><a href="#1-Servlet" class="headerlink" title="1. Servlet"></a>1. Servlet</h2><p>Servlet(Server Applet)就是就是一个接口，<code>Interface</code>，实现了这个接口中的方法可以看做服务器端的小程序。定义了服务器端小程序需要实现的五个方法。但是光有一个类，服务器并不知道怎么去访问它，所以还需要将这个类放到容器中，如<code>tomcat</code>。然后给每个<code>servlet</code>类配置一个访问路径，这个时候通过路径，tomcat就能够加载相对应的类，然后调用其中的相关方法。</p>
-<p><img src="Servlet%E6%80%BB%E7%BB%93/%E4%B8%89%E5%B1%82%E7%BB%93%E6%9E%84.jpg" alt></p>
+<p><img src="/2019/07/09/Servlet总结/%E4%B8%89%E5%B1%82%E7%BB%93%E6%9E%84.jpg" alt></p>
 <p>其中一共包含如下的几个方法：</p>
 <ul>
 <li>init(ServletConfig):void 在创建实例的时候运行初始化方法</li>
@@ -524,7 +524,7 @@
 <h3 id="1-1-ServletConfig"><a href="#1-1-ServletConfig" class="headerlink" title="1.1 ServletConfig"></a>1.1 ServletConfig</h3><p>对象封装了Servlet的配置信息，内部需要的时候可以通过其获取</p>
 <h3 id="1-2-ServletRequest"><a href="#1-2-ServletRequest" class="headerlink" title="1.2 ServletRequest"></a>1.2 ServletRequest</h3><p>封装了请求的相关信息，可以通过一些方法直接获取。</p>
 <h3 id="1-3-ServletResponse"><a href="#1-3-ServletResponse" class="headerlink" title="1.3 ServletResponse"></a>1.3 ServletResponse</h3><p>Tomcat创建一个空的ServletResponse对象，传递给<code>service</code>方法，在方法内部可以调用方法来向其内部的缓冲区写内容，Tomcat在Servlet写完之后，将其中的内容作为响应发送给请求端。</p>
-<p><img src="Servlet%E6%80%BB%E7%BB%93/Servlet%E6%B5%81%E7%A8%8B.jpg" alt></p>
+<p><img src="/2019/07/09/Servlet总结/Servlet%E6%B5%81%E7%A8%8B.jpg" alt></p>
 <h2 id="2-GenericServlet"><a href="#2-GenericServlet" class="headerlink" title="2. GenericServlet"></a>2. GenericServlet</h2><p>Servlet中的<code>service</code>方法是一个控方法，直接继承的话，需要自己判断请求类型，然后做出不同的操作。写起来还是比较麻烦的。GenericServlet是一个继承Servlet的类，是一个抽象类，对Servlet中的方法进行了进一步封装。</p>
 <p>下面是部分的修改地方：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.config = config;</span><br><span class="line">        <span class="keyword">this</span>.init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. 提升了config的作用域，便于其他方法使用</span></span><br><span class="line"><span class="comment">2. 子类可以重写空的init方法，实现自己的初始化，同时被上一个初始化对象调用</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
@@ -667,7 +667,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -753,7 +753,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

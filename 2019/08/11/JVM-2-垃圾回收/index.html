@@ -102,20 +102,20 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="1. JVM内存分配与回收Java运行时区域的各个部分，其中程序计数器、虚拟机栈、本地方法栈区域随着线程而生、随线程而灭。而Java堆和方法区则不一样，一个接口中的多个实现类需要的内存可能不一样，一个方法中的多个分支需要的内存也可能不一样。只有在程序运行期间才知道会创建哪些对象。这部分内存的分配和回收都是动态的，垃圾收集器所关注的是这部分内存。 JDK1.8之前的堆内存示意图： 从上述堆内存分为新">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/01.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/02.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/03.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/04.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/06.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/07.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/08.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/09.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/10.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/03.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/04.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/06.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/07.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/08.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/09.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/10.png">
 <meta property="og:updated_time" content="2019-08-13T01:58:15.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM-2-垃圾回收">
 <meta name="twitter:description" content="1. JVM内存分配与回收Java运行时区域的各个部分，其中程序计数器、虚拟机栈、本地方法栈区域随着线程而生、随线程而灭。而Java堆和方法区则不一样，一个接口中的多个实现类需要的内存可能不一样，一个方法中的多个分支需要的内存也可能不一样。只有在程序运行期间才知道会创建哪些对象。这部分内存的分配和回收都是动态的，垃圾收集器所关注的是这部分内存。 JDK1.8之前的堆内存示意图： 从上述堆内存分为新">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/01.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/11/JVM-2-垃圾回收/01.png">
 
 
 
@@ -515,10 +515,10 @@
 
       
         <h2 id="1-JVM内存分配与回收"><a href="#1-JVM内存分配与回收" class="headerlink" title="1. JVM内存分配与回收"></a>1. JVM内存分配与回收</h2><p>Java运行时区域的各个部分，其中<code>程序计数器、虚拟机栈、本地方法栈</code>区域随着线程而生、随线程而灭。而<code>Java堆和方法区</code>则不一样，一个接口中的多个实现类需要的内存可能不一样，一个方法中的多个分支需要的内存也可能不一样。只有在程序运行期间才知道会创建哪些对象。这部分内存的分配和回收都是动态的，垃圾收集器所关注的是这部分内存。</p>
-<h3 id="JDK1-8之前的堆内存示意图："><a href="#JDK1-8之前的堆内存示意图：" class="headerlink" title="JDK1.8之前的堆内存示意图："></a>JDK1.8之前的堆内存示意图：</h3><p><img src="JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/01.png" alt="image-20190811183654812"></p>
+<h3 id="JDK1-8之前的堆内存示意图："><a href="#JDK1-8之前的堆内存示意图：" class="headerlink" title="JDK1.8之前的堆内存示意图："></a>JDK1.8之前的堆内存示意图：</h3><p><img src="/2019/08/11/JVM-2-垃圾回收/01.png" alt="image-20190811183654812"></p>
 <p>从上述堆内存分为<code>新生代、老年代和永久代</code>。新生代有分为：<code>Eden区+Survior1区+Survior2区</code>。</p>
 <p>在 JDK 1.8中移除整个永久代，取而代之的是一个叫<code>元空间</code>（Metaspace）的区域（永久代使用的是JVM的堆内存空间，而元空间使用的是物理内存，直接受到本机的物理内存限制）。</p>
-<h3 id="1-1-堆内存常见分配策略"><a href="#1-1-堆内存常见分配策略" class="headerlink" title="1.1 堆内存常见分配策略"></a>1.1 堆内存常见分配策略</h3><p><img src="JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/02.png" alt="image-20190811183944750"></p>
+<h3 id="1-1-堆内存常见分配策略"><a href="#1-1-堆内存常见分配策略" class="headerlink" title="1.1 堆内存常见分配策略"></a>1.1 堆内存常见分配策略</h3><p><img src="/2019/08/11/JVM-2-垃圾回收/02.png" alt="image-20190811183944750"></p>
 <ol>
 <li><p>对象优先在<code>eden</code>区分配</p>
 <p>将内存分为一块较大的Eden空间和两块较小的Survivor空间，每次使用Eden和其中一块Survivor。当回收的时候，将Eden和Survivor中还存活的对象一次性地复制到另外一块Survivor空间上，最后清理掉Eden和刚才用过的Survivor空间。当Survivor空间不够用时，需要依赖其他内存（老年代）进行分配担保(Handle Promotion)</p>
@@ -537,13 +537,13 @@
 </li>
 </ol>
 <h2 id="2-如何判断对象死亡"><a href="#2-如何判断对象死亡" class="headerlink" title="2. 如何判断对象死亡"></a>2. 如何判断对象死亡</h2><p>堆中存放着所欲对象的实例，对堆垃圾回收第一步就是判断哪些对象已经死亡。</p>
-<p><img src="JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/03.png" alt="image-20190811204300085"></p>
+<p><img src="/2019/08/11/JVM-2-垃圾回收/03.png" alt="image-20190811204300085"></p>
 <h3 id="2-1-引用计数法"><a href="#2-1-引用计数法" class="headerlink" title="2.1 引用计数法"></a>2.1 引用计数法</h3><p>给对象中添加一个引用计数器，每当有一个地方引用它，计数器就加1；当引用失效，计数器就减1；任何时候计数器为0的对象就是不可能再被使用的。</p>
 <p><strong>这个方法实现简单，效率高，但是目前主流的虚拟机中并没有选择这个算法来管理内存，其最主要的原因是它很难解决对象之间相互循环引用的问题。</strong>所谓对象之间的相互引用问题，如下面代码所示：除了对象objA 和 objB 相互引用着对方之外，这两个对象之间再无任何引用。但是他们因为互相引用对方，导致它们的引用计数器都不为0，于是引用计数算法无法通知 GC 回收器回收他们。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReferenceCountingGc</span> </span>&#123;</span><br><span class="line">    Object instance = <span class="keyword">null</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		ReferenceCountingGc objA = <span class="keyword">new</span> ReferenceCountingGc();</span><br><span class="line">		ReferenceCountingGc objB = <span class="keyword">new</span> ReferenceCountingGc();</span><br><span class="line">		objA.instance = objB;</span><br><span class="line">		objB.instance = objA;</span><br><span class="line">		objA = <span class="keyword">null</span>;</span><br><span class="line">		objB = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-2-可达性分析算法"><a href="#2-2-可达性分析算法" class="headerlink" title="2.2 可达性分析算法"></a>2.2 可达性分析算法</h3><p>这个算法的基本思想就是通过一系列的称为 <strong>“GC Roots”</strong> 的对象作为起点，从这些节点开始向下搜索，节点所走过的路径称为引用链，当一个对象到 GC Roots 没有任何引用链相连的话，则证明此对象是不可用的。</p>
-<p><img src="JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/04.png" alt="image-20190811204430971"></p>
+<p><img src="/2019/08/11/JVM-2-垃圾回收/04.png" alt="image-20190811204430971"></p>
 <p>在Java中GCRoot中的对象包含以下几类：</p>
 <ul>
 <li>虚拟机栈中引用的对象</li>
@@ -575,7 +575,7 @@
 <li>而其他三种类型的引用，使用得最多就是软引用和弱引用，这两种既有相似之处又有区别，他们都来描述非必须对象。</li>
 <li>被软引用关联的对象只有在内存不足时才会被回收，而被弱引用关联的对象在JVM进行垃圾回收时总会被回收。</li>
 </ul>
-<p><img src="JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/06.png" alt></p>
+<p><img src="/2019/08/11/JVM-2-垃圾回收/06.png" alt></p>
 <h3 id="2-4-不可达的对象并非“非死不可”"><a href="#2-4-不可达的对象并非“非死不可”" class="headerlink" title="2.4 不可达的对象并非“非死不可”"></a>2.4 不可达的对象并非“非死不可”</h3><p>即使在可达性分析法中不可达的对象，也并非是“非死不可”的，这时候它们暂时处于“缓刑阶段”，要真正宣告一个对象死亡，至少要经历两次标记过程；可达性分析法中不可达的对象被第一次标记并且进行一次筛选，筛选的条件是此对象是否有必要执行 finalize 方法。当对象没有覆盖 finalize 方法，或 finalize 方法已经被虚拟机调用过时，虚拟机将这两种情况视为没有必要执行。</p>
 <p>如果对象被判定为有必要执行finalize方法，则会被放置在一个F-Queen队列中，稍后有一个由虚拟机创建的低优先级的<code>finalizer</code>线程执行它。执行就是虚拟机会触发这个函数。<code>finalize()</code>方法是对象逃脱死亡的最后一次机会，稍后GC将对F-Queen中的对象进行第二次小规模的标记，如果对象要在finalize()方法中成功拯救自己–只要重新与引用链上的任何一个对象建立关联即可，那么第二次标记时它将会被移出即将回收的集合。下面所示：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FinalizeEscapeGC</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> FinalizeEscapeGC SAVE_HOOK = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">isAlive</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"yes, i an still alive"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.finalize();</span><br><span class="line">        System.out.println(<span class="string">"finalize method executed"</span>);</span><br><span class="line">        FinalizeEscapeGC.SAVE_HOOK = <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        SAVE_HOOK = <span class="keyword">new</span> FinalizeEscapeGC();</span><br><span class="line"></span><br><span class="line">        SAVE_HOOK = <span class="keyword">null</span>;</span><br><span class="line">        System.gc();</span><br><span class="line">        Thread.sleep(<span class="number">500</span>);</span><br><span class="line">        <span class="keyword">if</span>(SAVE_HOOK != <span class="keyword">null</span>)&#123;</span><br><span class="line">            SAVE_HOOK.isAlive();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"no, i am dead :("</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        SAVE_HOOK = <span class="keyword">null</span>;</span><br><span class="line">        System.gc();</span><br><span class="line">        Thread.sleep(<span class="number">500</span>);</span><br><span class="line">        <span class="keyword">if</span>(SAVE_HOOK != <span class="keyword">null</span>)&#123;</span><br><span class="line">            SAVE_HOOK.isAlive();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"no, i am dead :("</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -591,17 +591,17 @@
 <p>虚拟机可以对满足上述3个条件的无用类进行回收，但是仅仅是可以回收，不是不适用了一定会回收。是否回收可以通过参数来控制。</p>
 <p>在大量使用反射、动态代理、CGLib等框架、动态生成JSP和OSGi这列频繁定义ClassLoader的场景都需要虚拟机具备类卸载的能力，以保证永久代不会溢出。</p>
 <p><strong>注意</strong>：JDK1.7及之后版本的 JVM 已经将运行时常量池从方法区中移了出来，在 Java 堆（Heap）中开辟了一块区域存放运行时常量池。</p>
-<h2 id="4-垃圾回收算法"><a href="#4-垃圾回收算法" class="headerlink" title="4. 垃圾回收算法"></a>4. 垃圾回收算法</h2><p><img src="JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/07.png" alt="image-20190811213015755"></p>
+<h2 id="4-垃圾回收算法"><a href="#4-垃圾回收算法" class="headerlink" title="4. 垃圾回收算法"></a>4. 垃圾回收算法</h2><p><img src="/2019/08/11/JVM-2-垃圾回收/07.png" alt="image-20190811213015755"></p>
 <h3 id="4-1-标记-清除算法"><a href="#4-1-标记-清除算法" class="headerlink" title="4.1 标记-清除算法"></a>4.1 标记-清除算法</h3><p>算法分为“标记”和“清除”阶段：首先标记出所有需要回收的对象，在标记完成后统一回收所有被标记的对象。它是最基础的收集算法，效率也很高，但是会带来两个明显的问题：</p>
 <ol>
 <li><strong>效率问题</strong></li>
 <li><strong>空间问题（标记清除后会产生大量不连续的碎片</strong></li>
 </ol>
-<p><img src="JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/08.png" alt="image-20190811213121397"></p>
+<p><img src="/2019/08/11/JVM-2-垃圾回收/08.png" alt="image-20190811213121397"></p>
 <h3 id="4-2-复制算法"><a href="#4-2-复制算法" class="headerlink" title="4.2 复制算法"></a>4.2 复制算法</h3><p>为了解决效率问题，“复制”收集算法出现了。它可以将内存分为大小相同的两块，每次使用其中的一块。当这一块的内存使用完后，就将还存活的对象复制到另一块去，然后再把使用的空间一次清理掉。这样就使每次的内存回收都是对内存区间的一半进行回收。</p>
-<p><img src="JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/09.png" alt="image-20190811213155046"></p>
+<p><img src="/2019/08/11/JVM-2-垃圾回收/09.png" alt="image-20190811213155046"></p>
 <h3 id="4-3-标记-整理算法"><a href="#4-3-标记-整理算法" class="headerlink" title="4.3 标记-整理算法"></a>4.3 标记-整理算法</h3><p>根据老年代的特点特出的一种标记算法，标记过程仍然与“标记-清除”算法一样，但后续步骤不是直接对可回收对象回收，而是让所有存活的对象向一段移动，然后直接清理掉端边界以外的内存。</p>
-<p><img src="JVM-2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/10.png" alt="image-20190811213233194"></p>
+<p><img src="/2019/08/11/JVM-2-垃圾回收/10.png" alt="image-20190811213233194"></p>
 <h3 id="4-4-分代收集算法"><a href="#4-4-分代收集算法" class="headerlink" title="4.4 分代收集算法"></a>4.4 分代收集算法</h3><p>当前虚拟机的垃圾手机都采用分代收集算法，这种算法没有什么新的思想，只是根据对象存活周期的不同将内存分为几块。一般将java堆分为新生代和老年代，这样我们就可以根据各个年代的特点选择合适的垃圾收集算法。</p>
 <p><strong>比如在新生代中，每次收集都会有大量对象死去，所以可以选择复制算法，只需要付出少量对象的复制成本就可以完成每次垃圾收集。而老年代的对象存活几率是比较高的，而且没有额外的空间对它进行分配担保，所以我们必须选择“标记-清楚”或“标记-整理”算法进行垃圾收集。</strong></p>
 
@@ -730,7 +730,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -816,7 +816,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

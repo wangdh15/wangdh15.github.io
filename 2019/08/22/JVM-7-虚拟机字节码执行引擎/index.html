@@ -102,20 +102,20 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="字节码执行引擎 虚拟机和物理机都具有代码执行能力，但是物理机的执行引擎是直接建立在处理器、硬件、指令集合操作系统层面上的，而虚拟机的执行引擎是由自己实现的。所以虚拟机可以自行指定指令集和执行引擎的结构体系，而且能够执行那些不被硬件直接支持的指令集格式。   所有的Java虚拟机的执行引擎从外观看起来是一致的：输入字节码文件，处理过程是字节码解析的等效过程，输出的是执行结果。执行引擎在执行Java代">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/01.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/02.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/03.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/04.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/05.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/06.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/07.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/08.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/09.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/03.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/04.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/05.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/06.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/07.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/08.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/09.png">
 <meta property="og:updated_time" content="2019-08-22T13:16:37.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM-7-虚拟机字节码执行引擎">
 <meta name="twitter:description" content="字节码执行引擎 虚拟机和物理机都具有代码执行能力，但是物理机的执行引擎是直接建立在处理器、硬件、指令集合操作系统层面上的，而虚拟机的执行引擎是由自己实现的。所以虚拟机可以自行指定指令集和执行引擎的结构体系，而且能够执行那些不被硬件直接支持的指令集格式。   所有的Java虚拟机的执行引擎从外观看起来是一致的：输入字节码文件，处理过程是字节码解析的等效过程，输出的是执行结果。执行引擎在执行Java代">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/01.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/01.png">
 
 
 
@@ -519,10 +519,10 @@
 <li>方法返回地址</li>
 <li>额外的附加信息</li>
 </ul>
-<p><img src="JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/01.png" alt="image-20190822162740525"></p>
+<p><img src="/2019/08/22/JVM-7-虚拟机字节码执行引擎/01.png" alt="image-20190822162740525"></p>
 <h4 id="1-1-局部变量表"><a href="#1-1-局部变量表" class="headerlink" title="1.1 局部变量表"></a>1.1 局部变量表</h4><p>变量值的存储空间，由<strong>方法参数和方法内部定义的局部变量</strong>组成，其容量用Slot1作为最小单位。在编译期间，就在方法的Code属性的max_locals数据项中确定了该方法所需要分配的局部变量表的最大容量。由于局部变量表是建立在线程的栈上，是线程的私有数据，因此不存在数据安全问题。在方法执行时，虚拟机通过使用局部变量表完成参数值到参数变量列表的传递过程。<strong>如果是实例方法，那局部变量表第0位索引的Slot存储的是方法所属对象实例的引用，因此在方法内可以通过关键字this来访问到这个隐含的参数</strong>。其余的参数按照参数表顺序排列，参数表分配完毕之后，再根据方法体内定义的变量的顺序和作用域分配。</p>
 <h4 id="1-2-操作数栈"><a href="#1-2-操作数栈" class="headerlink" title="1.2 操作数栈"></a>1.2 操作数栈</h4><p>后入先出栈，由字节码指令往栈中存数据和取数据，栈中的任何一个元素都是可以任意的Java数据类型。和局部变量类似，操作数栈的最大深度也在编译的时候写入到Code属性的max_stacks数据项中。当一个方法刚开始执行的时候，这个方法的操作数栈是空的，在方法的执行过程中，会有各种字节码指令往操作数中写入和提取内容，也就是出栈/入栈操作。操作数栈中元素的数据类型必须与字节码指令的序列严格匹配2，这由编译器在编译器期间进行验证，同时在类加载过程中的类检验阶段的数据流分析阶段要再次验证。另外我们说Java虚拟机的解释引擎是基于栈的执行引擎，其中的栈指的就是操作数栈<br>在概念模型中，两个栈帧作为虚拟机栈的元素是完全独立的。但是在大多数虚拟机的实现都会做一些优化处理，令两个栈帧出现一部分重叠。让下面栈帧的部分局部变量表重叠在一起，这样在进行方法调用时就可以功用一部分数据，无需进行额外的参数复制传递。</p>
-<p><img src="JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/02.png" alt="image-20190822163504909"></p>
+<p><img src="/2019/08/22/JVM-7-虚拟机字节码执行引擎/02.png" alt="image-20190822163504909"></p>
 <h4 id="1-3-动态链接"><a href="#1-3-动态链接" class="headerlink" title="1.3 动态链接"></a>1.3 动态链接</h4><p>每个栈帧都包含一个指向运行时常量池中该栈帧所属方法的引用，持有该引用是为了支持方法调用过程中的动态连接。Class文件的常量池中存有大量的符号引用，字节码中的方法调用指令就以常量池中指向方法的符号引用作为参数。这些符号引用一部分会在类加载阶段或者第一次使用的时候转化为直接引用，这种称为<strong>静态解析</strong>。另外一部分将在每一次运行期间转化为直接引用，这部分称为<strong>动态链接</strong>。</p>
 <h4 id="1-4-方法返回地址"><a href="#1-4-方法返回地址" class="headerlink" title="1.4 方法返回地址"></a>1.4 方法返回地址</h4><p>存放调用调用该方法的pc计数器的值。当一个方法开始之后，只有两种方式可以退出这个方法：1、执行引擎遇到任意一个方法返回的字节码指令，也就是所谓的正常完成出口。2、在方法执行的过程中遇到了异常，并且这个异常没有在方法内进行处理，也就是只要在本方法的异常表中没有搜索到匹配的异常处理器，就会导致方法退出，这种方式成为异常完成出口。正常完成出口和异常完成出口的区别在于：通过异常完成出口退出的不会给他的上层调用者产生任何的返回值。<br>无论通过哪种方式退出，在方法退出后都返回到该方法被调用的位置，方法正常退出时，调用者的pc计数器的值作为返回地址，而通过异常退出的，返回地址是要通过异常处理器表来确定，栈帧中一般不会保存这部分信息。本质上，方法的退出就是当前栈帧出栈的过程。</p>
 <h3 id="2-方法调用"><a href="#2-方法调用" class="headerlink" title="2. 方法调用"></a>2. 方法调用</h3><blockquote>
@@ -597,21 +597,21 @@
 <p><strong>总结</strong>：Java是一门静态多分派，动态单分派的语言。</p>
 </blockquote>
 <h5 id="2-2-4-动态分派的实现"><a href="#2-2-4-动态分派的实现" class="headerlink" title="2.2.4 动态分派的实现"></a>2.2.4 动态分派的实现</h5><p>动态分派是非常频繁的工作，所以实现都不会真正进行频繁的搜索。可以为类在方法区中建立一个虚方法表，虚方法表存放着各个方法的实际入口地址。如果没有被重写，则和父类相同方法的地址入口相同。若重写则指向子类实现版本的入口。</p>
-<p><img src="JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/03.png" alt="image-20190822210623097"></p>
+<p><img src="/2019/08/22/JVM-7-虚拟机字节码执行引擎/03.png" alt="image-20190822210623097"></p>
 <p>为了程序实现方便，具有相同签名的方法，在父类和子类的虚方法表中都应该有一样的索引序号，这样当类型变换时，只需要查找方法表，就可以按索引转换出所需的入口地址。</p>
 <p>方法表一般在类加载的连接阶段进行初始化，准备了类的变量初始值候，虚拟机会把类的方法表也初始化完毕。</p>
-<h3 id="3-基于栈的字节码解释执行引擎"><a href="#3-基于栈的字节码解释执行引擎" class="headerlink" title="3. 基于栈的字节码解释执行引擎"></a>3. 基于栈的字节码解释执行引擎</h3><p><img src="JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/04.png" alt="image-20190822210752771"></p>
+<h3 id="3-基于栈的字节码解释执行引擎"><a href="#3-基于栈的字节码解释执行引擎" class="headerlink" title="3. 基于栈的字节码解释执行引擎"></a>3. 基于栈的字节码解释执行引擎</h3><p><img src="/2019/08/22/JVM-7-虚拟机字节码执行引擎/04.png" alt="image-20190822210752771"></p>
 <p>上图是编译的过程。Java语言中，Javac编译器完成了程序代码经过语法分析、语法分析到抽象语法树，再遍历语法树生成线性的字节码指令流的过程。这一部分是在JVM之外进行的，解释器在JVM内部，Java程序的编译时半独立的实现。</p>
 <h4 id="3-1-基于栈的指令集与基于寄存器的指令集"><a href="#3-1-基于栈的指令集与基于寄存器的指令集" class="headerlink" title="3.1 基于栈的指令集与基于寄存器的指令集"></a>3.1 基于栈的指令集与基于寄存器的指令集</h4><p>Java编译器输出的指令流是一种基于栈的指令集架构，大部分是零地址指令，他们依赖操作数栈进行工作。相对的另外一套常用的指令集架构是基于寄存器的指令集，最典型的是X86的二地址指令集。这些指令依赖寄存器进行工作。</p>
 <p>基于栈的指令集主要优点是可移植。寄存器由硬件提供，程序直接依赖硬件寄存器不可避免受到硬件的约束。如8086和ARM体系的CPU。主要缺点是执行速度相对会慢一些。主流的物理机指令集都是寄存器架构。</p>
 <h4 id="3-2-执行案例"><a href="#3-2-执行案例" class="headerlink" title="3.2 执行案例"></a>3.2 执行案例</h4><p>源代码：</p>
-<p><img src="JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/05.png" alt="image-20190822211458795"></p>
+<p><img src="/2019/08/22/JVM-7-虚拟机字节码执行引擎/05.png" alt="image-20190822211458795"></p>
 <p>字节码：</p>
-<p><img src="JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/06.png" alt="image-20190822211520924"></p>
+<p><img src="/2019/08/22/JVM-7-虚拟机字节码执行引擎/06.png" alt="image-20190822211520924"></p>
 <p>执行情况：</p>
-<p><img src="JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/07.png" alt="image-20190822211546622"></p>
-<p><img src="JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/08.png" alt="image-20190822211604443"></p>
-<p><img src="JVM-7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E/09.png" alt="image-20190822211623417"></p>
+<p><img src="/2019/08/22/JVM-7-虚拟机字节码执行引擎/07.png" alt="image-20190822211546622"></p>
+<p><img src="/2019/08/22/JVM-7-虚拟机字节码执行引擎/08.png" alt="image-20190822211604443"></p>
+<p><img src="/2019/08/22/JVM-7-虚拟机字节码执行引擎/09.png" alt="image-20190822211623417"></p>
 
       
     </div>
@@ -738,7 +738,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -824,7 +824,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

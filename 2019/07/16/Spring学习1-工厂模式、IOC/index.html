@@ -102,14 +102,14 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="1. 程序间的依赖关系12345678910111213141516171819202122public class JdbcDemo1 &amp;#123;    public static void main(String[] args) throws  Exception&amp;#123;        //1.注册驱动//        DriverManager.registerDriver(new">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/07/16/Spring学习1-工厂模式、IOC/Spring%E5%AD%A6%E4%B9%A01-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E3%80%81IOC/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/16/Spring学习1-工厂模式、IOC/Spring%E5%AD%A6%E4%B9%A01-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E3%80%81IOC/01.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/16/Spring学习1-工厂模式、IOC/Spring%E5%AD%A6%E4%B9%A01-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E3%80%81IOC/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/16/Spring学习1-工厂模式、IOC/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/16/Spring学习1-工厂模式、IOC/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/16/Spring学习1-工厂模式、IOC/3.png">
 <meta property="og:updated_time" content="2019-07-16T05:40:33.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring学习1_工厂模式、IOC">
 <meta name="twitter:description" content="1. 程序间的依赖关系12345678910111213141516171819202122public class JdbcDemo1 &amp;#123;    public static void main(String[] args) throws  Exception&amp;#123;        //1.注册驱动//        DriverManager.registerDriver(new">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/16/Spring学习1-工厂模式、IOC/Spring%E5%AD%A6%E4%B9%A01-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E3%80%81IOC/2.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/16/Spring学习1-工厂模式、IOC/2.png">
 
 
 
@@ -515,7 +515,7 @@
 </ol>
 <p>如上述代码中的<code>Class.forName(&quot;com.mysql.jdbc.Driver&quot;)</code>;</p>
 <h2 id="2-工厂方法"><a href="#2-工厂方法" class="headerlink" title="2.  工厂方法"></a>2.  工厂方法</h2><p>在一般的开发中，为了便于合作开发，会进行分层设计。如<code>service, dao</code>等分层设计。一般是上层的类有下层的类作为其成员对象，然后调用其提供的方法。或者在上层类中的方法中<code>new</code>一个下层的类。</p>
-<p><img src="Spring%E5%AD%A6%E4%B9%A01-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E3%80%81IOC/2.png" alt="image-20190716132710736"></p>
+<p><img src="/2019/07/16/Spring学习1-工厂模式、IOC/2.png" alt="image-20190716132710736"></p>
 <p>这种方法的弊端主要在于：</p>
 <ol>
 <li>没有实现程序之间的解耦，程序之间的耦合是非常严重的。</li>
@@ -523,7 +523,7 @@
 <li>应用能够直接访问到资源，不利于维护。</li>
 </ol>
 <p>为了解决上面的问题，可以使用<code>工厂模式</code>来进行设计。具体如下图所示：</p>
-<p><img src="Spring%E5%AD%A6%E4%B9%A01-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E3%80%81IOC/01.png" alt></p>
+<p><img src="/2019/07/16/Spring学习1-工厂模式、IOC/01.png" alt></p>
 <p>具体实现代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 一个创建Bean对象的工厂</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Bean：在计算机英语中，有可重用组件的含义。</span></span><br><span class="line"><span class="comment"> * JavaBean：用java语言编写的可重用组件。</span></span><br><span class="line"><span class="comment"> *      javabean &gt;  实体类</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *   它就是创建我们的service和dao对象的。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *   第一个：需要一个配置文件来配置我们的service和dao</span></span><br><span class="line"><span class="comment"> *           配置的内容：唯一标识=全限定类名（key=value)</span></span><br><span class="line"><span class="comment"> *   第二个：通过读取配置文件中配置的内容，反射创建对象</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *   我的配置文件可以是xml也可以是properties</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BeanFactory</span> </span>&#123;</span><br><span class="line">    <span class="comment">//定义一个Properties对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Properties props;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义一个Map,用于存放我们要创建的对象。我们把它称之为容器</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String,Object&gt; beans;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用静态代码块为Properties对象赋值</span></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//实例化对象</span></span><br><span class="line">            props = <span class="keyword">new</span> Properties();</span><br><span class="line">            <span class="comment">//获取properties文件的流对象</span></span><br><span class="line">            InputStream in = BeanFactory.class.getClassLoader().getResourceAsStream(<span class="string">"bean.properties"</span>);</span><br><span class="line">            props.load(in);</span><br><span class="line">            <span class="comment">//实例化容器</span></span><br><span class="line">            beans = <span class="keyword">new</span> HashMap&lt;String,Object&gt;();</span><br><span class="line">            <span class="comment">//取出配置文件中所有的Key</span></span><br><span class="line">            Enumeration keys = props.keys();</span><br><span class="line">            <span class="comment">//遍历枚举</span></span><br><span class="line">            <span class="keyword">while</span> (keys.hasMoreElements())&#123;</span><br><span class="line">                <span class="comment">//取出每个Key</span></span><br><span class="line">                String key = keys.nextElement().toString();</span><br><span class="line">                <span class="comment">//根据key获取value</span></span><br><span class="line">                String beanPath = props.getProperty(key);</span><br><span class="line">                <span class="comment">//反射创建对象</span></span><br><span class="line">                Object value = Class.forName(beanPath).newInstance();</span><br><span class="line">                <span class="comment">//把key和value存入容器中</span></span><br><span class="line">                beans.put(key,value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ExceptionInInitializerError(<span class="string">"初始化properties失败！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据bean的名称获取对象</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> beanName</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">getBean</span><span class="params">(String beanName)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> beans.get(beanName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -532,7 +532,7 @@
 <p><strong>这种被动接收的方式获取对象的思想就是控制反转(Inversion of Control)，它是 spring 框架的核心之一。</strong></p>
 <h2 id="3-Spring"><a href="#3-Spring" class="headerlink" title="3. Spring"></a>3. Spring</h2><p>Spring 是分层的 Java SE/EE 应用 full-stack 轻量级开源框架，以 IoC(Inverse Of Control:反转控制)和 AOP(Aspect Oriented Programming:面向切面编程)为内核。</p>
 <p>其体系结构如下：</p>
-<p><img src="Spring%E5%AD%A6%E4%B9%A01-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E3%80%81IOC/3.png" alt="image-20190716133108233"></p>
+<p><img src="/2019/07/16/Spring学习1-工厂模式、IOC/3.png" alt="image-20190716133108233"></p>
 
       
     </div>
@@ -661,7 +661,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -747,7 +747,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

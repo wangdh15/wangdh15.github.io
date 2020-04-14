@@ -102,19 +102,19 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="1. 垃圾回收算法实现1.1 枚举根节点可达性分析中，需要从GC Roots节点找引用链，但是GC Roots的节点主要在全局性引用(常量或者静态属性)和执行上下文(如栈帧中的本地变量表)中，有些引用方法区大小就有数百兆，逐个检查的话会非常浪费时间。 同时可达性分析执行时间的敏感还体现在GC停顿上。因为这项分析工作必须在一个能确保一致性的快照中，不可以出现分析过程中对象的引用关系还在不断变化的情况">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/01.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/02.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/03.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/04.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/06.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/07.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/08.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/09.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/03.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/04.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/06.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/07.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/08.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/09.png">
 <meta property="og:updated_time" content="2019-08-13T07:39:11.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM-3-垃圾收集器">
 <meta name="twitter:description" content="1. 垃圾回收算法实现1.1 枚举根节点可达性分析中，需要从GC Roots节点找引用链，但是GC Roots的节点主要在全局性引用(常量或者静态属性)和执行上下文(如栈帧中的本地变量表)中，有些引用方法区大小就有数百兆，逐个检查的话会非常浪费时间。 同时可达性分析执行时间的敏感还体现在GC停顿上。因为这项分析工作必须在一个能确保一致性的快照中，不可以出现分析过程中对象的引用关系还在不断变化的情况">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/01.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/13/JVM-3-垃圾收集器/01.png">
 
 
 
@@ -534,15 +534,15 @@
 </ol>
 </li>
 </ol>
-<h3 id="2-2-垃圾回收器分类标准"><a href="#2-2-垃圾回收器分类标准" class="headerlink" title="2.2 垃圾回收器分类标准"></a>2.2 垃圾回收器分类标准</h3><p><img src="JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/01.png" alt="image-20190813144113325"></p>
+<h3 id="2-2-垃圾回收器分类标准"><a href="#2-2-垃圾回收器分类标准" class="headerlink" title="2.2 垃圾回收器分类标准"></a>2.2 垃圾回收器分类标准</h3><p><img src="/2019/08/13/JVM-3-垃圾收集器/01.png" alt="image-20190813144113325"></p>
 <p>在JVM中，具体实现的有<code>Serival、ParNew、Parallel Scavenge、 CMS、Serial Old(MSC)、Parallel Old、G1</code>等。下图中有连线的表示可以配套使用。</p>
-<p><img src="JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/02.png" alt="image-20190813144345684"></p>
+<p><img src="/2019/08/13/JVM-3-垃圾收集器/02.png" alt="image-20190813144345684"></p>
 <h3 id="2-3-Serial-收集器"><a href="#2-3-Serial-收集器" class="headerlink" title="2.3 Serial 收集器"></a>2.3 Serial 收集器</h3><p>单线程收集器，最基本历史最悠久。在进行垃圾收集的时候必须暂停其他所有的工作线程，直达收集结束。由于垃圾清理时，<code>Serial</code> <strong>回收器</strong> 不存在 <strong>线程间的切换</strong>，因此，特别是在单 <code>CPU</code> 的环境下，它的 <strong>垃圾清除效率</strong> 比较高。对于 <code>Client</code> 运行模式的程序，选择 <code>Serial</code> 回收器是一个不错的选择。</p>
-<p><img src="JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/03.png" alt="image-20190813144522822"></p>
+<p><img src="/2019/08/13/JVM-3-垃圾收集器/03.png" alt="image-20190813144522822"></p>
 <h3 id="2-4-Serial-Old"><a href="#2-4-Serial-Old" class="headerlink" title="2.4 Serial Old"></a>2.4 Serial Old</h3><p><code>Serial Old</code>回收器是 <code>Serial</code>回收器的 <strong>老生代版本</strong>，属于 <strong>单线程回收器</strong>，它使用 <strong>标记-整理</strong>算法。对于 <code>Server</code>模式下的虚拟机，在 <code>JDK1.5</code>及其以前，它常与 <code>Parallel Scavenge</code>回收器配合使用，达到较好的 <strong>吞吐量</strong>，另外它也是 <code>CMS</code>回收器在 <code>Concurrent Mode Failure</code>时的 <strong>后备方案</strong>。</p>
-<p><img src="JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/04.png" alt="image-20190813144726174"></p>
+<p><img src="/2019/08/13/JVM-3-垃圾收集器/04.png" alt="image-20190813144726174"></p>
 <h3 id="2-5-ParNew收集器"><a href="#2-5-ParNew收集器" class="headerlink" title="2.5 ParNew收集器"></a>2.5 ParNew收集器</h3><p>ParNew收集器是Serial收集器的多线程版本，其余完全一样。同样运行在 <strong>新生代区域</strong>。在实现上，两者共用很多代码。在不同运行环境下，根据 <code>CPU</code>核数，开启 <strong>不同的线程数</strong>，从而达到 <strong>最优</strong>的垃圾回收效果。对于那些 <code>Server</code>模式的应用程序，如果考虑采用 <code>CMS</code>作为 <strong>老生代回收器</strong>时，<code>ParNew</code>回收器是一个不错的选择。</p>
-<p><img src="JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/06.png" alt="image-20190813144955663"></p>
+<p><img src="/2019/08/13/JVM-3-垃圾收集器/06.png" alt="image-20190813144955663"></p>
 <blockquote>
 <p><code>ParNew</code> <strong>新生代回收器</strong> 采用的是 <strong>复制算法</strong>。</p>
 </blockquote>
@@ -552,12 +552,12 @@
 <p><code>Parallel Scavenge</code> <strong>新生代回收器</strong> 采用的是 <strong>复制算法</strong>。</p>
 </blockquote>
 <h3 id="2-7-Parallel-Old"><a href="#2-7-Parallel-Old" class="headerlink" title="2.7 Parallel Old"></a>2.7 Parallel Old</h3><p><code>Parallel Old</code>回收器是 <code>Parallel Scavenge</code>回收器的 <strong>老生代版本</strong>，属于 <strong>多线程回收器</strong>，采用 <strong>标记-整理算法</strong>。<code>Parallel Old</code>回收器和 <code>Parallel Scavenge</code>回收器同样考虑了 <strong>吞吐量优先</strong>这一指标，非常适合那些 <strong>注重吞吐量</strong>和 <code>CPU</code><strong>资源敏感</strong>的场合。</p>
-<p><img src="JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/07.png" alt="image-20190813145351693"></p>
+<p><img src="/2019/08/13/JVM-3-垃圾收集器/07.png" alt="image-20190813145351693"></p>
 <blockquote>
 <p><code>Parallel Old</code> <strong>老年代回收器</strong> 采用的是 <strong>标记 - 整理算法</strong>。</p>
 </blockquote>
 <h3 id="2-8-CMS"><a href="#2-8-CMS" class="headerlink" title="2.8 CMS"></a>2.8 CMS</h3><p><code>CMS（Concurrent Mark Sweep）</code> 回收器是在 <strong>最短回收停顿时间</strong> 为前提的回收器，属于 <strong>多线程回收器</strong>，采用 <strong>标记-清除算法</strong>。</p>
-<p><img src="JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/08.png" alt="image-20190813145523600"></p>
+<p><img src="/2019/08/13/JVM-3-垃圾收集器/08.png" alt="image-20190813145523600"></p>
 <p>CMS工作流程分为以下四个步骤：</p>
 <ul>
 <li><p>初始标记(initial mark)</p>
@@ -595,7 +595,7 @@
 <p>G1跟踪各个Region里面的垃圾堆积的价值大小，在后台维护一个优先列表。每次根据允许回收的时间优先回收价值最大的Region，保证在有限的时间获得尽可能高的收集效率。</p>
 <p>但是不同的Region不是孤立的，一个对象分配在某个Region中，并非只能被本Region中的其他对象引用，而是可以和整个队任意对象发生引用关系。在判断对象是够存活的时候，难道需要扫描整个堆么？在其他收集器也面临同样的问题。新生代的对象可能被老生代所引用，在进行Minor GC的时候需要对整个堆进行扫描么？</p>
 <p>在G1收集器中，Region之间的对象引用以及其他收集器中的新生代和老生代之间的对象引用，是使用<code>Remembered Set</code>来避免全堆扫描的。G1中每个Region有一个与之对应的<code>Remembered Set</code>,虚拟机发现程序在对Reference类型的数据进行写操作的时候，会检查Reference引用对象是否处于不同的Region之中。如果是，则将相关引用信息记录到被引用对象所属的Region的<code>Remembered Set</code>中。在进行内存回收的时候，GC根节点的枚举范围加入<code>Remembered Set</code>可保证不对全堆扫描。</p>
-<p><img src="JVM-3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/09.png" alt="image-20190813152124636"></p>
+<p><img src="/2019/08/13/JVM-3-垃圾收集器/09.png" alt="image-20190813152124636"></p>
 <p>G1收集器运作大致分为以下几个步骤：</p>
 <ul>
 <li>初始标记</li>
@@ -746,7 +746,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -832,7 +832,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

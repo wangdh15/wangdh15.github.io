@@ -102,13 +102,13 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="1. JDBCJDBC(Java DataBase connectivity)是用于执行SQL语句的Java API。可以为多种关系数据库提供统一访问。使用Java编写的类和接口，是Java访问数据库的标准和规范。JBDC是借口，驱动是对接口的实现。  2. 运行的流程一般直接使用的流程为：  注册驱动(加载不同类型数据库的驱动类) 获得连接(连接到数据库) 获取语句执行平台 执行sql语句 处理">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/07/25/Java数据库连接/Java%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/01.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/25/Java数据库连接/Java%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/25/Java数据库连接/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/25/Java数据库连接/02.png">
 <meta property="og:updated_time" content="2019-07-25T15:55:52.528Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java数据库连接">
 <meta name="twitter:description" content="1. JDBCJDBC(Java DataBase connectivity)是用于执行SQL语句的Java API。可以为多种关系数据库提供统一访问。使用Java编写的类和接口，是Java访问数据库的标准和规范。JBDC是借口，驱动是对接口的实现。  2. 运行的流程一般直接使用的流程为：  注册驱动(加载不同类型数据库的驱动类) 获得连接(连接到数据库) 获取语句执行平台 执行sql语句 处理">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/25/Java数据库连接/Java%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/01.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/25/Java数据库连接/01.png">
 
 
 
@@ -498,7 +498,7 @@
 
       
         <h2 id="1-JDBC"><a href="#1-JDBC" class="headerlink" title="1. JDBC"></a>1. JDBC</h2><p>JDBC(Java DataBase connectivity)是用于执行SQL语句的Java API。可以为多种关系数据库提供统一访问。使用Java编写的类和接口，是Java访问数据库的标准和规范。JBDC是借口，驱动是对接口的实现。</p>
-<p><img src="Java%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/01.png" alt="image-20190725231524178"></p>
+<p><img src="/2019/07/25/Java数据库连接/01.png" alt="image-20190725231524178"></p>
 <h2 id="2-运行的流程"><a href="#2-运行的流程" class="headerlink" title="2. 运行的流程"></a>2. 运行的流程</h2><p>一般直接使用的流程为：</p>
 <ol>
 <li>注册驱动(加载不同类型数据库的驱动类)</li>
@@ -513,7 +513,7 @@
 
 <p>但是上面的代码在每次连接数据库的时候都需要写，是非常麻烦的。而且获取数据库连接是比较耗费资源的。于是有连接池技术的产生。</p>
 <h2 id="3-数据库连接池"><a href="#3-数据库连接池" class="headerlink" title="3. 数据库连接池"></a>3. 数据库连接池</h2><p>创建连接、释放连接都是非常消耗资源的操作。所以可以添加一个缓冲的机制，利用一个连接池。用户从连接池中获取和归还连接。在连接池初始化的时候可以和数据库创建一些连接，然后在用户关闭连接的时候，并不是真正的关闭，而是归还给连接池。相当于让连接池统一管理连接。</p>
-<p><img src="Java%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/02.png" alt="image-20190725233038881"></p>
+<p><img src="/2019/07/25/Java数据库连接/02.png" alt="image-20190725233038881"></p>
 <h3 id="3-1-规范"><a href="#3-1-规范" class="headerlink" title="3.1 规范"></a>3.1 规范</h3><p>Java为数据库连接池提供了一个统一的接口<code>javax.sql.DataSource</code>。不同连接池需要实现这个接口。其中比较常用的两个<code>DBCP</code>和<code>C3P0</code></p>
 <p>在<code>DataSource</code>接口中定义了一个方法<code>getConnction</code>。</p>
 <h2 id="4-C3P0"><a href="#4-C3P0" class="headerlink" title="4. C3P0"></a>4. C3P0</h2><p>使用C3P0需要使用MySQL的驱动以及c3p0的jar包</p>
@@ -650,7 +650,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -736,7 +736,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

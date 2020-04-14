@@ -102,16 +102,16 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="1. JVM内存结构Java 虚拟机在运行 Java 程序 时，把它所管理的内存划分为若干个不同的数据区域，主要包括以下五个部分：程序计数器、Java 堆、Java 虚拟机栈、方法区和本地方法栈。   1. 程序计数器程序计数器是当前线程所执行的字节码的行号指示器，它会指出下一条将要执行的指令的地址，字节码解释器就是通过改变计数器的值来选取程序接下来执行的操作。 程序计数器是线程私有的一小块内存，">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/01.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/02.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/03.jpeg">
-<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/04.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/05.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/03.jpeg">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/04.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/05.png">
 <meta property="og:updated_time" content="2019-08-11T07:09:33.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM-1.JVM内存管理">
 <meta name="twitter:description" content="1. JVM内存结构Java 虚拟机在运行 Java 程序 时，把它所管理的内存划分为若干个不同的数据区域，主要包括以下五个部分：程序计数器、Java 堆、Java 虚拟机栈、方法区和本地方法栈。   1. 程序计数器程序计数器是当前线程所执行的字节码的行号指示器，它会指出下一条将要执行的指令的地址，字节码解释器就是通过改变计数器的值来选取程序接下来执行的操作。 程序计数器是线程私有的一小块内存，">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/01.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/10/JVM-1-JVM内存管理/01.png">
 
 
 
@@ -511,8 +511,8 @@
 
       
         <h2 id="1-JVM内存结构"><a href="#1-JVM内存结构" class="headerlink" title="1. JVM内存结构"></a>1. JVM内存结构</h2><p><code>Java</code> 虚拟机在运行 <code>Java</code> 程序 时，把它所管理的内存划分为若干个不同的数据区域，主要包括以下五个部分：程序计数器、<code>Java</code> 堆、<code>Java</code> 虚拟机栈、方法区和本地方法栈。</p>
-<p><img src="JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/01.png" alt="img"></p>
-<p><img src="JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/02.png" alt="image-20190811142627782"></p>
+<p><img src="/2019/08/10/JVM-1-JVM内存管理/01.png" alt="img"></p>
+<p><img src="/2019/08/10/JVM-1-JVM内存管理/02.png" alt="image-20190811142627782"></p>
 <h3 id="1-程序计数器"><a href="#1-程序计数器" class="headerlink" title="1. 程序计数器"></a>1. 程序计数器</h3><p>程序计数器是当前线程所执行的字节码的行号指示器，它会指出下一条将要执行的指令的地址，字节码解释器就是通过改变计数器的值来选取程序接下来执行的操作。</p>
 <p>程序计数器是线程私有的一小块内存，每条线程都要有一个独立的程序计数器，以使线程切换后恢复到正确的执行位置。</p>
 <ul>
@@ -568,14 +568,14 @@
 <li>类型指针，对象指向它的元数据的指针，虚拟机通过这个指正来确定这个对象是哪个类的实例。如果对象是一个Java数组，对象头中还有一块用于记录数组长度的数据，因为虚拟机可以通过普通Java对象的元数据信息确定Java对象的大小。但是从数组的元数据中无法确定数组的大小。</li>
 </ol>
 <p>对其填充这部分不是必然存在的，没有特别的含义，只是占位符的作用。</p>
-<p><img src="JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/03.jpeg" alt="20170615230126453"></p>
+<p><img src="/2019/08/10/JVM-1-JVM内存管理/03.jpeg" alt="20170615230126453"></p>
 <h3 id="2-2-对象的访问定位"><a href="#2-2-对象的访问定位" class="headerlink" title="2.2 对象的访问定位"></a>2.2 对象的访问定位</h3><p>Java程序通过栈上的<code>reference</code>数据来操作堆上的具体对象。<code>reference</code>类型在Java虚拟机规范中只规定了一个指向对象的引用，没有定义这个引用应该通过何种方式去定位，所以访问方式取决于虚拟机实现而定。目前主流的访问方式有<code>句柄和直接指针</code>两种。</p>
 <ol>
 <li><p>句柄访问的话，Java堆中划分一块内存作为句柄池，<code>reference</code>中存储的是对象的句柄地址。句柄中包含对象的实例数据与类型数据各自的具体信息。</p>
-<p><img src="JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/04.png" alt="image-20190811145634905"></p>
+<p><img src="/2019/08/10/JVM-1-JVM内存管理/04.png" alt="image-20190811145634905"></p>
 </li>
 <li><p>直接指针访问的话，Java堆对象布局考虑如何放置访问类型数据的相关信息。<code>reference</code>中存储的直接是对象地址。</p>
-<p><img src="JVM-1-JVM%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/05.png" alt="image-20190811145808551"></p>
+<p><img src="/2019/08/10/JVM-1-JVM内存管理/05.png" alt="image-20190811145808551"></p>
 </li>
 </ol>
 <p>使用句柄的好处：reference中存储的是稳定的句柄地址，对象被移动时只会改变句柄汇总的实例数据指针，reference不需要修改。</p>
@@ -706,7 +706,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -792,7 +792,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

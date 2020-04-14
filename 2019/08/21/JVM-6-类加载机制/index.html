@@ -102,16 +102,16 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="JVM类加载机制不同于需要在编辑时进行链接的语言，Java语言中，类的加载、连接和初始化过程是在程序运行期间完成的。这种方法会令类加载时稍微增加一些性能开销，但是为Java应用程序提供了高度的灵活性，Java动态扩展的语言特性就是依赖运行期动态加载和动态链接这个特点实现的。用户可以编写一个面向对象的接口引用程序，等到运行时再指定其实际的实现类。 1. 类加载的时机类从被加载到虚拟机内存到卸载出内存">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/JVM-6-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/01.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/JVM-6-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/02.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/JVM-6-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/03.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/JVM-6-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/04.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/JVM-6-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/05.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/03.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/04.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/05.png">
 <meta property="og:updated_time" content="2019-08-21T16:16:57.658Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM-6-类加载机制">
 <meta name="twitter:description" content="JVM类加载机制不同于需要在编辑时进行链接的语言，Java语言中，类的加载、连接和初始化过程是在程序运行期间完成的。这种方法会令类加载时稍微增加一些性能开销，但是为Java应用程序提供了高度的灵活性，Java动态扩展的语言特性就是依赖运行期动态加载和动态链接这个特点实现的。用户可以编写一个面向对象的接口引用程序，等到运行时再指定其实际的实现类。 1. 类加载的时机类从被加载到虚拟机内存到卸载出内存">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/JVM-6-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/01.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/21/JVM-6-类加载机制/01.png">
 
 
 
@@ -511,10 +511,10 @@
 
       
         <h2 id="JVM类加载机制"><a href="#JVM类加载机制" class="headerlink" title="JVM类加载机制"></a>JVM类加载机制</h2><p>不同于需要在编辑时进行链接的语言，Java语言中，类的加载、连接和初始化过程是在程序运行期间完成的。这种方法会令类加载时稍微增加一些性能开销，但是为Java应用程序提供了高度的灵活性，Java动态扩展的语言特性就是依赖运行期动态加载和动态链接这个特点实现的。用户可以编写一个面向对象的接口引用程序，等到运行时再指定其实际的实现类。</p>
-<h3 id="1-类加载的时机"><a href="#1-类加载的时机" class="headerlink" title="1. 类加载的时机"></a>1. 类加载的时机</h3><p>类从被加载到虚拟机内存到卸载出内存为止，整个证明周期包括以下七个阶段：<br><img src="JVM-6-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/01.png" alt="image-20190821232535669"></p>
+<h3 id="1-类加载的时机"><a href="#1-类加载的时机" class="headerlink" title="1. 类加载的时机"></a>1. 类加载的时机</h3><p>类从被加载到虚拟机内存到卸载出内存为止，整个证明周期包括以下七个阶段：<br><img src="/2019/08/21/JVM-6-类加载机制/01.png" alt="image-20190821232535669"></p>
 <p>这些步骤总体上是按照图中顺序进行的，但是Java语言本身支持运行时绑定，所以<strong>解析阶段也可以是在初始化之后进行的</strong>。以上顺序都只是说开始的顺序，实际过程中是交叉进行的，加载过程中可能就已经开始验证了。</p>
 <p>什么时候类需要被加载，Java虚拟机规范并没有约束这一点，但是却规定了类必须进行<strong>初始化</strong>的5种情况</p>
-<p><img src="JVM-6-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/02.png" alt="image-20190821232739252"></p>
+<p><img src="/2019/08/21/JVM-6-类加载机制/02.png" alt="image-20190821232739252"></p>
 <h3 id="2-类加载的过程"><a href="#2-类加载的过程" class="headerlink" title="2. 类加载的过程"></a>2. 类加载的过程</h3><h4 id="2-1-加载"><a href="#2-1-加载" class="headerlink" title="2.1 加载"></a>2.1 加载</h4><p><strong>加载</strong>是整个类加载过程的第一步，如果需要创建类或者接口，就需要现在Java虚拟机方法区创建于虚拟机实现规定相匹配的内部表示。一般来说类的创建是由另一个类或者接口触发的，它通过自己的运行时常量池引用到了需要创建的类，也可能是由于调用了Java核心类库中的某些方法，譬如反射等。</p>
 <p>加载需要完成以下三件事情：</p>
 <ol>
@@ -596,7 +596,7 @@
 
 <p>value在准备阶段的初始值为0而不是123，因为这时候尚未开始执行任何Java方法，而把<code>value</code>赋值为123的<code>putstatic</code>指令是程序被编译之后，存放于类构造器<code>&lt;clinit&gt;()</code>方法之中，所以把value赋值为123的动作将在初始化阶段才会执行。</p>
 <p>下面是一些基本数据类型的零值：</p>
-<p><img src="JVM-6-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/03.png" alt="image-20190821235058043"></p>
+<p><img src="/2019/08/21/JVM-6-类加载机制/03.png" alt="image-20190821235058043"></p>
 <p>如果字段属性表存在<code>ConstantValue</code>属性，则准备阶段变量value就会被初始化为执行的值，如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> value = <span class="number">123</span>;</span><br></pre></td></tr></table></figure>
 
@@ -665,14 +665,14 @@
 <li>扩展类加载器(Extension ClassLoader)：Java编写，加载JAVA_HOME/jre/lib/ext目录中的文件</li>
 <li>应用程序类加载器(Application ClassLoader)：Java实现，负责加载用户类路径(ClassPath)上的指定的类库，开发者可直接使用这个类加载器。如果应用程序中没有自定义过自己的类加载器，则这个就是程序中默认的类加载器。</li>
 </ol>
-<h4 id="3-1-双亲委派模型"><a href="#3-1-双亲委派模型" class="headerlink" title="3.1 双亲委派模型"></a>3.1 双亲委派模型</h4><p><img src="JVM-6-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/04.png" alt="image-20190822001111757"></p>
+<h4 id="3-1-双亲委派模型"><a href="#3-1-双亲委派模型" class="headerlink" title="3.1 双亲委派模型"></a>3.1 双亲委派模型</h4><p><img src="/2019/08/21/JVM-6-类加载机制/04.png" alt="image-20190822001111757"></p>
 <blockquote>
 <p>这种层次关系为类加载器的双亲委派模型。要求除了顶层的父类加载器，其余的类加载器都应当有自己的父类加载器。<strong>这里的类加载器的父子关系不会以继承来实现，而是使用组合的关系来复用福类加载器的代码。</strong></p>
 </blockquote>
 <p><strong>双亲委派模型的原理是</strong>：当一个类加载器接收到类加载请求时，首先会请求其父类加载器加载，每一层都是如此，当父类加载器无法找到这个类时（根据类的全限定名称），子类加载器才会尝试自己去加载。下面是代码实现：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//提供class类的二进制名称表示，加载对应class，加载成功，则返回表示该类对应的Class&lt;T&gt; instance 实例</span></span><br><span class="line">    <span class="keyword">public</span> Class&lt;?&gt; loadClass(String name) <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">        <span class="keyword">return</span> loadClass(name, <span class="keyword">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">protected</span> Class&lt;?&gt; loadClass(String name, <span class="keyword">boolean</span> resolve)</span><br><span class="line">        <span class="keyword">throws</span> ClassNotFoundException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (getClassLoadingLock(name)) &#123;</span><br><span class="line">            <span class="comment">// 首先，检查是否已经被当前的类加载器记载过了，如果已经被加载，直接返回对应的Class&lt;T&gt;实例</span></span><br><span class="line">            Class&lt;?&gt; c = findLoadedClass(name);</span><br><span class="line">                <span class="comment">//初次加载</span></span><br><span class="line">                <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">long</span> t0 = System.nanoTime();</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (parent != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        <span class="comment">//如果有父类加载器，则先让父类加载器加载</span></span><br><span class="line">                        c = parent.loadClass(name, <span class="keyword">false</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="comment">// 没有父加载器，则查看是否已经被引导类加载器加载，有则直接返回</span></span><br><span class="line">                        c = findBootstrapClassOrNull(name);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">                    <span class="comment">// ClassNotFoundException thrown if class not found</span></span><br><span class="line">                    <span class="comment">// from the non-null parent class loader</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 父加载器加载失败，并且没有被引导类加载器加载，则尝试该类加载器自己尝试加载</span></span><br><span class="line">                <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// If still not found, then invoke findClass in order</span></span><br><span class="line">                    <span class="comment">// to find the class.</span></span><br><span class="line">                    <span class="keyword">long</span> t1 = System.nanoTime();</span><br><span class="line">                    <span class="comment">// 自己尝试加载</span></span><br><span class="line">                    c = findClass(name);</span><br><span class="line"> </span><br><span class="line">                    <span class="comment">// this is the defining class loader; record the stats</span></span><br><span class="line">                    sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);</span><br><span class="line">                    sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);</span><br><span class="line">                    sun.misc.PerfCounter.getFindClasses().increment();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//是否解析类 </span></span><br><span class="line">            <span class="keyword">if</span> (resolve) &#123;</span><br><span class="line">                resolveClass(c);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="JVM-6-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/05.png" alt="image-20190822001607688">s</p>
+<p><img src="/2019/08/21/JVM-6-类加载机制/05.png" alt="image-20190822001607688">s</p>
 
       
     </div>
@@ -799,7 +799,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -885,7 +885,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

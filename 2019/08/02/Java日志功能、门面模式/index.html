@@ -102,14 +102,14 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="Java日志、门面模式 日志就是记录程序的运行轨迹，方便查找关键信息，也方便快速定位解决问题。   Java 程序员在开发项目时都是依赖 Eclipse/ Idea 等开发工具的 Debug 调试功能来跟踪解决 Bug，在开发环境可以这么做，但项目发布到了测试、生产环境呢？你有可能会说可以使用远程调试，但实际并不能允许让你这么做。   日志的作用就是在测试、生产环境没有 Debug 调试工具时开发">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/08/02/Java日志功能、门面模式/Java%E6%97%A5%E5%BF%97%E3%80%81%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/02/Java日志功能、门面模式/Java%E6%97%A5%E5%BF%97%E3%80%81%E9%97%A8%E9%9D%A2%E5%8A%9F%E8%83%BD/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/02/Java日志功能、门面模式/Java%E6%97%A5%E5%BF%97%E3%80%81%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/02/Java日志功能、门面模式/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/02/Java日志功能、门面模式/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/02/Java日志功能、门面模式/3.png">
 <meta property="og:updated_time" content="2019-08-03T08:28:05.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java日志、门面模式">
 <meta name="twitter:description" content="Java日志、门面模式 日志就是记录程序的运行轨迹，方便查找关键信息，也方便快速定位解决问题。   Java 程序员在开发项目时都是依赖 Eclipse/ Idea 等开发工具的 Debug 调试功能来跟踪解决 Bug，在开发环境可以这么做，但项目发布到了测试、生产环境呢？你有可能会说可以使用远程调试，但实际并不能允许让你这么做。   日志的作用就是在测试、生产环境没有 Debug 调试工具时开发">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/02/Java日志功能、门面模式/Java%E6%97%A5%E5%BF%97%E3%80%81%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/1.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/02/Java日志功能、门面模式/1.png">
 
 
 
@@ -539,8 +539,8 @@
 <h3 id="2-门面模式"><a href="#2-门面模式" class="headerlink" title="2. 门面模式"></a>2. 门面模式</h3><blockquote>
 <p>门面模式，其核心为<strong>外部与一个子系统的通信必须通过一个统一的外观对象进行，使得子系统更易于使用</strong>。用一张图来表示门面模式的结构为</p>
 </blockquote>
-<p><img src="Java%E6%97%A5%E5%BF%97%E3%80%81%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/1.png" alt></p>
-<p><img src="Java%E6%97%A5%E5%BF%97%E3%80%81%E9%97%A8%E9%9D%A2%E5%8A%9F%E8%83%BD/2.png" alt="image-20190802232139297"></p>
+<p><img src="/2019/08/02/Java日志功能、门面模式/1.png" alt></p>
+<p><img src="/2019/08/02/Java日志功能、门面模式/2.png" alt="image-20190802232139297"></p>
 <p>门面模式的核心为Facade即门面对象，门面对象核心为几个点：</p>
 <ul>
 <li>知道所有子角色的功能和责任</li>
@@ -552,7 +552,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemA</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operationA</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"operation a..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemB</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operationB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"operation b..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemC</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operationC</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"operation c..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Facade</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wrapOperation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        SystemA a = <span class="keyword">new</span> SystemA();</span><br><span class="line">        a.operationA();</span><br><span class="line">        SystemB b = <span class="keyword">new</span> SystemB();</span><br><span class="line">        b.operationB();</span><br><span class="line">        SystemC c = <span class="keyword">new</span> SystemC();</span><br><span class="line">        c.operationC();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Facade facade = <span class="keyword">new</span> Facade();</span><br><span class="line">        facade.wrapOperation();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-self4j"><a href="#3-self4j" class="headerlink" title="3. self4j"></a>3. self4j</h3><p>《阿里巴巴Java开发手册》中有这样一句话：</p>
-<p><img src="Java%E6%97%A5%E5%BF%97%E3%80%81%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/3.png" alt="image-20190802232740095"></p>
+<p><img src="/2019/08/02/Java日志功能、门面模式/3.png" alt="image-20190802232740095"></p>
 <p>为了在应用中屏蔽掉底层日志框架的具体实现。这样的话，即使有一天要更换代码的日志框架，只需要修改jar包，最多再改改日志输出相关的配置文件就可以了。这就是解除了应用和日志框架之间的耦合。</p>
 <blockquote>
 <p>日志门面就像饭店的服务员，而日志框架就像是后厨的厨师。对于顾客这个应用来说，我到饭店点菜，我只需要告诉服务员我要一盘番茄炒蛋即可，我不关心后厨的所有事情。因为虽然主厨从把这道菜称之为『番茄炒蛋』A厨师换成了把这道菜称之为『西红柿炒鸡蛋』的B厨师。但是，顾客不需要关心，他只要下达『番茄炒蛋』的命令给到服务员，由服务员再去翻译给厨师就可以了。</p>
@@ -774,7 +774,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -860,7 +860,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

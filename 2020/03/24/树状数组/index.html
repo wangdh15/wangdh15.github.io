@@ -102,12 +102,12 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="树状数组1. 前缀有一种数据结构能够通过一些预处理能够得到任意区间[l, r]的数字的和。这就是通过 构造前缀数组，数组中存放的位置是当前下标之前的所有数字之和。同样，类似的数据结构 可以拓展到更高的维度。用于求二维矩阵任意子块的所有元素的和。 但是这种数据结构面临着一个问题就是元素根性问题。如果原始数组中某个位置的元素发生了更新， 那么前缀数组这个位置之后的元素都需要更新，时间复杂度比较高。能不">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2020/03/24/树状数组/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/01.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/24/树状数组/01.png">
 <meta property="og:updated_time" content="2020-03-24T11:48:11.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树状数组">
 <meta name="twitter:description" content="树状数组1. 前缀有一种数据结构能够通过一些预处理能够得到任意区间[l, r]的数字的和。这就是通过 构造前缀数组，数组中存放的位置是当前下标之前的所有数字之和。同样，类似的数据结构 可以拓展到更高的维度。用于求二维矩阵任意子块的所有元素的和。 但是这种数据结构面临着一个问题就是元素根性问题。如果原始数组中某个位置的元素发生了更新， 那么前缀数组这个位置之后的元素都需要更新，时间复杂度比较高。能不">
-<meta name="twitter:image" content="http://yoursite.com/2020/03/24/树状数组/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/01.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/03/24/树状数组/01.png">
 
 
 
@@ -504,7 +504,7 @@
 <p>地来支持这种更新操作，同时能够高效地支持任意区间元素和的操作呢？这就是树状数组的功能。</p>
 <h3 id="2-树状数组"><a href="#2-树状数组" class="headerlink" title="2. 树状数组"></a>2. 树状数组</h3><p>通过前面的分析，可以发现问题出在，和一个元素相关联的区间太多了。那么能不能降低元素和区间的关联呢。</p>
 <p>树状数组主要是下面的方法：</p>
-<p><img src="%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/01.png" alt="image-20200324192541052"></p>
+<p><img src="/2020/03/24/树状数组/01.png" alt="image-20200324192541052"></p>
 <p>每个元素不再维护其前面所有的元素的和，只维护其前面部分元素的和。下面是一个比较形象的说明：</p>
 <blockquote>
 <p>要计算1-40位置的所有的元素和，那么先看c[40], 然后发现其维护的是a[30] -a[40]的元素和，这个时候拿到之后，再看c[29]，发现其维护的是a[10] - a[29]的元素和，然后访问c[9],发现其实a[1] - a[9]的元素和。这样就能够通过几步得到想要的结果。</p>
@@ -656,7 +656,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -742,7 +742,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
