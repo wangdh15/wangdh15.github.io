@@ -103,7 +103,7 @@
 <meta property="og:description" content="拓扑排序原题链接 解题思路判断一个有向图是否存在拓扑排序。最核心的一点是，维护每个节点的入度。将入度为零的节点加入队列。 弹出节点则将这个节点的所有孩子节点的入度减1。如果入度为零，则加入队列中。同时在弹出的时候维护一个 数组将弹出结果村下来，最终输出即可。 时间复杂度 O(e+v)c++代码12345678910111213141516171819202122232425262728293031">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2020/04/16/图论算法/01.png">
-<meta property="og:updated_time" content="2020-04-16T15:54:15.226Z">
+<meta property="og:updated_time" content="2020-04-17T06:29:11.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图论算法">
 <meta name="twitter:description" content="拓扑排序原题链接 解题思路判断一个有向图是否存在拓扑排序。最核心的一点是，维护每个节点的入度。将入度为零的节点加入队列。 弹出节点则将这个节点的所有孩子节点的入度减1。如果入度为零，则加入队列中。同时在弹出的时候维护一个 数组将弹出结果村下来，最终输出即可。 时间复杂度 O(e+v)c++代码12345678910111213141516171819202122232425262728293031">
@@ -419,13 +419,23 @@
                 
               
 
-              <time title="Created: 2020-04-16 23:21:35 / Modified: 23:54:15" itemprop="dateCreated datePublished" datetime="2020-04-16T23:21:35+08:00">2020-04-16</time>
+              <time title="Created: 2020-04-16 23:21:35" itemprop="dateCreated datePublished" datetime="2020-04-16T23:21:35+08:00">2020-04-16</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-04-17 14:29:11" itemprop="dateModified" datetime="2020-04-17T14:29:11+08:00">2020-04-17</time>
+              </span>
             
           
 
@@ -515,7 +525,11 @@
 </li>
 </ul>
 <p><strong>难点在于如何建图。如何将问题抽象出求图两点之间的最短路问题。</strong></p>
-<h4 id="朴素Dijsktra"><a href="#朴素Dijsktra" class="headerlink" title="朴素Dijsktra"></a>朴素Dijsktra</h4><h4 id="堆优化Dijkstra"><a href="#堆优化Dijkstra" class="headerlink" title="堆优化Dijkstra"></a>堆优化Dijkstra</h4><h4 id="Bellman-Ford"><a href="#Bellman-Ford" class="headerlink" title="Bellman-Ford"></a>Bellman-Ford</h4><h4 id="SPFA"><a href="#SPFA" class="headerlink" title="SPFA"></a>SPFA</h4><h4 id="Floyd"><a href="#Floyd" class="headerlink" title="Floyd"></a>Floyd</h4><h3 id="Prim"><a href="#Prim" class="headerlink" title="Prim"></a>Prim</h3><h3 id="Kruskal"><a href="#Kruskal" class="headerlink" title="Kruskal"></a>Kruskal</h3><h3 id="染色法判断二分图"><a href="#染色法判断二分图" class="headerlink" title="染色法判断二分图"></a>染色法判断二分图</h3><h3 id="匈牙利算法"><a href="#匈牙利算法" class="headerlink" title="匈牙利算法"></a>匈牙利算法</h3>
+<h4 id="朴素Dijsktra"><a href="#朴素Dijsktra" class="headerlink" title="朴素Dijsktra"></a>朴素Dijsktra</h4><p>贪心的思想。每次将当前到源节点最近的那个点加入到结果中，并更新所有点到源节点的距离。这样可以保证最终每个点到源节点的距离是最近的。正确性可以使用反证法来证明。</p>
+<p>c++代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">510</span>;</span><br><span class="line"><span class="keyword">int</span> e[N][N];   <span class="comment">// 存储图的邻接矩阵</span></span><br><span class="line"><span class="keyword">int</span> dis[N];  <span class="comment">// 存储每个节点到源节点的距离</span></span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">bool</span> vis[N];  <span class="comment">// 存储结果集</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dijsktra</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    dis[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)&#123;</span><br><span class="line">        <span class="keyword">int</span> m_i = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> m_d = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j ++)&#123;    <span class="comment">// 找到当前距离源节点最近且没有访问过的点</span></span><br><span class="line">            <span class="keyword">if</span>(!vis[j] &amp;&amp; dis[j] &lt; m_d) &#123;</span><br><span class="line">                m_i = j; m_d = dis[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>( m_i == n) <span class="keyword">return</span> dis[n];  <span class="comment">// 找到n就提前返回</span></span><br><span class="line">        <span class="keyword">if</span>( m_i == <span class="number">-1</span>) <span class="keyword">return</span> <span class="number">-1</span>;  <span class="comment">// n节点和1节点处于两个连通分量中的情况</span></span><br><span class="line">        vis[m_i] = <span class="literal">true</span>;  <span class="comment">// 将当前节点加入到结果集中</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j ++)&#123;    <span class="comment">// 更新没有被访问过的点到源节点的距离。只可能通过刚加入的点才可能带来变化</span></span><br><span class="line">            <span class="keyword">if</span>(!vis[j] &amp;&amp; dis[j] &gt; dis[m_i] + e[m_i][j]) dis[j] = dis[m_i] + e[m_i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="built_in">memset</span>(e, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(e));</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(dis));</span><br><span class="line">    <span class="keyword">while</span>(m --)&#123;</span><br><span class="line">        <span class="keyword">int</span> a, b, c;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">        e[a][b] = min(e[a][b], c);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dijsktra();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="堆优化Dijkstra"><a href="#堆优化Dijkstra" class="headerlink" title="堆优化Dijkstra"></a>堆优化Dijkstra</h4><h4 id="Bellman-Ford"><a href="#Bellman-Ford" class="headerlink" title="Bellman-Ford"></a>Bellman-Ford</h4><h4 id="SPFA"><a href="#SPFA" class="headerlink" title="SPFA"></a>SPFA</h4><h4 id="Floyd"><a href="#Floyd" class="headerlink" title="Floyd"></a>Floyd</h4><h3 id="Prim"><a href="#Prim" class="headerlink" title="Prim"></a>Prim</h3><h3 id="Kruskal"><a href="#Kruskal" class="headerlink" title="Kruskal"></a>Kruskal</h3><h3 id="染色法判断二分图"><a href="#染色法判断二分图" class="headerlink" title="染色法判断二分图"></a>染色法判断二分图</h3><h3 id="匈牙利算法"><a href="#匈牙利算法" class="headerlink" title="匈牙利算法"></a>匈牙利算法</h3>
       
     </div>
 
@@ -563,6 +577,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/17/有趣的杂题/" rel="prev" title="有趣的杂题">
+                有趣的杂题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -635,7 +653,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -731,7 +749,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
