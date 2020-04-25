@@ -94,18 +94,20 @@
 
 
 
-  <meta name="description" content="机器学习 EM算法  TODO SVM LDA  Image Caption数据结构与算法 前缀与差分 背包九讲 状压DP DFS BFS 图的拓扑排序 最短路算法 Dijkstra Bellman-ford spfa Floyd   最小生成树算法 Prim Kruskal   二分图 染色法判定二分图 匈牙利算法求二分图最大匹配    TODO 区间DP 树形DP  重大突破 LeetCode">
-<meta name="keywords" content="EE">
-<meta property="og:type" content="website">
-<meta property="og:title" content="成长记录表">
-<meta property="og:url" content="http://yoursite.com/schedule/index.html">
+  <meta name="description" content="博弈论先手必胜状态：从当前状态有一种方式可以到达一个先手必败状态 先手必败状态：从当前状态走不到一个先手必败状态 NIM游戏1原题链接 解题思路首先根据当前桌子上的石子的个数可以得到先手对应的状态。 由于一个人可以拿1-3个石子，所以他可以将当前状态转到3个状态。  如果这3个状态全部都是先手必胜状态，那么当前状态就是先手必败状态。 如果这三个状态存在你着先手必败状态，那么当前状态就是先手必胜状态">
+<meta name="keywords" content="博弈论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博弈论">
+<meta property="og:url" content="http://yoursite.com/2020/04/25/博弈论/index.html">
 <meta property="og:site_name" content="wangdh&#39;blogs">
-<meta property="og:description" content="机器学习 EM算法  TODO SVM LDA  Image Caption数据结构与算法 前缀与差分 背包九讲 状压DP DFS BFS 图的拓扑排序 最短路算法 Dijkstra Bellman-ford spfa Floyd   最小生成树算法 Prim Kruskal   二分图 染色法判定二分图 匈牙利算法求二分图最大匹配    TODO 区间DP 树形DP  重大突破 LeetCode">
+<meta property="og:description" content="博弈论先手必胜状态：从当前状态有一种方式可以到达一个先手必败状态 先手必败状态：从当前状态走不到一个先手必败状态 NIM游戏1原题链接 解题思路首先根据当前桌子上的石子的个数可以得到先手对应的状态。 由于一个人可以拿1-3个石子，所以他可以将当前状态转到3个状态。  如果这3个状态全部都是先手必胜状态，那么当前状态就是先手必败状态。 如果这三个状态存在你着先手必败状态，那么当前状态就是先手必胜状态">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-22T07:07:57.995Z">
+<meta property="og:image" content="http://yoursite.com/2020/04/25/博弈论/06c8190a6cb3885a47a994469ad55ec1141b8fbb4140371e93d44fac137fdf40-image.png">
+<meta property="og:updated_time" content="2020-04-25T16:35:04.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="成长记录表">
-<meta name="twitter:description" content="机器学习 EM算法  TODO SVM LDA  Image Caption数据结构与算法 前缀与差分 背包九讲 状压DP DFS BFS 图的拓扑排序 最短路算法 Dijkstra Bellman-ford spfa Floyd   最小生成树算法 Prim Kruskal   二分图 染色法判定二分图 匈牙利算法求二分图最大匹配    TODO 区间DP 树形DP  重大突破 LeetCode">
+<meta name="twitter:title" content="博弈论">
+<meta name="twitter:description" content="博弈论先手必胜状态：从当前状态有一种方式可以到达一个先手必败状态 先手必败状态：从当前状态走不到一个先手必败状态 NIM游戏1原题链接 解题思路首先根据当前桌子上的石子的个数可以得到先手对应的状态。 由于一个人可以拿1-3个石子，所以他可以将当前状态转到3个状态。  如果这3个状态全部都是先手必胜状态，那么当前状态就是先手必败状态。 如果这三个状态存在你着先手必败状态，那么当前状态就是先手必胜状态">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/25/博弈论/06c8190a6cb3885a47a994469ad55ec1141b8fbb4140371e93d44fac137fdf40-image.png">
 
 
 
@@ -113,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/schedule/">
+  <link rel="canonical" href="http://yoursite.com/2020/04/25/博弈论/">
 
 
 
@@ -123,7 +125,7 @@
   };
 </script>
 
-  <title>成长记录表 | wangdh'blogs</title>
+  <title>博弈论 | wangdh'blogs</title>
   
 
 
@@ -277,7 +279,7 @@
         
         
           
-          <li class="menu-item menu-item-schedule menu-item-active">
+          <li class="menu-item menu-item-schedule">
 
     
     
@@ -354,113 +356,272 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/25/博弈论/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daohui Wang">
+      <meta itemprop="description" content="Nothing">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangdh'blogs">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">成长记录表
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h2 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h2><ol>
-<li>EM算法</li>
-</ol>
-<h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3><ol>
-<li>SVM</li>
-<li>LDA</li>
-</ol>
-<h2 id="Image-Caption"><a href="#Image-Caption" class="headerlink" title="Image Caption"></a>Image Caption</h2><h2 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h2><ol>
-<li>前缀与差分</li>
-<li>背包九讲</li>
-<li>状压DP</li>
-<li>DFS</li>
-<li>BFS</li>
-<li>图的拓扑排序</li>
-<li>最短路算法<ul>
-<li>Dijkstra</li>
-<li>Bellman-ford</li>
-<li>spfa</li>
-<li>Floyd</li>
-</ul>
-</li>
-<li>最小生成树算法<ul>
-<li>Prim</li>
-<li>Kruskal</li>
-</ul>
-</li>
-<li>二分图<ul>
-<li>染色法判定二分图</li>
-<li>匈牙利算法求二分图最大匹配</li>
-</ul>
-</li>
-</ol>
-<h3 id="TODO-1"><a href="#TODO-1" class="headerlink" title="TODO"></a>TODO</h3><ol>
-<li>区间DP</li>
-<li>树形DP</li>
-</ol>
-<h2 id="重大突破"><a href="#重大突破" class="headerlink" title="重大突破"></a>重大突破</h2><ul>
-<li>LeetCode周赛 进前100啦，加油~  （2020.04.05）</li>
-<li>研究生第一学期GPA 3.95， 继续努力鸭！</li>
-</ul>
+          <h1 class="post-title" itemprop="name headline">博弈论
 
+              
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-04-25 13:17:13" itemprop="dateCreated datePublished" datetime="2020-04-25T13:17:13+08:00">2020-04-25</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-04-26 00:35:04" itemprop="dateModified" datetime="2020-04-26T00:35:04+08:00">2020-04-26</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2020/04/25/博弈论/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/25/博弈论/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 Views:  
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="博弈论"><a href="#博弈论" class="headerlink" title="博弈论"></a>博弈论</h3><p>先手必胜状态：从当前状态有一种方式可以到达一个先手必败状态</p>
+<p>先手必败状态：从当前状态走不到一个先手必败状态</p>
+<h3 id="NIM游戏1"><a href="#NIM游戏1" class="headerlink" title="NIM游戏1"></a>NIM游戏1</h3><p><a href="https://leetcode-cn.com/problems/nim-game/" target="_blank" rel="noopener">原题链接</a></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>首先根据当前桌子上的石子的个数可以得到先手对应的状态。</p>
+<p>由于一个人可以拿<code>1-3</code>个石子，所以他可以将当前状态转到3个状态。</p>
+<ul>
+<li>如果这3个状态全部都是先手必胜状态，那么当前状态就是先手必败状态。</li>
+<li>如果这三个状态存在你着先手必败状态，那么当前状态就是先手必胜状态。</li>
+</ul>
+<p>下面是整个<strong>状态的转移图。</strong></p>
+<p><img src="/2020/04/25/博弈论/06c8190a6cb3885a47a994469ad55ec1141b8fbb4140371e93d44fac137fdf40-image.png" alt="image.png"></p>
+<p>通过写，发现有如下的规律：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[0] = False, dp[1 - 3] = True dp[4] = False, dp[5-7] = True</span><br></pre></td></tr></table></figure>
+
+<p>所以如果是四的倍数，则是必败状态，否则是必胜状态。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canWinNim</span><span class="params">(self, n: int)</span> -&gt; bool:</span></span><br><span class="line">        </span><br><span class="line">        n %= <span class="number">4</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="NIM游戏2"><a href="#NIM游戏2" class="headerlink" title="NIM游戏2"></a>NIM游戏2</h3><p><a href="https://www.acwing.com/problem/content/893/" target="_blank" rel="noopener">原题链接</a></p>
+<p>给定N堆物品，第i堆物品有Ai个。两名玩家轮流行动，每次可以任选一堆，取走任意多个物品，可把一堆取光，但不能不取。取走最后一件物品者获胜。两人都采取最优策略，问先手是否必胜。</p>
+<p>我们把这种游戏称为NIM博弈。<strong>把游戏过程中面临的状态称为局面</strong>。整局游戏第一个行动的称为先手，第二个行动的称为后手。若在某一局面下无论采取何种行动，都会输掉游戏，则称该局面必败。<br>所谓采取最优策略是指，若在某一局面下存在某种行动，使得行动后对面面临必败局面，则优先采取该行动。同时，这样的局面被称为必胜。我们讨论的博弈问题一般都只考虑理想情况，即<strong>两人均无失误，都采取最优策略行动时游戏的结果。</strong><br><strong>NIM博弈不存在平局，只有先手必胜和先手必败两种情况。</strong></p>
+<p>定理： NIM博弈先手必胜，当且仅当 <code>A1 ^ A2 ^ … ^ An != 0</code></p>
+<h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><p>现在的游戏的状态需要使用<code>n</code>个数表示，每个数表示这一堆的石子数。</p>
+<ul>
+<li>最终状态：所有的石子都是零，这是一个必败状态</li>
+<li>假设当前局面的状态是$x_1, x_2, …, x_n$，如果<code>A1 ^ A2 ^ ... ^ An = 0</code>，则这个状态是必败状态</li>
+<li>如果当前局面的状态满足<code>A1 ^ A2 ^ ..., ^ An != 0</code>,则这个状态是必胜状态。</li>
+</ul>
+<p>可以证明具有如下的性质：</p>
+<ul>
+<li>如果任意一个异或等于零的状态，不管采取什么操作，最终到达的状态都是一个异或不等于零的状态。</li>
+<li>任意一个异或不等于零的状态，都可以采取一个操作使到达的状态是一个异或等于零的状态。</li>
+</ul>
+<p>首先证明第二点：</p>
+<p>假设当前的各个堆的元素异或的结果是<code>A1 ^ A2 ^ ..., ^ An = x</code>，假设<code>x</code>的二进制表示的最高位为第<code>k</code>位，</p>
+<p>那么在<code>A1, A2, ..., An</code>中必定存在着一个数，其第<code>k</code>位是1。如果所有的数的第<code>k</code>位都是零的话，那么异或结果是0，矛盾了。</p>
+<p>那么假设<code>Ai</code>的第<code>k</code>位是1，那么就有<code>Ai ^ x &lt; Ai</code>。因为<code>Ai ^ x</code>，<code>Ai</code>的在第k为之前的数不会变，第<code>k</code>位会变成零，</p>
+<p>所以<code>Ai ^ x &lt; Ai</code>恒成立。这个时候就可以从<code>Ai</code>中拿出<code>Ai - (Ai ^ x)</code>个石子，那么<code>Ai</code>，就变成了<code>Ai ^ x</code>。</p>
+<p>那么就有<code>A1 ^ A2 ^ ... ^ Ai ^ x ^ ... ^ An = x ^ x = 0</code></p>
+<p>下面证明第一点。也就是若<code>A1 ^ A2 ^ ... ^ An = 0</code>，则<code>A1 ^ A2 ^ ..., ^ Ai&#39; ^ ... ^ An</code>不可能等于零</p>
+<p>使用反证法，假设还是零，那么将上述两个异或起来，那么就有<code>Ai ^ Ai&#39; = 0</code>，也就是<code>Ai = Ai&#39;</code>，所以矛盾。</p>
+<p>所以上述如果先手异或为零，那么他能够一直是异或为零的状态。每次都拿石子，问题最终会变成全零的状态，所以必败</p>
+<p>如果先手异或不为零，那么他可以让后手的人面对的状态都是异或为零的状态，那么他就可以必胜！</p>
+<h4 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">        <span class="keyword">int</span> x; <span class="built_in">cin</span> &gt;&gt; x; res ^= x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(res) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Yes"</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">"No"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="台阶NIM游戏"><a href="#台阶NIM游戏" class="headerlink" title="台阶NIM游戏"></a>台阶NIM游戏</h3><p><a href="https://www.acwing.com/problem/content/894/" target="_blank" rel="noopener">原题链接</a></p>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><p>考虑奇数台阶上的石子，如果当前奇数台阶上的石子异或和不是零，那么按照前面的理论，可以采取策略是其异或和变成零。</p>
+<p>因为最后所有都是零，也就是奇数台阶上的石子异或和是零是最终失败的状态。</p>
+<ul>
+<li>如果当前奇数台阶上的石子的异或和是零的话，那么对手只可能将石子从偶数台阶搬到奇数台阶或者将石子从偶数台阶搬到奇数台阶。那么如果他将偶数搬到了奇数，那就可以将其再搬到下一个偶数，使得奇数台阶上的异或和还是零。如果其将石子从奇数搬到了偶数，那么可以按照经典的NIM游戏，可以将某个奇数台阶上的石子搬到下一个偶数台阶使奇数台阶上的石子的异或值变为零。</li>
+</ul>
+<p>所以只需要奇数台阶上的石子异或和是零，那么就是先手必胜态，否则是先手必败态。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n; <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">        <span class="keyword">int</span> x; <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">        <span class="keyword">if</span>( i &amp; <span class="number">1</span>) res ^= x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(res) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Yes"</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">"No"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/博弈论/" rel="tag"># 博弈论</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/22/数论/" rel="next" title="数论">
+                <i class="fa fa-chevron-left"></i> 数论
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -692,7 +853,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习"><span class="nav-number">1.</span> <span class="nav-text">机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TODO"><span class="nav-number">1.1.</span> <span class="nav-text">TODO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-Caption"><span class="nav-number">2.</span> <span class="nav-text">Image Caption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构与算法"><span class="nav-number">3.</span> <span class="nav-text">数据结构与算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TODO-1"><span class="nav-number">3.1.</span> <span class="nav-text">TODO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重大突破"><span class="nav-number">4.</span> <span class="nav-text">重大突破</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#博弈论"><span class="nav-number">1.</span> <span class="nav-text">博弈论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NIM游戏1"><span class="nav-number">2.</span> <span class="nav-text">NIM游戏1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路"><span class="nav-number">2.1.</span> <span class="nav-text">解题思路</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NIM游戏2"><span class="nav-number">3.</span> <span class="nav-text">NIM游戏2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路分析"><span class="nav-number">3.1.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码"><span class="nav-number">3.2.</span> <span class="nav-text">C++代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#台阶NIM游戏"><span class="nav-number">4.</span> <span class="nav-text">台阶NIM游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路-1"><span class="nav-number">4.1.</span> <span class="nav-text">解题思路</span></a></li></ol></li></ol></div>
             
 
           </div>
