@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="贪心法非常难，而且难以证明是正确的。下面是几种常见的模型。 区间问题设计到多个区间的问题，一般的方法是按照左端点或者右端点对区间进行排序，然后找到一种贪心的策略。 区间合并原题链接 解题思路将所有的区间按照左端点进行排序，然后从前到后扫描。维护当前合并之后的区间的左端点和右端点。  如果新的区间的左端点比维护的右端点大，则区间数+1， 取新的区间的左右端点为维护的左右端点 如果新的区间的左端点比维">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-27T16:59:48.863Z">
+<meta property="og:updated_time" content="2020-04-27T17:01:32.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="贪心法">
 <meta name="twitter:description" content="贪心法非常难，而且难以证明是正确的。下面是几种常见的模型。 区间问题设计到多个区间的问题，一般的方法是按照左端点或者右端点对区间进行排序，然后找到一种贪心的策略。 区间合并原题链接 解题思路将所有的区间按照左端点进行排序，然后从前到后扫描。维护当前合并之后的区间的左端点和右端点。  如果新的区间的左端点比维护的右端点大，则区间数+1， 取新的区间的左右端点为维护的左右端点 如果新的区间的左端点比维">
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-04-28 00:59:48" itemprop="dateModified" datetime="2020-04-28T00:59:48+08:00">2020-04-28</time>
+                <time title="Modified: 2020-04-28 01:01:32" itemprop="dateModified" datetime="2020-04-28T01:01:32+08:00">2020-04-28</time>
               </span>
             
           
@@ -542,6 +542,7 @@
 <h2 id="排序不等式"><a href="#排序不等式" class="headerlink" title="排序不等式"></a>排序不等式</h2><p>该算法也是操作系统任务调度中的最小等待时间的算法。将所有的任务按照执行时间从小到大排序，然后执行即可。</p>
 <p>证明：</p>
 <p>如果执行的顺序中存在着相邻两项是逆序，那么将这两项交换次序之后，整体的等待时间会变短。所以序列有序时，等待时间最短。</p>
+<p><a href="https://www.acwing.com/problem/content/description/915/" target="_blank" rel="noopener">原题链接</a></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> q[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; q[i];</span><br><span class="line">    &#125;</span><br><span class="line">    sort(q, q + n);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>, s = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)&#123;</span><br><span class="line">        res += s;</span><br><span class="line">        s += q[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="绝对值不等式"><a href="#绝对值不等式" class="headerlink" title="绝对值不等式"></a>绝对值不等式</h2><p><a href="https://www.acwing.com/problem/content/106/" target="_blank" rel="noopener">原题链接</a></p>
@@ -601,6 +602,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/01/剑指offer01/" rel="prev" title="剑指offer01">
+                剑指offer01 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -673,7 +678,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -785,7 +790,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
