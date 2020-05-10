@@ -97,15 +97,15 @@
   <meta name="description" content="概述前缀操作和差分操作是两个互逆操作。求数据区间和能够转化为前缀和的单点操作。对数据区间增减可以转化为 对差分的单点操作，从而提高效率。 但是这种数据结构不支持对一个数据单点操作，并高效地支持区间和操作。要想同时拥有对数据的单点操作和区间和操作， 需要使用树状数组的数据结构。 1. 一维前缀和前缀和的数据结构能够快速求某个区间的和。方法是在读入数据的时候创建一个数组将0-i的全部数据的和 存储下来">
 <meta name="keywords" content="代码模板,c++,连续子数组问题,二分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一维二维前缀和、查分">
+<meta property="og:title" content="一维二维前缀和、差分">
 <meta property="og:url" content="http://yoursite.com/2020/03/26/一维二维前缀和、查分/index.html">
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="概述前缀操作和差分操作是两个互逆操作。求数据区间和能够转化为前缀和的单点操作。对数据区间增减可以转化为 对差分的单点操作，从而提高效率。 但是这种数据结构不支持对一个数据单点操作，并高效地支持区间和操作。要想同时拥有对数据的单点操作和区间和操作， 需要使用树状数组的数据结构。 1. 一维前缀和前缀和的数据结构能够快速求某个区间的和。方法是在读入数据的时候创建一个数组将0-i的全部数据的和 存储下来">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2020/03/26/一维二维前缀和、查分/01.png">
-<meta property="og:updated_time" content="2020-04-23T06:51:13.764Z">
+<meta property="og:updated_time" content="2020-05-10T08:02:59.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一维二维前缀和、查分">
+<meta name="twitter:title" content="一维二维前缀和、差分">
 <meta name="twitter:description" content="概述前缀操作和差分操作是两个互逆操作。求数据区间和能够转化为前缀和的单点操作。对数据区间增减可以转化为 对差分的单点操作，从而提高效率。 但是这种数据结构不支持对一个数据单点操作，并高效地支持区间和操作。要想同时拥有对数据的单点操作和区间和操作， 需要使用树状数组的数据结构。 1. 一维前缀和前缀和的数据结构能够快速求某个区间的和。方法是在读入数据的时候创建一个数组将0-i的全部数据的和 存储下来">
 <meta name="twitter:image" content="http://yoursite.com/2020/03/26/一维二维前缀和、查分/01.png">
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>一维二维前缀和、查分 | wangdh'blogs</title>
+  <title>一维二维前缀和、差分 | wangdh'blogs</title>
   
 
 
@@ -393,7 +393,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一维二维前缀和、查分
+          <h1 class="post-title" itemprop="name headline">一维二维前缀和、差分
 
               
             
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-04-23 14:51:13" itemprop="dateModified" datetime="2020-04-23T14:51:13+08:00">2020-04-23</time>
+                <time title="Modified: 2020-05-10 16:02:59" itemprop="dateModified" datetime="2020-05-10T16:02:59+08:00">2020-05-10</time>
               </span>
             
           
@@ -552,6 +552,17 @@
 <p><strong>求。。的最大，求。。的最小等等这类的题。</strong></p>
 <p><strong>类似的题还有：给定一些木棒，问将这些模板锯成k端相等长度的木棒，为木棒的长度最大是多少。可以用二分来搜索。</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// https://www.lintcode.com/problem/maximum-average-subarray-ii/description</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @param nums: an array with positive and negative numbers</span></span><br><span class="line"><span class="comment">     * @param k: an integer</span></span><br><span class="line"><span class="comment">     * @return: the maximum average</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">maxAverage</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write your code here</span></span><br><span class="line">        <span class="keyword">double</span> l, r;</span><br><span class="line">        l = r = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i ++)&#123;  <span class="comment">// 首先找到所有数据中的最大值和最小值，用作二分的起点</span></span><br><span class="line">            l = min(<span class="keyword">double</span>(nums[i]), l);</span><br><span class="line">            r = max(<span class="keyword">double</span>(nums[i]), r);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; l &lt;&lt; " " &lt;&lt; r &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">while</span>(r  - l &gt; <span class="number">1e-6</span>)&#123;  <span class="comment">// 二分查找</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; l &lt;&lt; <span class="string">" "</span> &lt;&lt; r &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">double</span> s[<span class="number">1000010</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k; i ++)&#123;   <span class="comment">// 先求出前k - 1个元素的前缀和</span></span><br><span class="line">                s[i] = s[i - <span class="number">1</span>] + nums[i - <span class="number">1</span>] - mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">double</span> m_l = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = k ; i &lt;= nums.size(); i ++)&#123;  <span class="comment">// 维护前面的最小值，求出当前的前缀和，并判断是否满足条件</span></span><br><span class="line">                s[i] = s[i - <span class="number">1</span>] + nums[i - <span class="number">1</span>] - mid;</span><br><span class="line">                m_l = min(m_l, s[i - k]);</span><br><span class="line">                <span class="keyword">if</span>(s[i] - m_l &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">                    flag = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(flag) l = mid;</span><br><span class="line">            <span class="keyword">else</span> r = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (l + r) / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="形成两个异或相等数组的三元组数目"><a href="#形成两个异或相等数组的三元组数目" class="headerlink" title="形成两个异或相等数组的三元组数目"></a>形成两个异或相等数组的三元组数目</h3><p><a href="https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/" target="_blank" rel="noopener">原题链接</a></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li><p>方法1： 先用数据记录前缀异或和，然后暴力枚举三个区间</p>
+</li>
+<li><p>方法2：题目中两端异或和相等，其实就是整个区间的异或和为零。所以只需要找到数组中异或和为零的区间。然后这个区间可拆分为任意两个，这两个的异或和都相等。</p>
+</li>
+</ul>
+<p>所以某个长度<code>k</code>的异或的为零的区间，对应着<code>k-1</code>种分法。</p>
+<p>所以可以使用哈希表存储前面每个值的前缀异或和出现的各个位置，然后直接求解。</p>
+<h4 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> sum[<span class="number">310</span>];</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; ma;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countTriplets</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">        ma[t].push_back(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= arr.size(); i ++)&#123;</span><br><span class="line">            t ^= arr[i<span class="number">-1</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> x:ma[t])&#123;</span><br><span class="line">                ans += (i - x - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            ma[t].push_back(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>在实验中，发现使用<code>scanf/printf</code>比<code>cin/cout</code>速度快非常多。。</p>
 <p><img src="/2020/03/26/一维二维前缀和、查分/01.png" alt="image-20200326215450718"></p>
@@ -685,7 +696,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -863,7 +874,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-一维前缀和"><span class="nav-number">2.</span> <span class="nav-text">1. 一维前缀和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-二维前缀和"><span class="nav-number">3.</span> <span class="nav-text">2. 二维前缀和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-一维差分"><span class="nav-number">4.</span> <span class="nav-text">3. 一维差分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-二维差分"><span class="nav-number">5.</span> <span class="nav-text">4. 二维差分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#和为K的子数组"><span class="nav-number">6.</span> <span class="nav-text">和为K的子数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均值为K的子数组"><span class="nav-number">7.</span> <span class="nav-text">均值为K的子数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子数组的最大平均值"><span class="nav-number">8.</span> <span class="nav-text">子数组的最大平均值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">9.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-一维前缀和"><span class="nav-number">2.</span> <span class="nav-text">1. 一维前缀和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-二维前缀和"><span class="nav-number">3.</span> <span class="nav-text">2. 二维前缀和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-一维差分"><span class="nav-number">4.</span> <span class="nav-text">3. 一维差分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-二维差分"><span class="nav-number">5.</span> <span class="nav-text">4. 二维差分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#和为K的子数组"><span class="nav-number">6.</span> <span class="nav-text">和为K的子数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#均值为K的子数组"><span class="nav-number">7.</span> <span class="nav-text">均值为K的子数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子数组的最大平均值"><span class="nav-number">8.</span> <span class="nav-text">子数组的最大平均值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#形成两个异或相等数组的三元组数目"><span class="nav-number">9.</span> <span class="nav-text">形成两个异或相等数组的三元组数目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路"><span class="nav-number">9.1.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码"><span class="nav-number">9.2.</span> <span class="nav-text">C++代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">10.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>
