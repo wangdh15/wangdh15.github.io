@@ -95,14 +95,14 @@
 
 
   <meta name="description" content="1. 二分查找二分查找使用的范围是，给定一个解的范围，中间存在一个边界，使得这个边界左边的一边是满足的，另一边是不满足的， 二分能够找到这个边界在什么位置。 比如在一个非递减的数组中查找到某个数字的最左侧的位置或者最右侧的位置。 但是二分查找能够写对是不是很容易的。其实最重要的就是考虑两个元素的时候不能出现死循环。也就是要保证内部迭代每一步 都使得区间长度是严格递减的。 2. 整数二分代码模板每次">
-<meta name="keywords" content="C++,代码模板,二分法">
+<meta name="keywords" content="代码模板,C++,二分法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二分代码模板">
 <meta property="og:url" content="http://yoursite.com/2020/03/26/二分代码模板/index.html">
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="1. 二分查找二分查找使用的范围是，给定一个解的范围，中间存在一个边界，使得这个边界左边的一边是满足的，另一边是不满足的， 二分能够找到这个边界在什么位置。 比如在一个非递减的数组中查找到某个数字的最左侧的位置或者最右侧的位置。 但是二分查找能够写对是不是很容易的。其实最重要的就是考虑两个元素的时候不能出现死循环。也就是要保证内部迭代每一步 都使得区间长度是严格递减的。 2. 整数二分代码模板每次">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-12T13:40:34.784Z">
+<meta property="og:updated_time" content="2020-05-15T04:40:18.482Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二分代码模板">
 <meta name="twitter:description" content="1. 二分查找二分查找使用的范围是，给定一个解的范围，中间存在一个边界，使得这个边界左边的一边是满足的，另一边是不满足的， 二分能够找到这个边界在什么位置。 比如在一个非递减的数组中查找到某个数字的最左侧的位置或者最右侧的位置。 但是二分查找能够写对是不是很容易的。其实最重要的就是考虑两个元素的时候不能出现死循环。也就是要保证内部迭代每一步 都使得区间长度是严格递减的。 2. 整数二分代码模板每次">
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-05-12 21:40:34" itemprop="dateModified" datetime="2020-05-12T21:40:34+08:00">2020-05-12</time>
+                <time title="Modified: 2020-05-15 12:40:18" itemprop="dateModified" datetime="2020-05-15T12:40:18+08:00">2020-05-15</time>
               </span>
             
           
@@ -516,6 +516,16 @@
 <p>其中找距离不大于<code>x</code>的数还可以对输入数据进行排序，然后使用双指针进行处理。</p>
 <h4 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">smallestDistancePair</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tt[<span class="number">1000010</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; ma;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> x:nums)&#123;  <span class="comment">// 统计每个数字出现的次数</span></span><br><span class="line">            tt[x] ++;</span><br><span class="line">            ma[x] ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">1000010</span>; i ++) tt[i] += tt[i<span class="number">-1</span>];   <span class="comment">// 得到前缀和</span></span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">1000000</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;   <span class="comment">// 二分答案</span></span><br><span class="line">            <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> nu = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> x: ma)&#123; <span class="comment">// 枚举数对中的最小值</span></span><br><span class="line">                <span class="keyword">int</span> xxx = x.first;</span><br><span class="line">                <span class="keyword">int</span> nnn = x.second;</span><br><span class="line">                nu += (nnn - <span class="number">1</span>) * (nnn) / <span class="number">2</span>;   <span class="comment">// 只包含当前数组的种类数</span></span><br><span class="line">                nu += (tt[min(xxx + mid, <span class="number">1000000</span>)] - tt[xxx]) * nnn; <span class="comment">// 一个为当前数，一个为比其大的树的种类数</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// cout &lt;&lt; l &lt;&lt; " " &lt;&lt; r &lt;&lt; " " &lt;&lt; nu &lt;&lt; endl;</span></span><br><span class="line">            <span class="keyword">if</span>(nu &gt;= k) r = mid;<span class="comment">// 多的话可能是mid，也可能比mid小</span></span><br><span class="line">            <span class="keyword">else</span> l = mid + <span class="number">1</span>;  <span class="comment">// 少的话肯定比当前mid大</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<h3 id="H指数"><a href="#H指数" class="headerlink" title="H指数"></a>H指数</h3><p><a href="https://leetcode-cn.com/problems/h-index/" target="_blank" rel="noopener">原题链接</a></p>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h4><p>二分答案。 给定一个答案，可以在<code>O(N)</code>的时间内判断是不是成立。</p>
+<p>而且答案具有单调性。所以可以直接二分，找到第一个答案即可。</p>
+<h4 id="C-代码-1"><a href="#C-代码-1" class="headerlink" title="C++代码"></a>C++代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hIndex</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; cit)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> x:cit)&#123;</span><br><span class="line">                <span class="keyword">if</span>(x &gt;= mid) t ++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(t &lt; mid) r = mid - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> l = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="H指数2"><a href="#H指数2" class="headerlink" title="H指数2"></a>H指数2</h3><p><a href="https://leetcode-cn.com/problems/h-index-ii/" target="_blank" rel="noopener">原题链接</a></p>
+<h4 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h4><p>每篇文章的引用量是不减的，引用量不小于当前篇文章的数量是严格递减的。所以相当于一个严格递减和不减的序列交点的问题。</p>
+<p>使用二分法，时间复杂度为<code>log n</code>.</p>
+<h4 id="C-代码-2"><a href="#C-代码-2" class="headerlink" title="C++代码"></a>C++代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hIndex</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; cits)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cits.size() == <span class="number">0</span> || cits.back() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">        <span class="comment">// if(cits[0] &gt;= cits.size()) return cits.size();</span></span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = (<span class="keyword">int</span>)cits.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            <span class="comment">// cout &lt;&lt; l &lt;&lt; " " &lt;&lt; r &lt;&lt; endl;</span></span><br><span class="line">            <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(cits[mid] &gt;= (<span class="keyword">int</span>)cits.size() - mid) r = mid;</span><br><span class="line">            <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)cits.size() - l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -542,9 +552,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"># C++</a>
-          
             <a href="/tags/代码模板/" rel="tag"># 代码模板</a>
+          
+            <a href="/tags/C/" rel="tag"># C++</a>
           
             <a href="/tags/二分法/" rel="tag"># 二分法</a>
           
@@ -644,7 +654,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">59</span>
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -675,7 +685,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -758,7 +770,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -822,7 +838,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-二分查找"><span class="nav-number">1.</span> <span class="nav-text">1. 二分查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-整数二分代码模板"><span class="nav-number">2.</span> <span class="nav-text">2. 整数二分代码模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-浮点数二分"><span class="nav-number">3.</span> <span class="nav-text">3. 浮点数二分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#剧情出发的时间"><span class="nav-number">4.</span> <span class="nav-text">剧情出发的时间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路"><span class="nav-number">4.1.</span> <span class="nav-text">解题思路</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找出第k小的距离对"><span class="nav-number">5.</span> <span class="nav-text">找出第k小的距离对</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路-1"><span class="nav-number">5.1.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码"><span class="nav-number">5.2.</span> <span class="nav-text">C++代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-二分查找"><span class="nav-number">1.</span> <span class="nav-text">1. 二分查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-整数二分代码模板"><span class="nav-number">2.</span> <span class="nav-text">2. 整数二分代码模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-浮点数二分"><span class="nav-number">3.</span> <span class="nav-text">3. 浮点数二分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#剧情出发的时间"><span class="nav-number">4.</span> <span class="nav-text">剧情出发的时间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路"><span class="nav-number">4.1.</span> <span class="nav-text">解题思路</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找出第k小的距离对"><span class="nav-number">5.</span> <span class="nav-text">找出第k小的距离对</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路-1"><span class="nav-number">5.1.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码"><span class="nav-number">5.2.</span> <span class="nav-text">C++代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#H指数"><span class="nav-number">6.</span> <span class="nav-text">H指数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路-2"><span class="nav-number">6.1.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码-1"><span class="nav-number">6.2.</span> <span class="nav-text">C++代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#H指数2"><span class="nav-number">7.</span> <span class="nav-text">H指数2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路-3"><span class="nav-number">7.1.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码-2"><span class="nav-number">7.2.</span> <span class="nav-text">C++代码</span></a></li></ol></li></ol></div>
             
 
           </div>
