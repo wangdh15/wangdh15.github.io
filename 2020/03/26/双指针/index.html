@@ -104,7 +104,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2020/03/26/双指针/01.png">
 <meta property="og:image" content="http://yoursite.com/2020/03/26/双指针/wangdh/Files/blogs/source/_posts/%E5%8F%8C%E6%8C%87%E9%92%88/02.png">
-<meta property="og:updated_time" content="2020-03-26T15:32:29.193Z">
+<meta property="og:updated_time" content="2020-05-23T04:43:02.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="双指针">
 <meta name="twitter:description" content="1. 双指针算法双指针算法一般是将暴力遍历的算法通过观察一些规律，从而将复杂度从降为线性复杂度的方法。 维护两个指针，指针内部的区间满足某些性质或者两个指针指向的数据满足某些性质(有序数组两数和的问题)。 2. 最长不重复子序列 维护一个数组，记录当前区间各个数字出现的次数，移动右边指针的时候判断移入的数在不在区间内，如果在，右移左指针，直到 区间没有重复的数字。 1234567891011121">
@@ -420,13 +420,23 @@
                 
               
 
-              <time title="Created: 2020-03-26 23:00:19 / Modified: 23:32:29" itemprop="dateCreated datePublished" datetime="2020-03-26T23:00:19+08:00">2020-03-26</time>
+              <time title="Created: 2020-03-26 23:00:19" itemprop="dateCreated datePublished" datetime="2020-03-26T23:00:19+08:00">2020-03-26</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-05-23 12:43:02" itemprop="dateModified" datetime="2020-05-23T12:43:02+08:00">2020-05-23</time>
+              </span>
             
           
 
@@ -508,6 +518,10 @@
 <p>这种有序数据目标和的问题，一般都可以转换为双指针问题。一个指针指向最大，一个指向最小。然后利用大小关系挪动指针。</p>
 <p>如果是无序数组，可以先对其排序再处理。如果是多个数，可以先对最小数进行遍历，然后从剩下的区间来利用双指针方法。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> A[N], B[N];</span><br><span class="line"><span class="keyword">int</span> n, m, x;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; x;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; A[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i ++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; B[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, j = m - <span class="number">1</span>; ;)&#123;</span><br><span class="line">        <span class="keyword">if</span>(A[i] + B[j] == x)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">" "</span> &lt;&lt; j;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(A[i] + B[j] &lt; x)&#123;</span><br><span class="line">            i ++;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            j --;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="最小覆盖子串"><a href="#最小覆盖子串" class="headerlink" title="最小覆盖子串"></a>最小覆盖子串</h3><p><a href="https://leetcode-cn.com/problems/minimum-window-substring/" target="_blank" rel="noopener">原题链接</a></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>双指针，同时用哈希表存储两个指针之间的各个字符串出现的次数，并和目标串进行比较。右指针移动到包含目标串的时候，就竟可能移动左指针，使其不包含目标串。</p>
+<h4 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; smp, tmp;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">()</span></span>&#123;  <span class="comment">// 检查i-j区间是否满足情况</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> x:tmp)&#123;</span><br><span class="line">            <span class="keyword">if</span>(smp[x.first] &lt; x.second) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">minWindow</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> x:t) tmp[x] ++;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">-1e9</span>, r = <span class="number">1e9</span>;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(j &lt; s.size())&#123;</span><br><span class="line">            smp[s[j]] ++;</span><br><span class="line">            <span class="keyword">while</span>(check() &amp;&amp; i &lt;= j)&#123;  <span class="comment">// 当区间满足时，不断移动左指针</span></span><br><span class="line">                <span class="keyword">if</span>(j - i &lt; r - l)&#123;</span><br><span class="line">                    l = i;</span><br><span class="line">                    r = j;</span><br><span class="line">                &#125;</span><br><span class="line">                smp[s[i]] --;</span><br><span class="line">                i ++;</span><br><span class="line">            &#125;</span><br><span class="line">            j ++;  <span class="comment">// 移动右指针</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l == <span class="number">-1e9</span>) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        <span class="built_in">string</span> ans = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = l; i &lt;= r; i ++) ans += s[i];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -635,7 +649,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">69</span>
+                    <span class="site-state-item-count">70</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -757,7 +771,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">36</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -832,7 +850,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-双指针算法"><span class="nav-number">1.</span> <span class="nav-text">1. 双指针算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-最长不重复子序列"><span class="nav-number">2.</span> <span class="nav-text">2. 最长不重复子序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数组元素的目标和"><span class="nav-number">3.</span> <span class="nav-text">3. 数组元素的目标和</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-双指针算法"><span class="nav-number">1.</span> <span class="nav-text">1. 双指针算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-最长不重复子序列"><span class="nav-number">2.</span> <span class="nav-text">2. 最长不重复子序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数组元素的目标和"><span class="nav-number">3.</span> <span class="nav-text">3. 数组元素的目标和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小覆盖子串"><span class="nav-number">4.</span> <span class="nav-text">最小覆盖子串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路"><span class="nav-number">4.1.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码"><span class="nav-number">4.2.</span> <span class="nav-text">C++代码</span></a></li></ol></li></ol></div>
             
 
           </div>
