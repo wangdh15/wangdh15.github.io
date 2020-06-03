@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="每个人戴不同帽子的方案数原题链接 解题思路状态压缩DP(集合类) 定义状态dp[i][j] 为从1 - i将1 - i顶帽子，分给状态为j的方法。则分为两类：  不使用第i顶帽子，则为dp[i-1][j]   使用第i顶帽子，则枚举状态j中的人，并且这个人也喜欢这个帽子，有dp[i-1][j - (1 &amp;lt;&amp;lt; k)], 第k个人待第i顶帽子的方法  最终输出dp[40][(1 &amp;lt;&amp;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-01T16:32:38.208Z">
+<meta property="og:updated_time" content="2020-06-03T15:53:16.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划杂题2">
 <meta name="twitter:description" content="每个人戴不同帽子的方案数原题链接 解题思路状态压缩DP(集合类) 定义状态dp[i][j] 为从1 - i将1 - i顶帽子，分给状态为j的方法。则分为两类：  不使用第i顶帽子，则为dp[i-1][j]   使用第i顶帽子，则枚举状态j中的人，并且这个人也喜欢这个帽子，有dp[i-1][j - (1 &amp;lt;&amp;lt; k)], 第k个人待第i顶帽子的方法  最终输出dp[40][(1 &amp;lt;&amp;">
@@ -417,13 +417,23 @@
                 
               
 
-              <time title="Created: 2020-06-02 00:10:57 / Modified: 00:32:38" itemprop="dateCreated datePublished" datetime="2020-06-02T00:10:57+08:00">2020-06-02</time>
+              <time title="Created: 2020-06-02 00:10:57" itemprop="dateCreated datePublished" datetime="2020-06-02T00:10:57+08:00">2020-06-02</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-06-03 23:53:16" itemprop="dateModified" datetime="2020-06-03T23:53:16+08:00">2020-06-03</time>
+              </span>
             
           
 
@@ -507,6 +517,22 @@
 <p>时间复杂度$40 \times 2 ^n \times n$</p>
 <p>空间复杂度$40 \times 2 ^ n$</p>
 <h4 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> dp[<span class="number">41</span>][<span class="number">1</span> &lt;&lt; <span class="number">10</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">bool</span> has[<span class="number">10</span>][<span class="number">41</span>] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numberWays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; hats)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = hats.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)&#123;  <span class="comment">// 预处理好第i个人是否喜欢第j顶帽子，用于后面转移判断使用</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> j : hats[i])&#123;</span><br><span class="line">                has[i][j] = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">40</span>; i ++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">1</span> &lt;&lt; n; j ++)&#123;</span><br><span class="line">                dp[i][j] += dp[i<span class="number">-1</span>][j];  <span class="comment">// 不选第i顶帽子</span></span><br><span class="line">                dp[i][j] %= mod;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; k ++)&#123;   <span class="comment">// 选第i顶帽子</span></span><br><span class="line">                    <span class="keyword">if</span>((j &amp; (<span class="number">1</span> &lt;&lt; k)) &amp;&amp; has[k][i])&#123;  <span class="comment">// 枚举所有人，并判断这个人是不是喜欢第i顶帽子</span></span><br><span class="line">                        dp[i][j] += dp[i<span class="number">-1</span>][j - (<span class="number">1</span> &lt;&lt; k)]; <span class="comment">// 状态转移</span></span><br><span class="line">                        dp[i][j] %= mod;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">40</span>][(<span class="number">1</span> &lt;&lt; n) - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="新21点"><a href="#新21点" class="headerlink" title="新21点"></a>新21点</h3><p><a href="https://leetcode-cn.com/problems/new-21-game/" target="_blank" rel="noopener">原题链接</a></p>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><p>动态规划。 定义状态<strong><code>dp[i]</code></strong>为处在<strong><code>i</code></strong>位置时(现在有了<code>i</code>分)，满足题意的概率是多少。</p>
+<p>当处于<strong><code>i</code></strong>时，下一步有<strong><code>W</code></strong>种情况。由全概率公式有</p>
+<p>$$P(X) = \sum_{Y}P(X|Y)$$</p>
+<p>所以有$dp[i] = \frac{\sum_{j = 1}^{W} dp[i + j]}{W}$</p>
+<p>可以看到，每个状态的计算，依赖其后面的<strong><code>W</code></strong>个状态。 在更新的时候，可以用一个量记录窗口为<strong><code>W</code></strong>的区间的结果和。</p>
+<p>然后滑动的时候不断删除尾元素，加入头元素即可。</p>
+<p>边界情况：</p>
+<p><strong>-</strong> 当<strong><code>i</code></strong>处于<strong><code>K</code></strong>到<strong><code>N</code></strong>之间时，已经满足，概率为<strong><code>1</code></strong></p>
+<p><strong>-</strong> 当<strong><code>i</code></strong>大于<strong><code>N</code></strong>时，概率为<strong><code>0</code></strong></p>
+<p>然后从<strong><code>k-1</code></strong>开始进行状态计算，最后输出<strong><code>dp[0]</code></strong></p>
+<p>时间复杂度<strong><code>O(N)</code></strong></p>
+<h4 id="C-代码-1"><a href="#C-代码-1" class="headerlink" title="C++代码"></a>C++代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">new21Game</span><span class="params">(<span class="keyword">int</span> N, <span class="keyword">int</span> K, <span class="keyword">int</span> W)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; dp(N + W + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = K; i &lt;= N; i ++) dp[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">double</span> t = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = K; i &lt;= K + W - <span class="number">1</span>; i ++) t += dp[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = K - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i --)&#123;</span><br><span class="line">            dp[i] = t / W;</span><br><span class="line">            t -= dp[i + W];</span><br><span class="line">            t += dp[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
@@ -839,7 +865,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#每个人戴不同帽子的方案数"><span class="nav-number">1.</span> <span class="nav-text">每个人戴不同帽子的方案数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路"><span class="nav-number">1.1.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码"><span class="nav-number">1.2.</span> <span class="nav-text">C++代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#每个人戴不同帽子的方案数"><span class="nav-number">1.</span> <span class="nav-text">每个人戴不同帽子的方案数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路"><span class="nav-number">1.1.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码"><span class="nav-number">1.2.</span> <span class="nav-text">C++代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新21点"><span class="nav-number">2.</span> <span class="nav-text">新21点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路-1"><span class="nav-number">2.1.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码-1"><span class="nav-number">2.2.</span> <span class="nav-text">C++代码</span></a></li></ol></li></ol></div>
             
 
           </div>
