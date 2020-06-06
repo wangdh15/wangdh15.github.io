@@ -94,27 +94,18 @@
 
 
 
-  <meta name="description" content="02.系统调用1. 什么是接口接口是操作系统对底层的分装之后，对上层软件暴露的接口。连接上层用户和底层，屏蔽不必要的细节。 操作系统接口就是系统调用，就是操作系统提供的一些函数。如fork,open,write,read。 POSIX说明了操作系统需要对上层应用提供什么接口，实现什么功能。只要实现的系统符合这个接口，那么在linux上开发的程序也能跑。 操作系统接口连接的不是用户，而是应用软件。用">
-<meta name="keywords" content="操作系统,基础知识">
+  <meta name="description" content="区间DP 环形问题：破链成环，复制区间   环形石子合并原题链接 解题思路最后一步操作肯定是把两堆石子合并，而这两堆肯定是对应原来的环形的两边互不相交的部分。所以相当于枚举环的断点，然后求数组的石子合并问题。这样的时间复杂度为O(n^4) 考虑破链成环。将原数组复制一份。那么在长度为2 * n 的区间上做区间DP，然后枚举所有的长度为n的情况，取最小和最大即可。 时间复杂度O(n^3)  如果石子">
+<meta name="keywords" content="动态规划">
 <meta property="og:type" content="article">
-<meta property="og:title" content="02_系统调用">
-<meta property="og:url" content="http://yoursite.com/2020/05/15/02-系统调用/index.html">
+<meta property="og:title" content="动态规划提高课05--区间DP">
+<meta property="og:url" content="http://yoursite.com/2020/06/05/动态规划提高课05-区间DP/index.html">
 <meta property="og:site_name" content="wangdh&#39;blogs">
-<meta property="og:description" content="02.系统调用1. 什么是接口接口是操作系统对底层的分装之后，对上层软件暴露的接口。连接上层用户和底层，屏蔽不必要的细节。 操作系统接口就是系统调用，就是操作系统提供的一些函数。如fork,open,write,read。 POSIX说明了操作系统需要对上层应用提供什么接口，实现什么功能。只要实现的系统符合这个接口，那么在linux上开发的程序也能跑。 操作系统接口连接的不是用户，而是应用软件。用">
+<meta property="og:description" content="区间DP 环形问题：破链成环，复制区间   环形石子合并原题链接 解题思路最后一步操作肯定是把两堆石子合并，而这两堆肯定是对应原来的环形的两边互不相交的部分。所以相当于枚举环的断点，然后求数组的石子合并问题。这样的时间复杂度为O(n^4) 考虑破链成环。将原数组复制一份。那么在长度为2 * n 的区间上做区间DP，然后枚举所有的长度为n的情况，取最小和最大即可。 时间复杂度O(n^3)  如果石子">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2020/05/15/02-系统调用/01.png">
-<meta property="og:image" content="http://yoursite.com/2020/05/15/02-系统调用/02.png">
-<meta property="og:image" content="http://yoursite.com/2020/05/15/02-系统调用/03.png">
-<meta property="og:image" content="http://yoursite.com/2020/05/15/02-系统调用/04.png">
-<meta property="og:image" content="http://yoursite.com/2020/05/15/02-系统调用/05.png">
-<meta property="og:image" content="http://yoursite.com/2020/05/15/02-系统调用/06.png">
-<meta property="og:image" content="http://yoursite.com/2020/05/15/02-系统调用/07.png">
-<meta property="og:image" content="http://yoursite.com/2020/05/15/02-系统调用/08.png">
-<meta property="og:updated_time" content="2020-05-15T15:43:24.481Z">
+<meta property="og:updated_time" content="2020-06-05T12:07:36.798Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="02_系统调用">
-<meta name="twitter:description" content="02.系统调用1. 什么是接口接口是操作系统对底层的分装之后，对上层软件暴露的接口。连接上层用户和底层，屏蔽不必要的细节。 操作系统接口就是系统调用，就是操作系统提供的一些函数。如fork,open,write,read。 POSIX说明了操作系统需要对上层应用提供什么接口，实现什么功能。只要实现的系统符合这个接口，那么在linux上开发的程序也能跑。 操作系统接口连接的不是用户，而是应用软件。用">
-<meta name="twitter:image" content="http://yoursite.com/2020/05/15/02-系统调用/01.png">
+<meta name="twitter:title" content="动态规划提高课05--区间DP">
+<meta name="twitter:description" content="区间DP 环形问题：破链成环，复制区间   环形石子合并原题链接 解题思路最后一步操作肯定是把两堆石子合并，而这两堆肯定是对应原来的环形的两边互不相交的部分。所以相当于枚举环的断点，然后求数组的石子合并问题。这样的时间复杂度为O(n^4) 考虑破链成环。将原数组复制一份。那么在长度为2 * n 的区间上做区间DP，然后枚举所有的长度为n的情况，取最小和最大即可。 时间复杂度O(n^3)  如果石子">
 
 
 
@@ -122,7 +113,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2020/05/15/02-系统调用/">
+  <link rel="canonical" href="http://yoursite.com/2020/06/05/动态规划提高课05-区间DP/">
 
 
 
@@ -132,7 +123,7 @@
   };
 </script>
 
-  <title>02_系统调用 | wangdh'blogs</title>
+  <title>动态规划提高课05--区间DP | wangdh'blogs</title>
   
 
 
@@ -383,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/02-系统调用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/05/动态规划提高课05-区间DP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -400,7 +391,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">02_系统调用
+          <h1 class="post-title" itemprop="name headline">动态规划提高课05--区间DP
 
               
             
@@ -426,7 +417,7 @@
                 
               
 
-              <time title="Created: 2020-05-15 23:40:44 / Modified: 23:43:24" itemprop="dateCreated datePublished" datetime="2020-05-15T23:40:44+08:00">2020-05-15</time>
+              <time title="Created: 2020-06-05 18:58:31 / Modified: 20:07:36" itemprop="dateCreated datePublished" datetime="2020-06-05T18:58:31+08:00">2020-06-05</time>
             </span>
           
 
@@ -445,7 +436,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/操作系统/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
 
                 
                 
@@ -463,8 +454,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/05/15/02-系统调用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/15/02-系统调用/" itemprop="commentCount"></span>
+                <a href="/2020/06/05/动态规划提高课05-区间DP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/05/动态规划提高课05-区间DP/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -503,72 +494,24 @@
       
 
       
-        <h2 id="02-系统调用"><a href="#02-系统调用" class="headerlink" title="02.系统调用"></a>02.系统调用</h2><h3 id="1-什么是接口"><a href="#1-什么是接口" class="headerlink" title="1. 什么是接口"></a>1. 什么是接口</h3><p>接口是操作系统对底层的分装之后，对上层软件暴露的接口。连接上层用户和底层，屏蔽不必要的细节。</p>
-<p>操作系统接口就是系统调用，就是操作系统提供的一些函数。如<code>fork,open,write,read</code>。</p>
-<p><code>POSIX</code>说明了操作系统需要对上层应用提供什么接口，实现什么功能。只要实现的系统符合这个接口，那么在linux上开发的程序也能跑。</p>
-<p>操作系统接口连接的不是用户，而是应用软件。用户交互的是各种应用软件。应用软件通过操作系统提供的接口来申请计算机的资源，所有的资源由操作系统统一进行管理。</p>
-<img src="/2020/05/15/02-系统调用/01.png" alt="image-20200515135301125" style="zoom:50%;">
-
-<p><code>shell</code>也是一段程序。在使用命令行的时候，其实就是在<code>shell</code>程序中输入了一个字符串，然后<code>shell</code>程序解析这个字符串，</p>
-<p>并<code>fork</code>一个新的进程来执行其对应的应用程序。所以使用<code>shell</code>也是用户在和应用软件进行交互。</p>
-<p>图形界面其实也是一个包括画图的C程序，捕捉鼠标的动作，然后对动作进行解析，并执行对应的操作。所以图形界面也是用户和应用软件进行交互。</p>
-<p>操作系统接口是连接操作系统和应用软件的，通过C语言来进行链接。在<code>C</code>语言中，某些重要的库函数内部需要调用操作系统接口</p>
-<p>才能够完成任务，如<code>printf</code>函数，底层其实调用了操作系统提供的函数。这些重要的函数就是操作系统的接口。接口表现为函数调用，由系统提供，所以称为系统调用。</p>
-<img src="/2020/05/15/02-系统调用/02.png" alt="image-20200515140204610" style="zoom:50%;">
-
-<p>下面是POSIX定义的一些系统调用接口：</p>
-<img src="/2020/05/15/02-系统调用/03.png" alt="image-20200515140306951" style="zoom:50%;">
-
-<h3 id="2-系统调用的实现"><a href="#2-系统调用的实现" class="headerlink" title="2. 系统调用的实现"></a>2. 系统调用的实现</h3><p>为什么要系统调用呢？</p>
-<p>因为操作系统管理了一些非常重要的信息，如<code>root</code>的密码，这些东西是不能够让用户直接进行访问的。所以一些核心的功能必须封装起来。同时不同的APP的内存空间也不能随意访问，这就涉及到虚拟内存。</p>
-<p>如何将内核程序和用户程序进行隔离呢？</p>
-<p>区分内核态和用户态。通过处理器的硬件设计，当前运行的指令能够访问的地址进行约束(对跳转指令也一样实现了隔离，不能够随意跳转到内核部分的代码执行。)。如果当前处于用户态的话，其不能够访问内核的数据。处于内核态的则可以访问任何数据。</p>
-<img src="/2020/05/15/02-系统调用/04.png" alt="image-20200515141013963" style="zoom:50%;">
-
-<p>如何确定当前程序执行在什么态呢？<code>CS:IP</code>是当前指令，用<code>CS</code>的最低两位来表示：0是内核态，3是用户态。</p>
-<p><strong>补充：保护模式下的寻址方式</strong></p>
-<p>段寄存器<code>CS</code>中存储的不再是段基址，而是段选择子，通过这个索引在<code>GDT</code>表中查找对应的段描述符，段描述符中长度为<code>64</code>位，其中32为存放的是段基址，剩下的32为存放着段边界权限等信息。下面图是整个流程。如果开启了分页机制的话，那么这个流程最后得到是线性地址，还需要经过页部件才转换成物理地址。</p>
-<img src="/2020/05/15/02-系统调用/05.png" alt="image-20200515142328068" style="zoom:50%;">
-
-<p>硬件如何确保用户态的指令无法访问到内核态的数据呢？</p>
-<p>通过比较当前的特权级和目标特权级之间的大小关系。<code>DPL</code>是目标特权级，存放在<code>GDT</code>表中，<code>CPL</code>表示当前的特权级，存放在<code>CS</code>寄存器中，如果<code>DPL &gt;= CPL</code>则可以访问，否则就是不合法的。</p>
-<p>那么用户程序如何才能够进入内核态呢？</p>
-<p>硬件提供了“主动进入内核的方法”，通过调用中断指令<code>int 0x80</code>,进入内核(只有通过设计的一些中断才能进入内核，不能通过jump, mov等指令)，然后之后的操作流程都有操作系统接管，操作系统通过用户对固定寄存器的赋值情况，进而执行不同的内核代码来进行处理提供服务。</p>
-<p>操作系统调用的核心：</p>
-<ol>
-<li>用户程序中包含一段包含<code>int</code>指令的代码,(有库函数提供)</li>
-<li>操作系统写中断处理，获取想调程序的编号。</li>
-<li>操作系统根据编号执行相应的代码</li>
+        <h2 id="区间DP"><a href="#区间DP" class="headerlink" title="区间DP"></a>区间DP</h2><ol>
+<li>环形问题：破链成环，复制区间</li>
+<li></li>
 </ol>
-<p><strong>注意：</strong></p>
+<h4 id="环形石子合并"><a href="#环形石子合并" class="headerlink" title="环形石子合并"></a>环形石子合并</h4><p><a href="https://www.acwing.com/problem/content/1070/" target="_blank" rel="noopener">原题链接</a></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>最后一步操作肯定是把两堆石子合并，而这两堆肯定是对应原来的环形的两边互不相交的部分。所以相当于枚举环的断点，然后求数组的石子合并问题。这样的时间复杂度为<code>O(n^4)</code></p>
+<p>考虑破链成环。将原数组复制一份。那么在长度为<code>2 * n</code> 的区间上做区间DP，然后枚举所有的长度为<code>n</code>的情况，取最小和最大即可。</p>
+<p>时间复杂度<code>O(n^3)</code></p>
 <ul>
-<li>用户程序能够调<code>int 0x80</code>,表明调用完<code>int 0x80</code>之后的CPL任然是3，下面再进行跳转，CPL就变为0了。(总得开个口给用户来调)</li>
+<li>如果石子可以随便移，那就是哈弗曼编码问题</li>
+<li>如果不是环形，则直接区间DP即可</li>
 </ul>
-<img src="/2020/05/15/02-系统调用/06.png" alt="image-20200515144033661" style="zoom: 67%;">
+<h4 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">210</span>;</span><br><span class="line"><span class="keyword">int</span> q[N * <span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> dp[N * <span class="number">2</span>][N * <span class="number">2</span>], dp2[N * <span class="number">2</span>][N * <span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> s[N * <span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) <span class="built_in">cin</span> &gt;&gt; q[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n + <span class="number">1</span>; i &lt;= <span class="number">2</span> * n; i ++) q[i] = q[i - n];  <span class="comment">// 复制数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span> * n; i ++) s[i] = s[i - <span class="number">1</span>] + q[i];   <span class="comment">// 预处理前缀和</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> step = <span class="number">2</span>; step &lt;= n; step ++)&#123;   <span class="comment">// 枚举区间长度</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i + step - <span class="number">1</span> &lt;= <span class="number">2</span> * n; i ++)&#123;  <span class="comment">// 枚举区间起点</span></span><br><span class="line">            dp[i][i + step - <span class="number">1</span>] = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">            dp2[i][i + step <span class="number">-1</span>] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; i + step - <span class="number">1</span>; j ++)&#123;  <span class="comment">// 枚举断点，更新状态</span></span><br><span class="line">                dp[i][i + step - <span class="number">1</span>] = min(dp[i][i + step - <span class="number">1</span>], dp[i][j] + dp[j + <span class="number">1</span>][i + step - <span class="number">1</span>] + s[i + step - <span class="number">1</span>] - s[i - <span class="number">1</span>]);</span><br><span class="line">                dp2[i][i + step - <span class="number">1</span>] = max(dp2[i][i + step - <span class="number">1</span>], dp2[i][j] + dp2[j + <span class="number">1</span>][i + step - <span class="number">1</span>] + s[i + step - <span class="number">1</span>] - s[i - <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mi = <span class="number">0x3f3f3f3f</span>, ma = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) &#123;  <span class="comment">// 枚举所有长度为n的区间，找到最大和最小即可</span></span><br><span class="line">        mi = min(mi, dp[i][i + n - <span class="number">1</span>]);</span><br><span class="line">        ma = max(ma, dp2[i][i + n - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; mi &lt;&lt; <span class="built_in">endl</span> &lt;&lt; ma &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="能量项链"><a href="#能量项链" class="headerlink" title="能量项链"></a>能量项链</h3><p><a href="https://www.acwing.com/problem/content/322/" target="_blank" rel="noopener">原题链接</a></p>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><p>石子合并的变种，只不过是状态转移发生了变化。求一个状态的时候，枚举最后一步的分界点即可。</p>
+<h4 id="C-代码-1"><a href="#C-代码-1" class="headerlink" title="C++代码"></a>C++代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">110</span>;</span><br><span class="line"><span class="keyword">int</span> q[<span class="number">2</span> * N];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">2</span> * N][<span class="number">2</span> * N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) <span class="built_in">cin</span> &gt;&gt; q[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n + <span class="number">1</span>; i &lt;= <span class="number">2</span> * n; i ++) q[i] = q[i - n];  <span class="comment">// 复制</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> step = <span class="number">3</span>; step &lt;= n + <span class="number">1</span>; step ++)&#123;  <span class="comment">// 枚举区间长度</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i + step - <span class="number">1</span> &lt;= n * <span class="number">2</span>; i ++)&#123;  <span class="comment">// 枚举区间起点</span></span><br><span class="line">            dp[i][i + step - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = i + <span class="number">1</span>; k  &lt;  i + step - <span class="number">1</span>; k ++)&#123;  <span class="comment">// 枚举最后一步合并的分界点</span></span><br><span class="line">                dp[i][i + step - <span class="number">1</span>] = max(dp[i][i + step - <span class="number">1</span>], dp[i][k] + dp[k][i + step - <span class="number">1</span>] + q[i] * q[k] * q[i + step - <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;  <span class="comment">// 找到长度为n + 1的区间的答案的最大值</span></span><br><span class="line">        ans = max(ans, dp[i][i + n]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-<h3 id="3-printf函数运行流程"><a href="#3-printf函数运行流程" class="headerlink" title="3. printf函数运行流程"></a>3. printf函数运行流程</h3><img src="/2020/05/15/02-系统调用/07.png" alt="image-20200515144401306" style="zoom:50%;">
-
-<p>在用户态中，通过系统提供的库函数展成包含<code>int 0x80</code>的代码，然后进入内核态之后，通过传入的系统调用号，找到对应的系统调用函数的入口地址，跳转过去执行，执行完之后按照调用返回结果即可。</p>
-<img src="/2020/05/15/02-系统调用/08.png" alt="image-20200515144846919" style="zoom: 67%;">
-
-<h3 id="4-Linux源码分析"><a href="#4-Linux源码分析" class="headerlink" title="4. Linux源码分析"></a>4. Linux源码分析</h3><p>下面就<code>Linux 0.11</code>的源码部分中关于系统调用部分代码进行追踪分析。以系统提供的<code>close</code>函数为例</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// lib/close.c程序</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __LIBRARY__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在用户空间的接口函数，将本文件include之后，调用close() 函数就转为了调用下面的函数。_syscall1是在unistd.h中定义</span></span><br><span class="line">_syscall1(<span class="keyword">int</span>, close, <span class="keyword">int</span>, fd)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个是在unistd.h中对_syscall1的定义</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _syscall1(type,name,atype,a) \</span></span><br><span class="line">type name(atype a) \</span><br><span class="line">&#123; \</span><br><span class="line"><span class="keyword">long</span> __res; \</span><br><span class="line">__<span class="function">asm__ <span class="title">volatile</span> <span class="params">(<span class="string">"int $0x80"</span> \</span></span></span><br><span class="line"><span class="function"><span class="params">    : <span class="string">"=a"</span> (__res) \</span></span></span><br><span class="line"><span class="function"><span class="params">    : <span class="string">"0"</span> (__NR_##name),<span class="string">"b"</span> ((<span class="keyword">long</span>)(a)))</span></span>; \</span><br><span class="line"><span class="keyword">if</span> (__res &gt;= <span class="number">0</span>) \</span><br><span class="line">    <span class="keyword">return</span> (type) __res; \</span><br><span class="line">errno = -__res; \</span><br><span class="line"><span class="keyword">return</span> <span class="number">-1</span>; \</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以看到其是一个宏，所以上面close.c程序就会被展开成下面的代码</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">close</span><span class="params">(<span class="keyword">int</span> fd)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> __res;</span><br><span class="line">    __<span class="function">asm__ <span class="title">volatile</span> <span class="params">(<span class="string">"int $0x80"</span></span></span></span><br><span class="line"><span class="function"><span class="params">        : <span class="string">"=a"</span> (__res)</span></span></span><br><span class="line"><span class="function"><span class="params">        : <span class="string">"0"</span> (__NR_close),<span class="string">"b"</span> ((<span class="keyword">long</span>)(fd)))</span></span>;</span><br><span class="line">    <span class="keyword">if</span> (__res &gt;= <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) __res;</span><br><span class="line">    errno = -__res;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 这样就定义好了close函数。因为各个最终调用int 0x80的代码其实结构是差不多的，所以可以直接定义好框架，然后使用相当于配置的方法就可以直接生成系统调用函数。</span></span><br><span class="line"><span class="comment">// 参数个数不同，用不同的模板。</span></span><br></pre></td></tr></table></figure>
-
-<p>它先将宏 <code>__NR_close</code> 存入 EAX，将参数 fd 存入 EBX，然后进行 0x80 中断调用。调用返回后，从 EAX 取出返回值，存入 <code>__res</code>，再通过对 <code>__res</code> 的判断决定传给 API 的调用者什么样的返回值。</p>
-<p><code>__NR_close</code>就是系统调用的编号，其在<code>include/unistd.h</code>中被定义。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __NR_close    6</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">所以添加系统调用时需要修改include/unistd.h文件，</span></span><br><span class="line"><span class="comment">使其包含__NR_whoami和__NR_iam。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<p>按照上面的流程就能够通过修改对应的代码，添加自己的系统调用。</p>
-<ul>
-<li>添加自己的系统调用号(还需要修改其他的部分文件，具体见哈工大实验参考书)</li>
-<li>在系统调用中断处理函数中扩大系统调用函数的数量，随后根据<code>call sys_call_table(, %eax, 4)</code>将内核函数加入到内核函数表中</li>
-<li>在用户空间通过类似配置的方式定义好接口函数</li>
-<li>在内核代码中实现对应系统调用的函数</li>
-</ul>
 
       
     </div>
@@ -595,9 +538,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/操作系统/" rel="tag"># 操作系统</a>
-          
-            <a href="/tags/基础知识/" rel="tag"># 基础知识</a>
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
           
         </div>
       
@@ -610,8 +551,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/15/01-操作系统启动/" rel="next" title="01_操作系统启动">
-                <i class="fa fa-chevron-left"></i> 01_操作系统启动
+              <a href="/2020/06/02/动态规划杂题2/" rel="next" title="动态规划杂题2">
+                <i class="fa fa-chevron-left"></i> 动态规划杂题2
               </a>
             
           </div>
@@ -619,10 +560,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/05/15/03-操作系统历史/" rel="prev" title="03_操作系统历史">
-                03_操作系统历史 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -906,7 +843,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#02-系统调用"><span class="nav-number">1.</span> <span class="nav-text">02.系统调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是接口"><span class="nav-number">1.1.</span> <span class="nav-text">1. 什么是接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-系统调用的实现"><span class="nav-number">1.2.</span> <span class="nav-text">2. 系统调用的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-printf函数运行流程"><span class="nav-number">1.3.</span> <span class="nav-text">3. printf函数运行流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Linux源码分析"><span class="nav-number">1.4.</span> <span class="nav-text">4. Linux源码分析</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#区间DP"><span class="nav-number">1.</span> <span class="nav-text">区间DP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#环形石子合并"><span class="nav-number">1.0.1.</span> <span class="nav-text">环形石子合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路"><span class="nav-number">1.0.2.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码"><span class="nav-number">1.0.3.</span> <span class="nav-text">C++代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能量项链"><span class="nav-number">1.1.</span> <span class="nav-text">能量项链</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解题思路-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-代码-1"><span class="nav-number">1.1.2.</span> <span class="nav-text">C++代码</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1458,6 +1395,46 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
