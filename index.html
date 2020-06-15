@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-06-13 02:11:09" itemprop="dateModified" datetime="2020-06-13T02:11:09+08:00">2020-06-13</time>
+                <time title="Modified: 2020-06-16 02:01:51" itemprop="dateModified" datetime="2020-06-16T02:01:51+08:00">2020-06-16</time>
               </span>
             
           
@@ -503,11 +503,12 @@
             <p>
               数位DP技巧：
 
-两个边界问题转为一个边界问题
-转为树的形式
+两个边界问题转为一个边界问题(求[x, y] 范围内的数，转化为求[0, y]和[0, x]范围的问题)
+转为树的形式，从最高位开始分类。小于当前数字的可以直接算出来。等于的话沿着右侧分支向下走。
 
-度的数量原题链接
-解题思路C++代码#include&lt;iostream&gt;#include&lt;vector&gt;using namespace std;const int N = 35;int X, Y, K, B;in
+总结：
+
+在预处理左侧分支的时候一般状态的定义第一维为数的个数，第二维为数，第三维
               ...
             </p>
           <!--noindex-->
