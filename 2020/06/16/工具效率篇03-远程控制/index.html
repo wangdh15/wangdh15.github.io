@@ -102,13 +102,13 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="01. Remote Machine通过ssh链接到远程服务器 12ssh username@foo.bar  # url可以替换为IP地址、默认是22号端口，可以使用-p 指定端口ssh username@foo.bar ls | grep aaa # 远程执行命令，并将输出到本地的shell  SSH KEY详述原文 可以不通过密码的方式，使用秘钥进行登录。 SSH安全的原因：  远程主机收到">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2020/06/16/工具效率篇03-远程控制/wangdh/Files/blogs/source/_posts/工具效率篇03-远程控制/01.png">
-<meta property="og:image" content="http://yoursite.com/2020/06/16/工具效率篇03-远程控制/wangdh/Files/blogs/source/_posts/工具效率篇03-远程控制/03.png">
-<meta property="og:updated_time" content="2020-06-16T16:56:04.744Z">
+<meta property="og:image" content="http://yoursite.com/2020/06/16/工具效率篇03-远程控制/01.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/16/工具效率篇03-远程控制/03.png">
+<meta property="og:updated_time" content="2020-06-16T17:10:22.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工具效率篇03-远程控制">
 <meta name="twitter:description" content="01. Remote Machine通过ssh链接到远程服务器 12ssh username@foo.bar  # url可以替换为IP地址、默认是22号端口，可以使用-p 指定端口ssh username@foo.bar ls | grep aaa # 远程执行命令，并将输出到本地的shell  SSH KEY详述原文 可以不通过密码的方式，使用秘钥进行登录。 SSH安全的原因：  远程主机收到">
-<meta name="twitter:image" content="http://yoursite.com/2020/06/16/工具效率篇03-远程控制/wangdh/Files/blogs/source/_posts/工具效率篇03-远程控制/01.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/16/工具效率篇03-远程控制/01.png">
 
 
 
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-06-17 00:56:04" itemprop="dateModified" datetime="2020-06-17T00:56:04+08:00">2020-06-17</time>
+                <time title="Modified: 2020-06-17 01:10:22" itemprop="dateModified" datetime="2020-06-17T01:10:22+08:00">2020-06-17</time>
               </span>
             
           
@@ -539,9 +539,13 @@
 </ul>
 <h4 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h4><p><a href="http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html" target="_blank" rel="noopener">博客</a></p>
 <p>远程服务器使用防火墙使得某些端口无法访问，可以通知<code>SSH</code>来进行端口转发。</p>
-<h5 id="Local-Port-Forwarding：绑定本地的端口转发"><a href="#Local-Port-Forwarding：绑定本地的端口转发" class="headerlink" title="Local Port Forwarding：绑定本地的端口转发"></a><strong>Local Port Forwarding</strong>：绑定本地的端口转发</h5><img src="/2020/06/16/工具效率篇03-远程控制/wangdh/Files/blogs/source/_posts/工具效率篇03-远程控制/01.png" style="zoom:50%;">
+<h5 id="Local-Port-Forwarding：绑定本地的端口转发"><a href="#Local-Port-Forwarding：绑定本地的端口转发" class="headerlink" title="Local Port Forwarding：绑定本地的端口转发"></a><strong>Local Port Forwarding</strong>：绑定本地的端口转发</h5><img src="/2020/06/16/工具效率篇03-远程控制/01.png" style="zoom:50%;">
 
-<h5 id="Remote-Port-Forwarding：绑定远程的端口转发"><a href="#Remote-Port-Forwarding：绑定远程的端口转发" class="headerlink" title="Remote Port Forwarding：绑定远程的端口转发"></a><strong>Remote Port Forwarding</strong>：绑定远程的端口转发</h5><img src="/2020/06/16/工具效率篇03-远程控制/wangdh/Files/blogs/source/_posts/工具效率篇03-远程控制/03.png" style="zoom:50%;">
+
+
+<h5 id="Remote-Port-Forwarding：绑定远程的端口转发"><a href="#Remote-Port-Forwarding：绑定远程的端口转发" class="headerlink" title="Remote Port Forwarding：绑定远程的端口转发"></a><strong>Remote Port Forwarding</strong>：绑定远程的端口转发</h5><img src="/2020/06/16/工具效率篇03-远程控制/03.png" style="zoom:50%;">
+
+
 
 <p>The most common scenario is local port forwarding, where a service in the remote machine listens in a port and you want to link a port in your local machine to forward to the remote port. For example, if we execute <code>jupyter notebook</code> in the remote server that listens to the port <code>8888</code>. Thus, to forward that to the local port <code>9999</code>, we would do <code>ssh -L 9999:localhost:8888 foobar@remote_server</code> and then navigate to <code>locahost:9999</code> in our local machine.</p>
 <h4 id="ssh配置文件"><a href="#ssh配置文件" class="headerlink" title="ssh配置文件"></a>ssh配置文件</h4><p>本地文件<code>~/.ssh/config</code>， 服务端文件<code>/etc/ssh/sshd_config</code></p>
