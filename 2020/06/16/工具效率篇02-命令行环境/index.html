@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="01. Job Control杀死进程使用UNIX通信机制中的signal来和进程交互信息。进程收到一个signal之后暂停自己的执行，处理信号，从而基于信号传递的信息改变执行流。signal是软中断。 输入Ctrl- C就是shell给运行的进程发送了一个SIGINT的signal。 下面是一个进程收到SIGINT信号并将其忽略的例子。 123456789101112#!/usr/bin/env">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-16T17:04:58.756Z">
+<meta property="og:updated_time" content="2020-06-17T04:49:46.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工具效率篇02--命令行环境">
 <meta name="twitter:description" content="01. Job Control杀死进程使用UNIX通信机制中的signal来和进程交互信息。进程收到一个signal之后暂停自己的执行，处理信号，从而基于信号传递的信息改变执行流。signal是软中断。 输入Ctrl- C就是shell给运行的进程发送了一个SIGINT的signal。 下面是一个进程收到SIGINT信号并将其忽略的例子。 123456789101112#!/usr/bin/env">
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-06-17 01:04:58" itemprop="dateModified" datetime="2020-06-17T01:04:58+08:00">2020-06-17</time>
+                <time title="Modified: 2020-06-17 12:49:46" itemprop="dateModified" datetime="2020-06-17T12:49:46+08:00">2020-06-17</time>
               </span>
             
           
@@ -538,6 +538,7 @@
 
 <h3 id="02-Terminal-Multiplexers"><a href="#02-Terminal-Multiplexers" class="headerlink" title="02. Terminal Multiplexers"></a>02. Terminal Multiplexers</h3><p><a href="https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/" target="_blank" rel="noopener">quick tutorial</a></p>
 <p><a href="https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/" target="_blank" rel="noopener">basic customizations</a></p>
+<p><a href="https://gist.github.com/MohamedAlaa/2961058" target="_blank" rel="noopener">cheatsheet</a></p>
 <p>Tmux概念层级结构</p>
 <ul>
 <li>Sessions<ul>
@@ -557,6 +558,7 @@
 <li><code>tmux ls</code>：lists the currents sessions</li>
 <li>Within <code>tmux</code>, typing <code>&lt;C-b&gt; d</code>detaches the current session</li>
 <li><code>tmux a</code> attaches the last session. You can use <code>-t</code> flag to specify which</li>
+<li><code>tmux rename-session -t origin-name target-name</code>， rename session</li>
 </ul>
 <h4 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h4><blockquote>
 <p>Equivalent to tabs in editors or browsers, they are visually separate parts of the same session</p>
@@ -738,7 +740,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">93</span>
+                    <span class="site-state-item-count">94</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -878,7 +880,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

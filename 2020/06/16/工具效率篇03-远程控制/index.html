@@ -94,20 +94,20 @@
 
 
 
-  <meta name="description" content="01. Remote Machine通过ssh链接到远程服务器 12ssh username@foo.bar  # url可以替换为IP地址、默认是22号端口，可以使用-p 指定端口ssh username@foo.bar ls | grep aaa # 远程执行命令，并将输出到本地的shell  SSH KEY详述原文 可以不通过密码的方式，使用秘钥进行登录。 SSH安全的原因：  远程主机收到">
+  <meta name="description" content="01. Remote Machine如何在virtual box安装虚拟机 通过ssh链接到远程服务器 12ssh username@foo.bar  # url可以替换为IP地址、默认是22号端口，可以使用-p 指定端口ssh username@foo.bar ls | grep aaa # 远程执行命令，并将输出到本地的shell  SSH KEY详述原文 可以不通过密码的方式，使用秘钥进行登">
 <meta name="keywords" content="terminal">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工具效率篇03-远程控制">
 <meta property="og:url" content="http://yoursite.com/2020/06/16/工具效率篇03-远程控制/index.html">
 <meta property="og:site_name" content="wangdh&#39;blogs">
-<meta property="og:description" content="01. Remote Machine通过ssh链接到远程服务器 12ssh username@foo.bar  # url可以替换为IP地址、默认是22号端口，可以使用-p 指定端口ssh username@foo.bar ls | grep aaa # 远程执行命令，并将输出到本地的shell  SSH KEY详述原文 可以不通过密码的方式，使用秘钥进行登录。 SSH安全的原因：  远程主机收到">
+<meta property="og:description" content="01. Remote Machine如何在virtual box安装虚拟机 通过ssh链接到远程服务器 12ssh username@foo.bar  # url可以替换为IP地址、默认是22号端口，可以使用-p 指定端口ssh username@foo.bar ls | grep aaa # 远程执行命令，并将输出到本地的shell  SSH KEY详述原文 可以不通过密码的方式，使用秘钥进行登">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2020/06/16/工具效率篇03-远程控制/01.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/16/工具效率篇03-远程控制/03.png">
-<meta property="og:updated_time" content="2020-06-16T17:10:22.194Z">
+<meta property="og:updated_time" content="2020-06-17T14:56:13.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工具效率篇03-远程控制">
-<meta name="twitter:description" content="01. Remote Machine通过ssh链接到远程服务器 12ssh username@foo.bar  # url可以替换为IP地址、默认是22号端口，可以使用-p 指定端口ssh username@foo.bar ls | grep aaa # 远程执行命令，并将输出到本地的shell  SSH KEY详述原文 可以不通过密码的方式，使用秘钥进行登录。 SSH安全的原因：  远程主机收到">
+<meta name="twitter:description" content="01. Remote Machine如何在virtual box安装虚拟机 通过ssh链接到远程服务器 12ssh username@foo.bar  # url可以替换为IP地址、默认是22号端口，可以使用-p 指定端口ssh username@foo.bar ls | grep aaa # 远程执行命令，并将输出到本地的shell  SSH KEY详述原文 可以不通过密码的方式，使用秘钥进行登">
 <meta name="twitter:image" content="http://yoursite.com/2020/06/16/工具效率篇03-远程控制/01.png">
 
 
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-06-17 01:10:22" itemprop="dateModified" datetime="2020-06-17T01:10:22+08:00">2020-06-17</time>
+                <time title="Modified: 2020-06-17 22:56:13" itemprop="dateModified" datetime="2020-06-17T22:56:13+08:00">2020-06-17</time>
               </span>
             
           
@@ -507,7 +507,8 @@
       
 
       
-        <h3 id="01-Remote-Machine"><a href="#01-Remote-Machine" class="headerlink" title="01. Remote Machine"></a>01. Remote Machine</h3><p>通过<code>ssh</code>链接到远程服务器</p>
+        <h3 id="01-Remote-Machine"><a href="#01-Remote-Machine" class="headerlink" title="01. Remote Machine"></a>01. Remote Machine</h3><p><a href="https://hibbard.eu/install-ubuntu-virtual-box/" target="_blank" rel="noopener">如何在virtual box安装虚拟机</a></p>
+<p>通过<code>ssh</code>链接到远程服务器</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh username@foo.bar  # url可以替换为IP地址、默认是22号端口，可以使用-p 指定端口</span><br><span class="line">ssh username@foo.bar ls | grep aaa # 远程执行命令，并将输出到本地的shell</span><br></pre></td></tr></table></figure>
 
 <h4 id="SSH-KEY"><a href="#SSH-KEY" class="headerlink" title="SSH KEY"></a>SSH KEY</h4><p><a href="https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="noopener">详述原文</a></p>
@@ -531,6 +532,8 @@
 <ol>
 <li>生成秘钥对<code>ssh-keygen</code></li>
 <li>将自己的公钥拷贝到远程主机。<code>ssh-copy-id -i .ssh/id_ed25519.pub foobar@remote</code></li>
+<li>在本地的<code>.ssh/config</code>文件中添加主机的信息，格式见下方。</li>
+<li>通过<code>ssh hostname</code>即可直接登录到远程主机</li>
 </ol>
 <h4 id="通过SSH拷贝文件"><a href="#通过SSH拷贝文件" class="headerlink" title="通过SSH拷贝文件"></a>通过SSH拷贝文件</h4><ul>
 <li><a href="https://www.man7.org/linux/man-pages/man1/scp.1.html" target="_blank" rel="noopener"><code>scp</code></a> when copying large amounts of files/directories, the secure copy <code>scp</code> command is more convenient since it can easily recurse over paths. The syntax is <code>scp path/to/local_file remote_host:path/to/remote_file</code></li>
@@ -548,8 +551,8 @@
 
 
 <p>The most common scenario is local port forwarding, where a service in the remote machine listens in a port and you want to link a port in your local machine to forward to the remote port. For example, if we execute <code>jupyter notebook</code> in the remote server that listens to the port <code>8888</code>. Thus, to forward that to the local port <code>9999</code>, we would do <code>ssh -L 9999:localhost:8888 foobar@remote_server</code> and then navigate to <code>locahost:9999</code> in our local machine.</p>
-<h4 id="ssh配置文件"><a href="#ssh配置文件" class="headerlink" title="ssh配置文件"></a>ssh配置文件</h4><p>本地文件<code>~/.ssh/config</code>， 服务端文件<code>/etc/ssh/sshd_config</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Host vm</span><br><span class="line">    User foobar</span><br><span class="line">    HostName 172.16.174.141</span><br><span class="line">    Port 2222</span><br><span class="line">    IdentityFile ~/.ssh/id_ed25519</span><br><span class="line">    LocalForward 9999 localhost:8888</span><br><span class="line"></span><br><span class="line"># Configs can also take wildcards</span><br><span class="line">Host *.mit.edu</span><br><span class="line">    User foobaz</span><br></pre></td></tr></table></figure>
+<h4 id="ssh配置文件"><a href="#ssh配置文件" class="headerlink" title="ssh配置文件"></a>ssh配置文件</h4><p>本地文件<code>~/.ssh/config</code>， 服务端文件<code>/etc/ssh/sshd_config</code>(配置是否允许root用户登录、是否允许使用密码登录等)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Host vm</span><br><span class="line">    User foobar</span><br><span class="line">    HostName 172.16.174.141</span><br><span class="line">    Port 2222</span><br><span class="line">    IdentityFile ~/.ssh/id_ed25519</span><br><span class="line">    LocalForward 9999 localhost:8888  # 自动端口转发</span><br><span class="line"></span><br><span class="line"># Configs can also take wildcards</span><br><span class="line">Host *.mit.edu</span><br><span class="line">    User foobaz</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><a href="https://mosh.org/" target="_blank" rel="noopener">Mosh</a>, the mobile shell, improves upon ssh, allowing roaming connections, intermittent connectivity and providing intelligent local echo.</li>
@@ -557,6 +560,7 @@
 </ul>
 <h4 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/env bash</span></span><br><span class="line">kill -0 "$1"</span><br><span class="line">sta=$?</span><br><span class="line">while [[ $sta -eq 0 ]]; do</span><br><span class="line">    sleep 1</span><br><span class="line">    kill -0 "$1" &gt; /dev/null 2&gt;&amp;1</span><br><span class="line">    sta=$?</span><br><span class="line">done</span><br><span class="line">echo "Over"</span><br><span class="line"><span class="meta">#</span><span class="bash"> 不同shell之间的<span class="built_in">wait</span></span></span><br></pre></td></tr></table></figure>
 
+<h4 id="BackGround-port-forwarding"><a href="#BackGround-port-forwarding" class="headerlink" title="BackGround port forwarding"></a>BackGround port forwarding</h4><p><code>ssh -fNT -L 8888:localhost:8888 user@hostname</code></p>
 
       
     </div>
@@ -605,6 +609,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/17/工具效率篇04-Git/" rel="prev" title="工具效率篇04-Git">
+                工具效率篇04-Git <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -677,7 +685,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">93</span>
+                    <span class="site-state-item-count">94</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -817,7 +825,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -892,7 +902,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#01-Remote-Machine"><span class="nav-number">1.</span> <span class="nav-text">01. Remote Machine</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH-KEY"><span class="nav-number">1.1.</span> <span class="nav-text">SSH KEY</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过SSH拷贝文件"><span class="nav-number">1.2.</span> <span class="nav-text">通过SSH拷贝文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#端口转发"><span class="nav-number">1.3.</span> <span class="nav-text">端口转发</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Local-Port-Forwarding：绑定本地的端口转发"><span class="nav-number">1.3.1.</span> <span class="nav-text">Local Port Forwarding：绑定本地的端口转发</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Remote-Port-Forwarding：绑定远程的端口转发"><span class="nav-number">1.3.2.</span> <span class="nav-text">Remote Port Forwarding：绑定远程的端口转发</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ssh配置文件"><span class="nav-number">1.4.</span> <span class="nav-text">ssh配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Exercises"><span class="nav-number">1.5.</span> <span class="nav-text">Exercises</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#01-Remote-Machine"><span class="nav-number">1.</span> <span class="nav-text">01. Remote Machine</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH-KEY"><span class="nav-number">1.1.</span> <span class="nav-text">SSH KEY</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过SSH拷贝文件"><span class="nav-number">1.2.</span> <span class="nav-text">通过SSH拷贝文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#端口转发"><span class="nav-number">1.3.</span> <span class="nav-text">端口转发</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Local-Port-Forwarding：绑定本地的端口转发"><span class="nav-number">1.3.1.</span> <span class="nav-text">Local Port Forwarding：绑定本地的端口转发</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Remote-Port-Forwarding：绑定远程的端口转发"><span class="nav-number">1.3.2.</span> <span class="nav-text">Remote Port Forwarding：绑定远程的端口转发</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ssh配置文件"><span class="nav-number">1.4.</span> <span class="nav-text">ssh配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Exercises"><span class="nav-number">1.5.</span> <span class="nav-text">Exercises</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BackGround-port-forwarding"><span class="nav-number">1.6.</span> <span class="nav-text">BackGround port forwarding</span></a></li></ol></li></ol></div>
             
 
           </div>

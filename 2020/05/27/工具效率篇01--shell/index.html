@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="内容来自MIT-6-NULL 01. Shell基础1234567891011121314151617181920212223242526272829303132333435363738echo &quot;Message&quot;  # 输出Message， 当Message中不存在空格时，可以去除双引号，或者使用\转义echo Hello\ World  ==  echo &quot;Hello Word&quot;echo $P">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-16T10:29:20.606Z">
+<meta property="og:updated_time" content="2020-06-17T06:54:40.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工具效率篇">
 <meta name="twitter:description" content="内容来自MIT-6-NULL 01. Shell基础1234567891011121314151617181920212223242526272829303132333435363738echo &quot;Message&quot;  # 输出Message， 当Message中不存在空格时，可以去除双引号，或者使用\转义echo Hello\ World  ==  echo &quot;Hello Word&quot;echo $P">
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-06-16 18:29:20" itemprop="dateModified" datetime="2020-06-16T18:29:20+08:00">2020-06-16</time>
+                <time title="Modified: 2020-06-17 14:54:40" itemprop="dateModified" datetime="2020-06-17T14:54:40+08:00">2020-06-17</time>
               </span>
             
           
@@ -513,7 +513,7 @@
 
 <p>命令通常会通过<code>STDOUT</code>返回输出，通过<code>STDERR</code>返回error。返回值为<code>0</code>表示一切正常，其他返回值都表示某些error发生。</p>
 <p>命令的返回值可以用来作为条件语句。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在逻辑运算的时候是一样的逻辑</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 下面是一些逻辑运算短路的特性</span></span><br><span class="line">false || echo "Oops, fail"</span><br><span class="line"><span class="meta">#</span><span class="bash"> Oops, fail</span></span><br><span class="line"></span><br><span class="line">true || echo "Will not be printed"</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"></span><br><span class="line">true &amp;&amp; echo "Things went well"</span><br><span class="line"><span class="meta">#</span><span class="bash"> Things went well</span></span><br><span class="line"></span><br><span class="line">false &amp;&amp; echo "Will not be printed"</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"></span><br><span class="line">false ; echo "This will always run"</span><br><span class="line"><span class="meta">#</span><span class="bash"> This will always run</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在逻辑运算的时候是一样的逻辑</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 下面是一些逻辑运算短路的特性</span></span><br><span class="line">false || echo "Oops, fail"</span><br><span class="line"><span class="meta">#</span><span class="bash"> Oops, fail</span></span><br><span class="line"></span><br><span class="line">true || echo "Will not be printed"</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"></span><br><span class="line">true &amp;&amp; echo "Things went well"</span><br><span class="line"><span class="meta">#</span><span class="bash"> Things went well</span></span><br><span class="line"></span><br><span class="line">false &amp;&amp; echo "Will not be printed"</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"></span><br><span class="line">false ; echo "This will always run"</span><br><span class="line"><span class="meta">#</span><span class="bash"> This will always run</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 不能通过命令的返回值判断</span></span></span><br><span class="line">command1  &amp;&amp; command2  &amp;&amp; command3  ## commond1 成功后才会执行command2 ， command3</span><br><span class="line">command1 || command2  || command3   ## command1 失败后才会执行command2</span><br></pre></td></tr></table></figure>
 
 <h4 id="Shell脚本实例"><a href="#Shell脚本实例" class="headerlink" title="Shell脚本实例"></a>Shell脚本实例</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1 </span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/env bash</span></span><br><span class="line"></span><br><span class="line">echo "Starting program at $(date)" # Date will be substituted</span><br><span class="line"></span><br><span class="line">echo "Running program $0 with $# arguments with pid $$"</span><br><span class="line"></span><br><span class="line">for file in "$@"; do</span><br><span class="line">    grep foobar "$file" &gt; /dev/null 2&gt; /dev/null</span><br><span class="line">    # When pattern is not found, grep has exit status 1</span><br><span class="line">    # We redirect STDOUT and STDERR to a null register since we do not care about them</span><br><span class="line">    if [[ $? -ne 0 ]]; then</span><br><span class="line">        echo "File $file does not have any foobar, adding one"</span><br><span class="line">        echo "# foobar" &gt;&gt; "$file"</span><br><span class="line">    fi</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2</span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/env bash</span></span><br><span class="line">a=0</span><br><span class="line">res=-1</span><br><span class="line">let a+=1</span><br><span class="line"><span class="meta">$</span><span class="bash">(./aaa.sh &gt;&gt; ok.txt 2&gt; err.txt)</span></span><br><span class="line">while [[ $? -eq 0 ]]; dos</span><br><span class="line">    let a+=1</span><br><span class="line">    $(./aaa.sh &gt;&gt; ok.txt 2&gt; err.txt)</span><br><span class="line">done</span><br><span class="line">echo $as</span><br></pre></td></tr></table></figure>
 
@@ -667,7 +667,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">93</span>
+                    <span class="site-state-item-count">94</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -807,7 +807,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
