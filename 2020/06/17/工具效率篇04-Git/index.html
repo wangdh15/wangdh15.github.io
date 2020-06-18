@@ -103,7 +103,7 @@
 <meta property="og:description" content="Git数据模型在git中，一个文件为一个bolb，就是一些bytes。一个目录称为一个tree，将names映射为blobs or trees。 一个snapshot是并tracked的top-level tree。如下是一个示例。top-level tree包含两个元素，一个treefoo(foo包含一个元素，a blob “bar.txt”),和一个blobbaz.txt 1234567&amp;lt">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2020/06/17/工具效率篇04-Git/01.png">
-<meta property="og:updated_time" content="2020-06-17T17:04:54.610Z">
+<meta property="og:updated_time" content="2020-06-18T16:12:38.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工具效率篇04-Git">
 <meta name="twitter:description" content="Git数据模型在git中，一个文件为一个bolb，就是一些bytes。一个目录称为一个tree，将names映射为blobs or trees。 一个snapshot是并tracked的top-level tree。如下是一个示例。top-level tree包含两个元素，一个treefoo(foo包含一个元素，a blob “bar.txt”),和一个blobbaz.txt 1234567&amp;lt">
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-06-18 01:04:54" itemprop="dateModified" datetime="2020-06-18T01:04:54+08:00">2020-06-18</time>
+                <time title="Modified: 2020-06-19 00:12:38" itemprop="dateModified" datetime="2020-06-19T00:12:38+08:00">2020-06-19</time>
               </span>
             
           
@@ -560,6 +560,9 @@
 </ul>
 </li>
 <li><p><code>git log</code>: shows a flattened log of history</p>
+<ul>
+<li><code>git log &lt;filename&gt;</code>：show the history of a file</li>
+</ul>
 </li>
 <li><p><code>git log --all --graph --decorate</code>: visualizes history as a DAG</p>
 </li>
@@ -606,6 +609,12 @@
 <li><code>git stash</code>: temporarily remove modifications to working directory</li>
 <li><code>git bisect</code>: binary search history (e.g. for regressions)</li>
 <li><code>.gitignore</code>: <a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener">specify</a> intentionally untracked files to ignore</li>
+</ul>
+<h4 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h4><ul>
+<li><a href="https://blog.csdn.net/zhangphil/article/details/81067239" target="_blank" rel="noopener">追踪某些代码的历史</a></li>
+<li><a href="https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository" target="_blank" rel="noopener">将一个文件从所有的commit中删除</a>（会修改commit的hash值)</li>
+<li><a href="https://blog.csdn.net/daguanjia11/article/details/73810577" target="_blank" rel="noopener">暂存当前分支的修改，切换到另一个分支</a></li>
+<li><a href="https://blog.csdn.net/vim_wj/article/details/78300239" target="_blank" rel="noopener">如何向开源项目pr</a></li>
 </ul>
 
       
@@ -944,7 +953,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git数据模型"><span class="nav-number">1.</span> <span class="nav-text">Git数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Staging-area"><span class="nav-number">2.</span> <span class="nav-text">Staging area</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-常用命令"><span class="nav-number">3.</span> <span class="nav-text">Git 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic"><span class="nav-number">3.1.</span> <span class="nav-text">Basic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Branching-ans-merging"><span class="nav-number">3.2.</span> <span class="nav-text">Branching ans merging</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remotes"><span class="nav-number">3.3.</span> <span class="nav-text">Remotes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Undo"><span class="nav-number">3.4.</span> <span class="nav-text">Undo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Advanced-Git"><span class="nav-number">3.5.</span> <span class="nav-text">Advanced Git</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git数据模型"><span class="nav-number">1.</span> <span class="nav-text">Git数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Staging-area"><span class="nav-number">2.</span> <span class="nav-text">Staging area</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-常用命令"><span class="nav-number">3.</span> <span class="nav-text">Git 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic"><span class="nav-number">3.1.</span> <span class="nav-text">Basic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Branching-ans-merging"><span class="nav-number">3.2.</span> <span class="nav-text">Branching ans merging</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remotes"><span class="nav-number">3.3.</span> <span class="nav-text">Remotes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Undo"><span class="nav-number">3.4.</span> <span class="nav-text">Undo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Advanced-Git"><span class="nav-number">3.5.</span> <span class="nav-text">Advanced Git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Exercises"><span class="nav-number">3.6.</span> <span class="nav-text">Exercises</span></a></li></ol></li></ol></div>
             
 
           </div>
