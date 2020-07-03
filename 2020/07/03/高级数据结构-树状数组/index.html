@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="树状数组如果要求前缀和的话，有以下两个方法：  直接将所有的数据存下来，那么求前缀和的话，是O(n)时间，修改某个元素的话是O(1)时间 将所有的前缀和计算好，那么求前缀和的话，是O(1)的时间，修改某个元素的话，需要将其后面的前缀和都修改，为O(n)时间。  上述两个方式总有种鱼与熊掌不可兼得的感觉。有没有一种折中的方法，较高效地支持元素修改操作与前缀和查询操作呢。 这就是树状数组！树状数组能够">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-07-03T15:41:21.391Z">
+<meta property="og:updated_time" content="2020-07-03T16:32:40.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高级数据结构-树状数组">
 <meta name="twitter:description" content="树状数组如果要求前缀和的话，有以下两个方法：  直接将所有的数据存下来，那么求前缀和的话，是O(n)时间，修改某个元素的话是O(1)时间 将所有的前缀和计算好，那么求前缀和的话，是O(1)的时间，修改某个元素的话，需要将其后面的前缀和都修改，为O(n)时间。  上述两个方式总有种鱼与熊掌不可兼得的感觉。有没有一种折中的方法，较高效地支持元素修改操作与前缀和查询操作呢。 这就是树状数组！树状数组能够">
@@ -417,13 +417,23 @@
                 
               
 
-              <time title="Created: 2020-07-03 15:45:54 / Modified: 23:41:21" itemprop="dateCreated datePublished" datetime="2020-07-03T15:45:54+08:00">2020-07-03</time>
+              <time title="Created: 2020-07-03 15:45:54" itemprop="dateCreated datePublished" datetime="2020-07-03T15:45:54+08:00">2020-07-03</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-07-04 00:32:40" itemprop="dateModified" datetime="2020-07-04T00:32:40+08:00">2020-07-04</time>
+              </span>
             
           
 
@@ -1465,6 +1475,46 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
