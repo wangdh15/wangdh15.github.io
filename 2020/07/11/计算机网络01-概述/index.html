@@ -105,9 +105,9 @@
 <meta property="og:image" content="http://yoursite.com/2020/07/11/计算机网络01-概述/01.png">
 <meta property="og:image" content="http://yoursite.com/2020/07/11/计算机网络01-概述/02.png">
 <meta property="og:image" content="http://yoursite.com/2020/07/11/计算机网络01-概述/03.png">
-<meta property="og:image" content="http://yoursite.com/2020/07/11/计算机网络01-概述/wangdh/Files/blogs/source/_posts/计算机网络01-概述/04.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/11/计算机网络01-概述/04.png">
 <meta property="og:image" content="http://yoursite.com/2020/07/11/计算机网络01-概述/05.png">
-<meta property="og:updated_time" content="2020-07-11T09:03:51.537Z">
+<meta property="og:updated_time" content="2020-07-11T09:06:35.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络01-概述">
 <meta name="twitter:description" content="1. 分组交换 从源端系统向目的端系统发送一个报文，源将长报文划分为较小的数据块，称之为分组。在源和目的地之间，每个分组都通过通信链路和分组交换机传送(交换机主要有两类：路由器和链路层交换机。一个工作在网络层，一个工作在数据链路层)。分组以等于该链路的最大传输速率的速度传输通过该通信链路。   存储转发传输。路由器在转发前需要接收、存储和处理整个分组。如下图所示。     排队时延与分组丢失。每台">
@@ -423,7 +423,7 @@
                 
               
 
-              <time title="Created: 2020-07-11 16:01:40 / Modified: 17:03:51" itemprop="dateCreated datePublished" datetime="2020-07-11T16:01:40+08:00">2020-07-11</time>
+              <time title="Created: 2020-07-11 16:01:40 / Modified: 17:06:35" itemprop="dateCreated datePublished" datetime="2020-07-11T16:01:40+08:00">2020-07-11</time>
             </span>
           
 
@@ -545,7 +545,7 @@
 <li>数据链路层：网络层必须依赖链路层的服务，在每个节点，网络层将数据报下传给链路层，链路层沿着路径将数据报传递给下一个节点。在该下一个节点，链路层将数据报上传给网络层。</li>
 <li>物理层：将帧中的一个个比特从一个节点移动到下一个节点。</li>
 </ul>
-<img src="/2020/07/11/计算机网络01-概述/wangdh/Files/blogs/source/_posts/计算机网络01-概述/04.png" alt="image-20200711165015573" style="zoom:67%;">
+<img src="/2020/07/11/计算机网络01-概述/04.png" alt="image-20200711165015573" style="zoom:67%;">
 
 <p>ISO OIS七层参考模型中，现有的缺少了表示层和会话层。如果程序开发者觉得这两层服务是否重要，如果重要，则开发者自己在应用程序中构建该功能。</p>
 <h4 id="2-1-封装"><a href="#2-1-封装" class="headerlink" title="2.1 封装"></a>2.1 封装</h4><p>下图是一个报文通过各个设备从源到目标的过程。</p>
@@ -1477,6 +1477,46 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
