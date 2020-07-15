@@ -113,7 +113,13 @@
 <meta property="og:image" content="http://yoursite.com/2020/07/13/计算机网络04-可靠数据传输原理/09.png">
 <meta property="og:image" content="http://yoursite.com/2020/07/13/计算机网络04-可靠数据传输原理/10.png">
 <meta property="og:image" content="http://yoursite.com/2020/07/13/计算机网络04-可靠数据传输原理/11.png">
-<meta property="og:updated_time" content="2020-07-13T14:56:03.430Z">
+<meta property="og:image" content="http://yoursite.com/2020/07/13/计算机网络04-可靠数据传输原理/12.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/13/计算机网络04-可靠数据传输原理/13.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/13/计算机网络04-可靠数据传输原理/14.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/13/计算机网络04-可靠数据传输原理/15.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/13/计算机网络04-可靠数据传输原理/16.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/13/计算机网络04-可靠数据传输原理/17.png">
+<meta property="og:updated_time" content="2020-07-15T07:31:32.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络04-可靠数据传输原理">
 <meta name="twitter:description" content="1. 可靠数据传输原理可靠数据传输为上层提供的服务抽象是：数据可以通过一条可靠的信道进行传输。借助可靠信道，传输数据比特就不会受到损坏或丢失，而且所有数据都是按照其发送顺序进行交付。这就是TCP向调用它的因特网应用所提供的服务模型。   可靠数据传输的下层协议也许是不可靠的，TCP就是在不可靠的端到端网络层之上实现的可靠数据传输协议。如下一步步构造真实的可靠数据传输协议。 1.1 可靠信道的可靠数">
@@ -429,13 +435,23 @@
                 
               
 
-              <time title="Created: 2020-07-13 21:08:41 / Modified: 22:56:03" itemprop="dateCreated datePublished" datetime="2020-07-13T21:08:41+08:00">2020-07-13</time>
+              <time title="Created: 2020-07-13 21:08:41" itemprop="dateCreated datePublished" datetime="2020-07-13T21:08:41+08:00">2020-07-13</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-07-15 15:31:32" itemprop="dateModified" datetime="2020-07-15T15:31:32+08:00">2020-07-15</time>
+              </span>
             
           
 
@@ -612,6 +628,92 @@
 </ol>
 </li>
 </ol>
+<h4 id="2-1-回退N步-GBN"><a href="#2-1-回退N步-GBN" class="headerlink" title="2.1 回退N步(GBN)"></a>2.1 回退N步(GBN)</h4><p>允许发送方发送多个分组而不需等待确认，但是在流水线中未确认的分组数不能超过某个最大允许数<code>N</code>。如下图所示，<strong>基序号</strong>定义为最早未确认分组的序号，<strong>下一个序号</strong>定义为最小的未使用需要(下一个待发送分组的序号)。则序号范围可以分为四段：</p>
+<ol>
+<li><code>[0, base - 1]</code>对应已经发送并被确认的分组</li>
+<li><code>[base, nextseqnum - 1]</code>段内对应已经发送但未被确认的分组</li>
+<li><code>[nextseqnum, base + N - 1]</code>用于那些要被立即发送的分组</li>
+<li><code>[base + N, ...]</code>不能使用，直到当前流水线中未被确认的分组已得到确认为止</li>
+</ol>
+<img src="/2020/07/13/计算机网络04-可靠数据传输原理/12.png" alt="image-20200715100653290" style="zoom: 67%;">
+
+<p>随着协议的运行，窗口在序号空间向前滑动，<code>N</code>被称为窗口长度，GBN协议以被称为<strong>滑动窗口协议</strong>。这里控制窗口大小是为了后面的流量控制和拥塞控制。</p>
+<p>在TCP中，序号字段占32比特，按字节流中的字节进行计数，不是按照分组计数。</p>
+<p>下图是新的状态机：</p>
+<img src="/2020/07/13/计算机网络04-可靠数据传输原理/13.png" alt="image-20200715101748998" style="zoom: 25%;">
+
+<img src="/2020/07/13/计算机网络04-可靠数据传输原理/14.png" alt="image-20200715101826698" style="zoom:25%;">
+
+<p>发送方响应三种类型事件：</p>
+<ol>
+<li>上层调用。检查发送窗口是不是已经满了，没满的话就产生一个分组并发送，更新变量。满了的话向上层指示。</li>
+<li>收到一个<code>ACK</code>。对序号为n的分组的确认采取累积确认的方式，表示接收方已正确接收到序号为n的以前且包括n在内的所有分组。</li>
+<li>超时事件。“回退N步”来源于出现丢失和时延过长分组时发送方的行为。如果出现超时，发送方重传所有已发送但还没有被确认过的分组。如果收到一个ACK，但仍有已发送但未被确认的分组，则定时器被重新启动。如果没有已发送但未被确认的分组，则停止定时器。</li>
+</ol>
+<p>接收方较为简单，一个序号为n的分组被正确收到，且按序，则为分组n发送一个<code>ACK</code>。其他所有的情况下，重新为最近按序接受的分组发送ACK。</p>
+<p>接受方丢弃所有失序分组，因为接受方按序将数据交付给上层，如果分组<code>n</code>丢失，则该分组和分组<code>n+1</code>最终会被发送方重传，所以接收方只需要丢弃分组<code>n+1</code>即可。这种方法接收方处理方式简单，但是缺点是丢弃了一个正确接收的分组，但是对这个分组的重传也许会丢失会出错，因此可能需要更多的重传。</p>
+<p>下图是该协议运行的一个时序图：</p>
+<img src="/2020/07/13/计算机网络04-可靠数据传输原理/15.png" alt="image-20200715104356375" style="zoom: 50%;">
+
+<p>上述的状态机响应了各种可能出现的事件时需要采取的动作。<strong>基于事件编程</strong>，这些过程要么被协议栈中的其他过程调用，要么作为一次中断的结果。发送方需要处理的事件有：</p>
+<ol>
+<li>来自上层实体的调用</li>
+<li>定时器中断</li>
+<li>报文到达时，来自下层的调用</li>
+</ol>
+<h3 id="2-2-选择重传"><a href="#2-2-选择重传" class="headerlink" title="2.2 选择重传"></a>2.2 选择重传</h3><p>在回退N步的的算法中，单个分组的差错就会引起重传大量分组，但是很多分组其实没有必要重传。</p>
+<p>选择重传协议通过让发送方仅重传那些它怀疑在接收方出错的分组而避免不必要的重传。SR接收方将确认一个正确接收的分组而不管其是否按序。失序的分组将被缓存直到所有丢失的分组皆被收到为止。</p>
+<img src="/2020/07/13/计算机网络04-可靠数据传输原理/16.png" alt="image-20200715110302069" style="zoom: 33%;">
+
+<p>发送方的时间和动作：</p>
+<ol>
+<li>从上层收到数据。和GBN一样，查看发送窗口是否还有空余</li>
+<li>超时。定时器用来防止丢失分组。不过现在每个分组都有自己的定时器。超时后只发送一个分组</li>
+<li>收到ACK。收到ACK，若分组序号位于窗口内，则SR发送方标记被确认的分组为已接收。如果序号等于<code>send_base</code>,则窗口基序号向前移动到具有最小序号的未被确认处。如果窗口移动了然后有序号落在窗口内的未发送分组，则发送这些分组。</li>
+</ol>
+<p>接收方动作：</p>
+<ol>
+<li>需要在<code>[rcv_base, rcv_base + N - 1]</code>内的分组被正确接收，则一个选择ACK发送回给发送方。如果该分组的序号等于接收窗口的基序号<code>rcv_base</code>，则将缓存的连续的分组交付给上层。</li>
+<li>序号在<code>[rcv_base - N, rcv_base - 1]</code>内的分组被正确收到，则必须产生一个<code>ACK</code>。</li>
+<li>其他情况，忽略该分组。</li>
+</ol>
+<p>上述的第二种情况的范围选择的原因是，最坏的情况是，发送方发送了<code>N</code>个报文，然后第一个接收方的<code>ACK</code>丢失了，这个时候，接收方最多会向后移动<code>N</code>步，所以接收方当前处于<code>rcv_base</code>的位置使，最坏的情况下，发送方的<code>send_base</code>位于<code>rcv_base - N</code>的位置，所以只需要对向前<code>N</code>个窗口内的报文发送<code>ACK</code>即可。再往前的发送方窗口肯定划过去了，就不用发送了。接受方接受到的原因可能是这个包延时过高，最后发送方重发接收方正确接手之后，第一个发的包才到。<strong>分析的时候将信道看做一个延时可以无限大，包可能在任何时候到达接受方的模型。</strong></p>
+<p>下面是一个SR协议的时序图。</p>
+<img src="/2020/07/13/计算机网络04-可靠数据传输原理/17.png" alt="image-20200715151836743" style="zoom:33%;">
+
+<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h3><p>可靠数据传输机制及其用途总结：</p>
+<table>
+<thead>
+<tr>
+<th align="center">机制</th>
+<th align="center">用途和说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">校验和</td>
+<td align="center">检测在传出分组中的比特错误</td>
+</tr>
+<tr>
+<td align="center">定时器</td>
+<td align="center">用于超时/重传一个分组。接收方可能会收到一个分组的多个冗余副本</td>
+</tr>
+<tr>
+<td align="center">序号</td>
+<td align="center">从发送方流向接受方的数据分组按顺序编号。接受分组的序号间的空隙可使接收方检测出丢失的分组<br>。具有相同序号的分组也可使接收方检测出一个分组的冗余副本。</td>
+</tr>
+<tr>
+<td align="center">确认</td>
+<td align="center">接收方用于告诉发送方一个分组或一组分组已被正确地接收到了。确认可以是逐个的或累积的，这取决于协议</td>
+</tr>
+<tr>
+<td align="center">否定确认</td>
+<td align="center">接收方用于告诉发送方某个分组未被正确接收。</td>
+</tr>
+<tr>
+<td align="center">窗口、流水线</td>
+<td align="center">发送方被限制仅发送那些序号落在一个指定范围内的分组。窗口长度课根据接收方接收和缓存报文的能力、网络中的拥塞程度或两者情况来进行设置。</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -981,7 +1083,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-可靠数据传输原理"><span class="nav-number">1.</span> <span class="nav-text">1. 可靠数据传输原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-可靠信道的可靠数据传输"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 可靠信道的可靠数据传输</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-有比特差错信息的可靠信道"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 有比特差错信息的可靠信道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-具有比特差错的丢包信道的可靠数据传输"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 具有比特差错的丢包信道的可靠数据传输</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-流水线可靠数据传输协议"><span class="nav-number">2.</span> <span class="nav-text">2. 流水线可靠数据传输协议</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-可靠数据传输原理"><span class="nav-number">1.</span> <span class="nav-text">1. 可靠数据传输原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-可靠信道的可靠数据传输"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 可靠信道的可靠数据传输</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-有比特差错信息的可靠信道"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 有比特差错信息的可靠信道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-具有比特差错的丢包信道的可靠数据传输"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 具有比特差错的丢包信道的可靠数据传输</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-流水线可靠数据传输协议"><span class="nav-number">2.</span> <span class="nav-text">2. 流水线可靠数据传输协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-回退N步-GBN"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 回退N步(GBN)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-选择重传"><span class="nav-number">3.</span> <span class="nav-text">2.2 选择重传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-总结"><span class="nav-number">4.</span> <span class="nav-text">3. 总结</span></a></li></ol></div>
             
 
           </div>
