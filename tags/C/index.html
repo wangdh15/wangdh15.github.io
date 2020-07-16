@@ -398,6 +398,32 @@
 
       <h2 class="post-title">
         
+          <a class="post-title-link" href="/2020/07/16/CMake初探/" itemprop="url">
+            
+              <span itemprop="name">CMake初探</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-07-16T22:56:11+08:00" content="2020-07-16">
+          07-16
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
           <a class="post-title-link" href="/2020/03/26/高精度/" itemprop="url">
             
               <span itemprop="name">高精度</span>
@@ -517,7 +543,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">109</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1320,24 +1346,7 @@
 
 </body>
 </html>
-      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
+     result += text.substring(prevEnd, hit.position);
                       var end = hit.position + hit.length;
                       result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
                       prevEnd = end;
