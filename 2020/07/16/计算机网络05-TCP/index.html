@@ -94,18 +94,22 @@
 
 
 
-  <meta name="description" content="Nothing">
-<meta name="keywords" content="EE">
+  <meta name="description" content="1. TCPTCP连接提供的是全双工、点对点的服务。 TCP建立连接是三次握手的过程，建立连接之后，客户进程通过套接字传递数据流，然后由TCP控制。TCP将数据引导到该连接的发送缓存(三次握手期间设置的缓存之一)中，然后TCP从缓存中取出一块数据，将其传递到网络层。TCP可以从缓存中取出并放入报文段中的数据数量受限于最大报文长度(MSS)，其通常有本地发送主机发送的最大链路层帧长度(最大传输单元M">
+<meta name="keywords" content="基础知识,计算机网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络05-TCP">
 <meta property="og:url" content="http://yoursite.com/2020/07/16/计算机网络05-TCP/index.html">
 <meta property="og:site_name" content="wangdh&#39;blogs">
-<meta property="og:description" content="Nothing">
+<meta property="og:description" content="1. TCPTCP连接提供的是全双工、点对点的服务。 TCP建立连接是三次握手的过程，建立连接之后，客户进程通过套接字传递数据流，然后由TCP控制。TCP将数据引导到该连接的发送缓存(三次握手期间设置的缓存之一)中，然后TCP从缓存中取出一块数据，将其传递到网络层。TCP可以从缓存中取出并放入报文段中的数据数量受限于最大报文长度(MSS)，其通常有本地发送主机发送的最大链路层帧长度(最大传输单元M">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-07-16T02:07:21.472Z">
+<meta property="og:image" content="http://yoursite.com/2020/07/16/计算机网络05-TCP/01.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/16/计算机网络05-TCP/02.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/16/计算机网络05-TCP/03.png">
+<meta property="og:updated_time" content="2020-07-17T16:49:45.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络05-TCP">
-<meta name="twitter:description" content="Nothing">
+<meta name="twitter:description" content="1. TCPTCP连接提供的是全双工、点对点的服务。 TCP建立连接是三次握手的过程，建立连接之后，客户进程通过套接字传递数据流，然后由TCP控制。TCP将数据引导到该连接的发送缓存(三次握手期间设置的缓存之一)中，然后TCP从缓存中取出一块数据，将其传递到网络层。TCP可以从缓存中取出并放入报文段中的数据数量受限于最大报文长度(MSS)，其通常有本地发送主机发送的最大链路层帧长度(最大传输单元M">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/16/计算机网络05-TCP/01.png">
 
 
 
@@ -422,7 +426,36 @@
           
 
           
+            
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-07-18 00:49:45" itemprop="dateModified" datetime="2020-07-18T00:49:45+08:00">2020-07-18</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机网络/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -475,7 +508,49 @@
       
 
       
-        
+        <h3 id="1-TCP"><a href="#1-TCP" class="headerlink" title="1. TCP"></a>1. TCP</h3><p>TCP连接提供的是全双工、点对点的服务。</p>
+<p>TCP建立连接是<strong>三次握手</strong>的过程，建立连接之后，客户进程通过套接字传递数据流，然后由TCP控制。TCP将数据引导到该连接的发送缓存(三次握手期间设置的缓存之一)中，然后TCP从缓存中取出一块数据，将其传递到网络层。TCP可以从缓存中取出并放入报文段中的数据数量受限于<strong>最大报文长度(MSS)</strong>，其通常有本地发送主机发送的最大链路层帧长度(<strong>最大传输单元MTU</strong>)来设置。一般来说一个TCP报文段加上TCP/IP首部长度(通常40)要适合单个链路层帧，以太网和PPP链路层协议都有1500字节的MTU，所以MSS的典型值为1460。下面是一个经典的模型。</p>
+<img src="/2020/07/16/计算机网络05-TCP/01.png" alt="image-20200717231532669" style="zoom:50%;">
+
+<h3 id="2-TCP报文结构"><a href="#2-TCP报文结构" class="headerlink" title="2. TCP报文结构"></a>2. TCP报文结构</h3><p>下图是TCP报文段结构</p>
+<img src="/2020/07/16/计算机网络05-TCP/02.png" alt="image-20200717231832043" style="zoom: 33%;">
+
+<ol>
+<li>源端口号与目标端口号，用于多路复用/分解来自上层应用的数据。</li>
+<li>32比特序号子段和32比特确认号字段，用于发送方和接收方实现可靠数据传输服务。</li>
+<li>16比特的接受窗口字段，用于进行流量控制，表示接收方愿意接收的字节数量。</li>
+<li>4比特首部长度字段，指示了以32比特的字为单位的TCP首部长度，TCP长度可变，典型长度为20字节(选项字段为空)</li>
+<li>可选与变长的选项字段。</li>
+<li>6比特的标志字段。<ul>
+<li><code>ACK</code>指示确认字段的值是有效的</li>
+<li><code>SYN</code>用于建立链接</li>
+<li><code>FIN</code>用于拆除链接</li>
+<li>其余不常用</li>
+</ul>
+</li>
+<li>检验和字段。</li>
+</ol>
+<p>TCP中的序列号和确认号是实现可靠传输服务的关键。</p>
+<p>序号表示当前报文携带的应用层数据的第一个字节的编号。可以通过对数据进行划分，然后给每段的第一个字节编号。</p>
+<p>确认号表示这个报文发送方希望收到的来自对方的下一字节的序号。假设<code>A</code>收到了来自<code>B</code>的编号为<code>0~112</code>的所有字节的数据，那么<code>A</code>给<code>B</code>发送的下一个报文中的确认号就是<code>113</code>。TCP只确认数据流中至第一个丢失字节为止的字节，即其是<strong>累计确认的</strong>。一般来说，对于接收方如果收到了失序的报文，会保留失序的字节，并等待缺少的字节来填充间隔。在报文中如果没有数据的话，任然需要有序号。一条TCP链接的双方均是随记地选择初始序号(在三次握手阶段相互交换自己选择的初始序号)。下面是一个交换的例子。</p>
+<img src="/2020/07/16/计算机网络05-TCP/03.png" alt="image-20200717234515942" style="zoom: 33%;">
+
+<h3 id="3-往返时延的估计与超时"><a href="#3-往返时延的估计与超时" class="headerlink" title="3. 往返时延的估计与超时"></a>3. 往返时延的估计与超时</h3><p>如果希望实现超时重传机制，就需要设置超时间隔长度。显然超时时间间隔必须大于该连接的往返时间(RTT)。但是这个时间并不是固定的，需要发送方根据当前网络状况进行估计。</p>
+<p>报文段的样本RTT是从某报文被发出到该报文段的确认被收到之间的时间量。由于路由器的拥塞和端系统复杂的变化，SampleRTT的值会随之波动。为了估计一个典型的RTT，要采取某种对SampleRTT取平均的办法。TCP维持一个SampleRTT的均值(EstimatedRTT)，获得一个新的SampleRTT，利用如下的公式来更新EstimatedRTT。$\alpha$推荐值为0.125。</p>
+<p>$$EstimatedRTT = (1 - \alpha) EstimatedRTT + \alpha SampleRTT$$</p>
+<p>上述是进行<strong>指数加权滑动平均</strong>，最终EstimatedRTT趋于平缓。</p>
+<p>除了估算RTT之外，RTT的变化可以用RTT偏差<code>DevRTT</code>来估算SampleRTT一般会偏离EstimatedRTT的程度。$\beta$推荐值为0.25。</p>
+<p>$$DevRTT = (1 - \beta)  DevRTT + \beta |SampleRTT - EstimatedRTT|$$</p>
+<p>有了EstimatedRTT和DevRTT，TCP的超时间隔可以进行如下设置：</p>
+<ol>
+<li>超时间隔应该大于等于EstimatedRTT</li>
+<li>超时间隔不能大太多，否则当报文丢失时，不能很快重传该报文</li>
+<li>当SampleRTT波动大时，余量应该较大，波动较小时余量应该较小。</li>
+</ol>
+<p>所以使用下面的公式：</p>
+<p>$$TimeoutInterval = EstimatedRTT + 4 \cdot DevRTT$$</p>
+<p>初始的TimeoutInterval为1秒，出现超时后加倍，以免即将被确认的后继报文段过早出现超时。然而只要收到报文段就更新EstimatedRTT, 并用上述公式再次计算TimeoutInterval。</p>
+
       
     </div>
 
@@ -495,6 +570,17 @@
     
 
     <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/基础知识/" rel="tag"># 基础知识</a>
+          
+            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
+          
+        </div>
       
 
       
@@ -565,8 +651,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -819,6 +914,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-TCP"><span class="nav-number">1.</span> <span class="nav-text">1. TCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-TCP报文结构"><span class="nav-number">2.</span> <span class="nav-text">2. TCP报文结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-往返时延的估计与超时"><span class="nav-number">3.</span> <span class="nav-text">3. 往返时延的估计与超时</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1365,6 +1477,46 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
