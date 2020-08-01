@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/07/31/系统级IO/03.png">
 <meta property="og:image" content="http://yoursite.com/2020/07/31/系统级IO/04.png">
 <meta property="og:image" content="http://yoursite.com/2020/07/31/系统级IO/05.png">
-<meta property="og:updated_time" content="2020-07-31T17:12:24.560Z">
+<meta property="og:updated_time" content="2020-08-01T06:52:59.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系统级IO">
 <meta name="twitter:description" content="1. Unix IOLinux文件就是一个字节序列。 $$B_0, B_1, …, B_n$$ 所有的IO设备(网络、终端、磁盘)都被模型化为文件，所有的输入输出都被当做对相应文件的读和写来执行。 将设备映射为文件，Linux内核引出一个简单、低级的应用接口，使得所有的输入和输出可以以一致统一的方式来执行：  打开文件，调用操作系统提供的服务，内核返回一个非负整数，称为文件描述符。后续操作传入这个">
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-08-01 01:12:24" itemprop="dateModified" datetime="2020-08-01T01:12:24+08:00">2020-08-01</time>
+                <time title="Modified: 2020-08-01 14:52:59" itemprop="dateModified" datetime="2020-08-01T14:52:59+08:00">2020-08-01</time>
               </span>
             
           
@@ -512,7 +512,7 @@
       
         <h3 id="1-Unix-IO"><a href="#1-Unix-IO" class="headerlink" title="1. Unix IO"></a>1. Unix IO</h3><p>Linux文件就是一个字节序列。</p>
 <p>$$B_0, B_1, …, B_n$$</p>
-<p>所有的IO设备(网络、终端、磁盘)都被模型化为文件，所有的输入输出都被当做对相应文件的读和写来执行。</p>
+<p>所有的<strong>IO设备</strong>(网络、终端、磁盘)都<strong>被模型化为文件</strong>，所有的输入输出都被当做对相应文件的读和写来执行。</p>
 <p>将设备映射为文件，Linux内核引出一个简单、低级的应用接口，使得所有的输入和输出可以以一致统一的方式来执行：</p>
 <ol>
 <li><p>打开文件，调用操作系统提供的服务，内核返回一个非负整数，称为<strong>文件描述符</strong>。后续操作传入这个标识符即可。内核记录有关这个打开文件的所有信息，应用程序只需要记住这个描述符。</p>
@@ -560,7 +560,30 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dup2</span><span class="params">(<span class="keyword">int</span> oldfd, <span class="keyword">int</span> newfd)</span></span>; <span class="comment">// 覆盖oldfd的内容到newfd中</span></span><br></pre></td></tr></table></figure>
 
 <p>上图中，为调用<code>dup(4, 1)</code>的结果。这样任何写到标准输出的内容都被重定向到了文件B中。</p>
+<h3 id="4-标准IO"><a href="#4-标准IO" class="headerlink" title="4. 标准IO"></a>4. 标准IO</h3><p>C语言定义了一组高级输入输出函数，为标准I/O库。提供了如下的函数</p>
+<ol>
+<li>打开关闭文件<code>fopen/fclose</code></li>
+<li>读写字节<code>fread/fwrite</code></li>
+<li>读写字符串<code>fgets/fputs</code></li>
+<li>格式化IO<code>scanf/printf</code></li>
+</ol>
+<p>标准IO库将打开的文件模型化为一个<strong>流</strong>。一个流就是一个指向<code>FILE</code>类型的指针。类型为<code>FILE</code>的流是对<strong>文件描述符</strong>和<strong>流缓冲区</strong>的抽象。使用缓冲区的目的是使开销较高的Linux I/O系统调用的数量尽可能得小。先对缓冲区操作，然后再缓冲区满之后再调用系统调用进程操作。</p>
+<p>每个C程序开始时都有三个打开的流，<code>stdin</code>、<code>stdout</code>、<code>stderr</code>，分别对应标准输入，标准输出和标准错误。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">extern</span> FILE *<span class="built_in">stdin</span>;  / 标注输入，代表描述符<span class="number">0</span></span><br><span class="line"><span class="keyword">extern</span> FILE *<span class="built_in">stdout</span>; / 标注输出，代表描述符<span class="number">1</span></span><br><span class="line"><span class="keyword">extern</span> FILE *<span class="built_in">stderr</span>; / 标注错误，代表描述符<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Stdout Hello World\n"</span>);</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stdout</span>, <span class="string">"Stdout Hello World\n"</span>);</span><br><span class="line">    perror(<span class="string">"Stderr Hello World\n"</span>);</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Stderr Hello World\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>stderr</code>没有缓冲，立即输出。</li>
+<li><code>stdout</code>默认是缓冲，遇到<code>\n</code>向外输出内容</li>
+<li>如果想实时输出，则加上<code>fflush(stdout)</code>，从而达到实时输出的效果</li>
+</ul>
+<p>可以对下面的代码进行断电调试，从而感受这种现象。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Stdout Hello World"</span>);</span><br><span class="line">    fflush(<span class="built_in">stdout</span>);</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stdout</span>, <span class="string">"Stdout Hello World\n"</span>);</span><br><span class="line">    perror(<span class="string">"Stderr Hello World"</span>);</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Stderr Hello World\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <img src="/2020/07/31/系统级IO/05.png" alt="image-20200801010858509" style="zoom:67%;">
+
+
 
 
 
@@ -616,6 +639,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/01/Linux信号/" rel="prev" title="Linux信号">
+                Linux信号 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -688,7 +715,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">116</span>
+                    <span class="site-state-item-count">117</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -941,7 +968,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Unix-IO"><span class="nav-number">1.</span> <span class="nav-text">1. Unix IO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-内核结构"><span class="nav-number">2.</span> <span class="nav-text">2. 内核结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-IO重定向"><span class="nav-number">3.</span> <span class="nav-text">3. IO重定向</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Unix-IO"><span class="nav-number">1.</span> <span class="nav-text">1. Unix IO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-内核结构"><span class="nav-number">2.</span> <span class="nav-text">2. 内核结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-IO重定向"><span class="nav-number">3.</span> <span class="nav-text">3. IO重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-标准IO"><span class="nav-number">4.</span> <span class="nav-text">4. 标准IO</span></a></li></ol></div>
             
 
           </div>
