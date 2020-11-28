@@ -104,7 +104,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2020/04/25/博弈论/06c8190a6cb3885a47a994469ad55ec1141b8fbb4140371e93d44fac137fdf40-image.png">
 <meta property="og:image" content="http://yoursite.com/2020/04/25/博弈论/image-20200427101724392.png">
-<meta property="og:updated_time" content="2020-07-12T14:56:19.219Z">
+<meta property="og:updated_time" content="2020-11-28T10:38:52.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博弈论">
 <meta name="twitter:description" content="博弈论先手必胜状态：从当前状态有一种方式可以到达一个先手必败状态 先手必败状态：从当前状态走不到一个先手必败状态 NIM游戏1原题链接 解题思路首先根据当前桌子上的石子的个数可以得到先手对应的状态。 由于一个人可以拿1-3个石子，所以他可以将当前状态转到3个状态。  如果这3个状态全部都是先手必胜状态，那么当前状态就是先手必败状态。 如果这三个状态存在你着先手必败状态，那么当前状态就是先手必胜状态">
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-07-12 22:56:19" itemprop="dateModified" datetime="2020-07-12T22:56:19+08:00">2020-07-12</time>
+                <time title="Modified: 2020-11-28 18:38:52" itemprop="dateModified" datetime="2020-11-28T18:38:52+08:00">2020-11-28</time>
               </span>
             
           
@@ -561,7 +561,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n; <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">        <span class="keyword">int</span> x; <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">        <span class="keyword">if</span>( i &amp; <span class="number">1</span>) res ^= x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(res) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Yes"</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">"No"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="SG函数"><a href="#SG函数" class="headerlink" title="SG函数"></a>SG函数</h3><h4 id="有向图游戏"><a href="#有向图游戏" class="headerlink" title="有向图游戏"></a>有向图游戏</h4><p>给定一个有向无环图，图中有一个唯一的起点，在起点上放有一枚棋子。两名玩家交替把这枚棋子沿有向边进行移动，每次可以移动一步，无法移动者判负。该游戏称为有向图游戏。</p>
-<p><strong>任何一个公平组合游戏都可以转化为有向图游戏。具体方法是，把每个局面看成图中的恶一个节点，并且从每个局面沿着合法行动能够到达的下一个局面连有向边。</strong></p>
+<p><strong>任何一个公平组合游戏都可以转化为有向图游戏。具体方法是，把每个局面看成图中的一个节点，并且从每个局面沿着合法行动能够到达的下一个局面连有向边。</strong></p>
 <h4 id="Mex运算"><a href="#Mex运算" class="headerlink" title="Mex运算"></a>Mex运算</h4><p>设<code>S</code>表示一个非负整数集合，定义<code>mex(S)</code>为求出不属于集合<code>S</code>的最小非负整数的运算，即<code>mex(S) = min(x)</code>，<code>x</code>属于自然数，且<code>x</code>不属于<code>S</code>。比如<code>mex({2, 3, 4}) = 0</code></p>
 <p>在一个游戏中，当前局面可以通过不同的操作到达很多不同的局面，每种局面是一种状态。</p>
 <p>定义<code>SG(终点) = 0</code>，则<code>SG(x)</code>， 定义为从状态<code>x</code>可以到的状态$y_1, y_2, …, y_k$的<code>SG</code>的值的<code>mex</code>函数，即</p>
@@ -743,7 +743,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">134</span>
+                    <span class="site-state-item-count">135</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -947,7 +947,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">66</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">68</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
