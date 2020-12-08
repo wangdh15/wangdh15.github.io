@@ -374,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/15/CPP文章汇总/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/门面模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -394,7 +394,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/10/15/CPP文章汇总/" class="post-title-link" itemprop="url">CPP文章汇总</a>
+                <a href="/2020/11/14/门面模式/" class="post-title-link" itemprop="url">门面模式</a>
               
             
           </h1>
@@ -419,7 +419,7 @@
                 
               
 
-              <time title="Created: 2020-10-15 15:55:01" itemprop="dateCreated datePublished" datetime="2020-10-15T15:55:01+08:00">2020-10-15</time>
+              <time title="Created: 2020-11-14 23:34:44" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
             </span>
           
 
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-11-14 20:25:48" itemprop="dateModified" datetime="2020-11-14T20:25:48+08:00">2020-11-14</time>
+                <time title="Modified: 2020-12-08 16:02:43" itemprop="dateModified" datetime="2020-12-08T16:02:43+08:00">2020-12-08</time>
               </span>
             
           
@@ -448,7 +448,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
 
                 
                 
@@ -466,8 +466,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/10/15/CPP文章汇总/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/10/15/CPP文章汇总/" itemprop="commentCount"></span>
+                <a href="/2020/11/14/门面模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/门面模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -501,28 +501,16 @@
         
           
             <p>
-              
-汇总一些学习C++的时候看到的感觉比较好的资源
+              门面模式下面是系统中各个类之间的依赖关系。
 
-1. 语言相关constexpr
-lambda表达式
-初始化列表
-decltype
-右值引用
-explicit
-initializer_list
-类型强制转换
-typeid
-2. STL相关3. 机制虚函数表
-虚继承1
-虚继承2
-
-              
+A方案中组件的客户和组件中各种复杂的子系统有了过多的耦合，随着外部客户端和各子系统的演化，这种过多的耦合面临很多变化的挑战。比如上述A图中的框中的类是易变的，变化一下，外部的类就都要边。
+需要简化外部客户程序和系统间的交互接口，使得外部客户程序的演化和内
+              ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/10/15/CPP文章汇总/#more" rel="contents">
+              <a class="btn" href="/2020/11/14/门面模式/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -582,7 +570,7 @@ typeid
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/环境配置踩坑/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/工厂方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -602,7 +590,7 @@ typeid
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/09/17/环境配置踩坑/" class="post-title-link" itemprop="url">环境配置踩坑</a>
+                <a href="/2020/11/14/工厂方法/" class="post-title-link" itemprop="url">工厂方法</a>
               
             
           </h1>
@@ -627,192 +615,7 @@ typeid
                 
               
 
-              <time title="Created: 2020-09-17 10:48:39 / Modified: 10:50:46" itemprop="dateCreated datePublished" datetime="2020-09-17T10:48:39+08:00">2020-09-17</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具/" itemprop="url" rel="index"><span itemprop="name">工具</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/09/17/环境配置踩坑/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/09/17/环境配置踩坑/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              整理在配置各个工具、环境的时候遇到的坑，以及问题的解决方案。
-1. Mac上配置GDB解决方案
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/09/17/环境配置踩坑/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/01/Linux信号/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daohui Wang">
-      <meta itemprop="description" content="Nothing">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wangdh'blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/08/01/Linux信号/" class="post-title-link" itemprop="url">Linux信号</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-08-01 14:52:51" itemprop="dateCreated datePublished" datetime="2020-08-01T14:52:51+08:00">2020-08-01</time>
+              <time title="Created: 2020-11-14 23:34:44" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
             </span>
           
 
@@ -827,7 +630,7 @@ typeid
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-08-05 21:19:10" itemprop="dateModified" datetime="2020-08-05T21:19:10+08:00">2020-08-05</time>
+                <time title="Modified: 2020-12-08 16:02:42" itemprop="dateModified" datetime="2020-12-08T16:02:42+08:00">2020-12-08</time>
               </span>
             
           
@@ -841,7 +644,7 @@ typeid
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSAPP/" itemprop="url" rel="index"><span itemprop="name">CSAPP</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
 
                 
                 
@@ -859,8 +662,8 @@ typeid
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/08/01/Linux信号/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/08/01/Linux信号/" itemprop="commentCount"></span>
+                <a href="/2020/11/14/工厂方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/工厂方法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -894,19 +697,15 @@ typeid
         
           
             <p>
-              1.信号
-Linux信号是一种高层的软件形式的异常，允许进程和内核中断其他进程。
-一个信号就是一条小消息，它通知进程系统中发生了一个某种类型的事件。
-
-底层的硬件异常是由内核异常处理程序处理的，正常情况下对用户而言是不可见的。信号提供一种机制来通知用户进程发生了这些异常。
-
-进程除0，内核发送一个S
+              工厂方法现在有一个UI界面，上面有一个按钮，点击按钮会读取文本框中的信息，然后调用文件分割器对文件进行分割。
+下面是一个能够正确实现功能的代码。
+#include &lt;iostream&gt;#include &lt;string&gt;// 文件分割器class FileSplitter &#
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/08/01/Linux信号/#more" rel="contents">
+              <a class="btn" href="/2020/11/14/工厂方法/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -966,7 +765,7 @@ Linux信号是一种高层的软件形式的异常，允许进程和内核中断
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/31/系统级IO/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/模板方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -986,7 +785,7 @@ Linux信号是一种高层的软件形式的异常，允许进程和内核中断
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/07/31/系统级IO/" class="post-title-link" itemprop="url">系统级IO</a>
+                <a href="/2020/11/14/模板方法/" class="post-title-link" itemprop="url">模板方法</a>
               
             
           </h1>
@@ -1011,7 +810,194 @@ Linux信号是一种高层的软件形式的异常，允许进程和内核中断
                 
               
 
-              <time title="Created: 2020-07-31 23:19:57" itemprop="dateCreated datePublished" datetime="2020-07-31T23:19:57+08:00">2020-07-31</time>
+              <time title="Created: 2020-11-14 23:34:44 / Modified: 20:25:48" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2020/11/14/模板方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/模板方法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              模板方法在软件构建的过程中，对于一项任务，通常有稳定的整体操作结构，但各个子步骤有很多改变的需求，或者子任务无法与任务的整体结构同时实现。比如在开发框架的时候。
+如何在确定操作结构的前提下，灵活应对各个子步骤的变化，或者晚期实现需求。
+下面是一个例子。
+
+在设计的时候，将主要的流程在框架中写好，然后
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/11/14/模板方法/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/代理模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daohui Wang">
+      <meta itemprop="description" content="Nothing">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangdh'blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/11/14/代理模式/" class="post-title-link" itemprop="url">代理模式</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-11-14 23:34:44" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
             </span>
           
 
@@ -1026,7 +1012,7 @@ Linux信号是一种高层的软件形式的异常，允许进程和内核中断
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-08-01 14:52:59" itemprop="dateModified" datetime="2020-08-01T14:52:59+08:00">2020-08-01</time>
+                <time title="Modified: 2020-12-08 16:02:42" itemprop="dateModified" datetime="2020-12-08T16:02:42+08:00">2020-12-08</time>
               </span>
             
           
@@ -1040,7 +1026,7 @@ Linux信号是一种高层的软件形式的异常，允许进程和内核中断
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSAPP/" itemprop="url" rel="index"><span itemprop="name">CSAPP</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
 
                 
                 
@@ -1058,8 +1044,8 @@ Linux信号是一种高层的软件形式的异常，允许进程和内核中断
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/07/31/系统级IO/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/31/系统级IO/" itemprop="commentCount"></span>
+                <a href="/2020/11/14/代理模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/代理模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1093,16 +1079,14 @@ Linux信号是一种高层的软件形式的异常，允许进程和内核中断
         
           
             <p>
-              1. Unix IOLinux文件就是一个字节序列。
-$$B_0, B_1, …, B_n$$
-所有的IO设备(网络、终端、磁盘)都被模型化为文件，所有的输入输出都被当做对相应文件的读和写来执行。
-将设备映射为文件，Linux内核引出一个简单、低级的应用接口，使得所有的输入和输出可以以一致统一的方式
+              代理模式问题在某些情况下，一个客户不能或者不想直接访问另一个对象，有可能是这个对象在远程服务器，远程对象比较大，或者有一些安全原因需要屏蔽客户端直接访问真实对象，如某单位的内部数据库等。
+某与某些原因，需要给某个对象提供一个代理以控制对该对象的访问，访问对象不适合或者并不能直接引用目标对象，这个时候
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/07/31/系统级IO/#more" rel="contents">
+              <a class="btn" href="/2020/11/14/代理模式/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1162,7 +1146,7 @@ $$B_0, B_1, …, B_n$$
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/31/孤儿进程与僵尸进程/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/面向对象设计原则/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1182,7 +1166,7 @@ $$B_0, B_1, …, B_n$$
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/07/31/孤儿进程与僵尸进程/" class="post-title-link" itemprop="url">孤儿进程与僵尸进程</a>
+                <a href="/2020/11/14/面向对象设计原则/" class="post-title-link" itemprop="url">面向对象设计原则</a>
               
             
           </h1>
@@ -1207,7 +1191,7 @@ $$B_0, B_1, …, B_n$$
                 
               
 
-              <time title="Created: 2020-07-31 18:34:10 / Modified: 23:18:05" itemprop="dateCreated datePublished" datetime="2020-07-31T18:34:10+08:00">2020-07-31</time>
+              <time title="Created: 2020-11-14 23:34:44 / Modified: 20:25:48" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
             </span>
           
 
@@ -1226,7 +1210,7 @@ $$B_0, B_1, …, B_n$$
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSAPP/" itemprop="url" rel="index"><span itemprop="name">CSAPP</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
 
                 
                 
@@ -1244,8 +1228,8 @@ $$B_0, B_1, …, B_n$$
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/07/31/孤儿进程与僵尸进程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/31/孤儿进程与僵尸进程/" itemprop="commentCount"></span>
+                <a href="/2020/11/14/面向对象设计原则/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/面向对象设计原则/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1279,26 +1263,17 @@ $$B_0, B_1, …, B_n$$
         
           
             <p>
-              1. 进程系统中的每个程序都运行在某个进程的上下文中，上下文是由程序正确运行所需的状态组成。状态包括：
+              1. 依赖倒置原则(DIP)
+高层模块(稳定)不应该依赖底层模块的变化，二者都应该依赖于抽象(稳定)
+抽象(稳定)不应该依赖实现细节变化，实现细节应该依赖于抽象(稳定)
 
-存放在内存中的程序的代码和数据
-栈、通用目的寄存器的内容
-程序计数器
-环境变量
-打开文件描述符集合等。
-
-进程给应用程序提供的抽象：
-
-独占地使用处理器
-独占地使用内存系统
-
-下图是一个典型的进
+mainForm  ----&gt; Line/Rectangle     ×  (稳定)             （不稳定）m
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/07/31/孤儿进程与僵尸进程/#more" rel="contents">
+              <a class="btn" href="/2020/11/14/面向对象设计原则/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1358,7 +1333,7 @@ $$B_0, B_1, …, B_n$$
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/22/计算机网络08-链路层/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/享元模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1378,7 +1353,7 @@ $$B_0, B_1, …, B_n$$
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/07/22/计算机网络08-链路层/" class="post-title-link" itemprop="url">计算机网络08-链路层</a>
+                <a href="/2020/11/14/享元模式/" class="post-title-link" itemprop="url">享元模式</a>
               
             
           </h1>
@@ -1403,193 +1378,7 @@ $$B_0, B_1, …, B_n$$
                 
               
 
-              <time title="Created: 2020-07-22 09:51:27 / Modified: 11:39:14" itemprop="dateCreated datePublished" datetime="2020-07-22T09:51:27+08:00">2020-07-22</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机网络/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/07/22/计算机网络08-链路层/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/22/计算机网络08-链路层/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              链路层链路层主要解决的问题是分组如何通过构成端到端的通信路径的各段链路。前面讨论的传输层和网络层都只是逻辑上发送过去，但是真正发送数据还是需要靠底层的链路层和物理层。物理层对于程序员来说没有太大理解的必要（电子本科的我已经学够了。。。）只考虑链路层是如何进行传输的。如下图中的蓝色的部分。
-
-
-链路层
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/07/22/计算机网络08-链路层/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/21/计算机网络07-路由算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daohui Wang">
-      <meta itemprop="description" content="Nothing">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wangdh'blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/07/21/计算机网络07-路由算法/" class="post-title-link" itemprop="url">计算机网络07-路由算法</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-07-21 09:57:17" itemprop="dateCreated datePublished" datetime="2020-07-21T09:57:17+08:00">2020-07-21</time>
+              <time title="Created: 2020-11-14 23:34:44" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
             </span>
           
 
@@ -1604,7 +1393,7 @@ $$B_0, B_1, …, B_n$$
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-07-22 09:51:38" itemprop="dateModified" datetime="2020-07-22T09:51:38+08:00">2020-07-22</time>
+                <time title="Modified: 2020-12-08 16:02:42" itemprop="dateModified" datetime="2020-12-08T16:02:42+08:00">2020-12-08</time>
               </span>
             
           
@@ -1618,7 +1407,7 @@ $$B_0, B_1, …, B_n$$
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机网络/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
 
                 
                 
@@ -1636,8 +1425,8 @@ $$B_0, B_1, …, B_n$$
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/07/21/计算机网络07-路由算法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/21/计算机网络07-路由算法/" itemprop="commentCount"></span>
+                <a href="/2020/11/14/享元模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/享元模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1671,23 +1460,16 @@ $$B_0, B_1, …, B_n$$
         
           
             <p>
-              1. 路由算法路由器中的转发表是由网络控制平面来进行计算、维护和安装的。这可以有两种方法：
+              享元模式1 问题软件系统采用纯粹面向对象的时候，有大量细颗粒度的对象会很快充斥在系统中，从而带来很高的运行时代码，只要是内存方面的代码。比如字符串，整数这种在程序中大量存在的对象。
+如何能够避免大量细颗粒度对象问题的同时，让外部客户端程序仍然能够透明地使用面向对象的方式来进行操作。
 
-每个路由器控制
-逻辑集中式控制
-
-如下图所示。
-
-
-
-
-路由选择算法目的是从发送方到接收方的过程中确定一条通过路由器网络的好的路径。可以将网络看成一个图$G = (N, E)$，每条链路的开销看做边的权重。
+享元模式通过共
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/07/21/计算机网络07-路由算法/#more" rel="contents">
+              <a class="btn" href="/2020/11/14/享元模式/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1747,7 +1529,7 @@ $$B_0, B_1, …, B_n$$
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/19/计算机网络06-网络层数据平面/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/策略模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1767,7 +1549,7 @@ $$B_0, B_1, …, B_n$$
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/07/19/计算机网络06-网络层数据平面/" class="post-title-link" itemprop="url">计算机网络06-网络层数据平面</a>
+                <a href="/2020/11/14/策略模式/" class="post-title-link" itemprop="url">策略模式</a>
               
             
           </h1>
@@ -1792,7 +1574,376 @@ $$B_0, B_1, …, B_n$$
                 
               
 
-              <time title="Created: 2020-07-19 22:05:33" itemprop="dateCreated datePublished" datetime="2020-07-19T22:05:33+08:00">2020-07-19</time>
+              <time title="Created: 2020-11-14 23:34:44 / Modified: 20:25:48" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2020/11/14/策略模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/策略模式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              策略模式某个对象可能需要根据某些属性来选择不同的算法，而且进场改变。如果将这些算法都编码到对象中，会使对象变得异常复杂。能够在运行时根据需要透明地更改对象的算法？也就是将算法的部分抽象出来。将算法和对象本身解耦。
+
+策略模式是，定义一系列算法，将他们一个个封装起来，并且使他们可互相替换(可变)。该模
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/11/14/策略模式/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/装饰模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daohui Wang">
+      <meta itemprop="description" content="Nothing">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangdh'blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/11/14/装饰模式/" class="post-title-link" itemprop="url">装饰模式</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-11-14 23:34:44 / Modified: 20:25:48" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2020/11/14/装饰模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/装饰模式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              装饰模式在某些情况下，为了扩展对象的功能，我们可以使用继承的方式，然后对对象原有的方法进行重写。但是继承为类型引入的静态特质(写死了，无法扩展)，使得这种扩展方式缺乏灵活性，而且随着子类的增多(扩展功能的增多)，各种子类的组合(扩展功能的组合)会导致子类的膨胀。
+如何使得对象功能的扩展能够根据需求动
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/11/14/装饰模式/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/中介者模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daohui Wang">
+      <meta itemprop="description" content="Nothing">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangdh'blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/11/14/中介者模式/" class="post-title-link" itemprop="url">中介者模式</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-11-14 23:34:44" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
             </span>
           
 
@@ -1807,7 +1958,7 @@ $$B_0, B_1, …, B_n$$
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-07-21 09:57:29" itemprop="dateModified" datetime="2020-07-21T09:57:29+08:00">2020-07-21</time>
+                <time title="Modified: 2020-12-08 16:02:42" itemprop="dateModified" datetime="2020-12-08T16:02:42+08:00">2020-12-08</time>
               </span>
             
           
@@ -1821,7 +1972,7 @@ $$B_0, B_1, …, B_n$$
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机网络/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
 
                 
                 
@@ -1839,8 +1990,8 @@ $$B_0, B_1, …, B_n$$
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/07/19/计算机网络06-网络层数据平面/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/19/计算机网络06-网络层数据平面/" itemprop="commentCount"></span>
+                <a href="/2020/11/14/中介者模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/中介者模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1874,20 +2025,15 @@ $$B_0, B_1, …, B_n$$
         
           
             <p>
-              1. 网路程概述网络中的每台主机和路由器都有一个网络层部分。网络层能够分解为两个相互作用的部分，数据平面和控制平面。
+              中介者模式在软件构建过程中，通常会有多个对象相互关联交错的情况，对象之间尝尝维护一种复杂的引用关系。遇到一些需求的更改，这些直接的引用关系将面临不断的变化。这里的相互关联交错是指系统内部的组件之间，系统内和系统外可以通过门面模式来处理。
 
-数据平面功能决定到达路由器输入链路之一的数据报如何转发到该路由器的输出链路之一。
-
-控制平面功能控制数据报沿着从源主机到目的主机的端到端路径中路由器之间的路由方式。
-
-
-网络层的作
+用一个中介者来封装(封装变化),一系列的对象的交互，中介者使
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/07/19/计算机网络06-网络层数据平面/#more" rel="contents">
+              <a class="btn" href="/2020/11/14/中介者模式/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1947,7 +2093,7 @@ $$B_0, B_1, …, B_n$$
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/CLion配置与远程调试/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/组合模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1967,7 +2113,7 @@ $$B_0, B_1, …, B_n$$
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/07/17/CLion配置与远程调试/" class="post-title-link" itemprop="url">CLion配置与远程调试</a>
+                <a href="/2020/11/14/组合模式/" class="post-title-link" itemprop="url">组合模式</a>
               
             
           </h1>
@@ -1992,13 +2138,23 @@ $$B_0, B_1, …, B_n$$
                 
               
 
-              <time title="Created: 2020-07-17 16:08:56 / Modified: 19:21:04" itemprop="dateCreated datePublished" datetime="2020-07-17T16:08:56+08:00">2020-07-17</time>
+              <time title="Created: 2020-11-14 23:34:44" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-12-08 16:02:42" itemprop="dateModified" datetime="2020-12-08T16:02:42+08:00">2020-12-08</time>
+              </span>
             
           
 
@@ -2011,7 +2167,7 @@ $$B_0, B_1, …, B_n$$
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
 
                 
                 
@@ -2029,8 +2185,8 @@ $$B_0, B_1, …, B_n$$
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/07/17/CLion配置与远程调试/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/17/CLion配置与远程调试/" itemprop="commentCount"></span>
+                <a href="/2020/11/14/组合模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/组合模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2064,216 +2220,14 @@ $$B_0, B_1, …, B_n$$
         
           
             <p>
-              CLion远程部署首先添加远程路径与当前路径的映射关系。
-如下图所示。
-
-
-
-
-
-
-配置后之后，可以使用同步功能来实现服务器和本地的文件的同步。
-
-
-然后添加服务器的工具链。
-
-一定要将CMake设置为对应的工具链。这里的Generation path为构建目录，默认有一个路径，可以修改成自己的路径
+              组合模式问题对于树形结构而言，一个容器对象下可以存放多种不同的叶子对象或者容器对象，容器对象和叶子对象之间树形差别可能非常大。比如文件夹中可以存放文件夹和文件，但是文件夹和文件的属性差别是非常大的。
+由于容器对象和叶子对象在功能上的区别，在使用这些对象的代码中必须有缺别地对待容器对象和叶子对象。但是
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/07/17/CLion配置与远程调试/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/C-预处理指令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daohui Wang">
-      <meta itemprop="description" content="Nothing">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wangdh'blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/07/17/C-预处理指令/" class="post-title-link" itemprop="url">C++预处理指令</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-07-17 10:14:02 / Modified: 16:09:07" itemprop="dateCreated datePublished" datetime="2020-07-17T10:14:02+08:00">2020-07-17</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/07/17/C-预处理指令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/17/C-预处理指令/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              预处理指令预处理指令以#开头，是在编译器进行编译之前进行的操作。预处理过程扫描源代码，对其进行初步的转换，产生新的源代码提供给编译器。预处理过程会完成以下功能：
-
-包含其他源文件
-定义宏，进行宏的替换
-根据条件决定编译时是否包含某些代码块,防制重复包含某些文件
-删除程序中的注释和多余的空白字符
-
-常
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/07/17/C-预处理指令/#more" rel="contents">
+              <a class="btn" href="/2020/11/14/组合模式/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -2322,7 +2276,7 @@ $$B_0, B_1, …, B_n$$
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2364,7 +2318,7 @@ $$B_0, B_1, …, B_n$$
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">151</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2572,7 +2526,9 @@ $$B_0, B_1, …, B_n$$
                     
                       
                     
-                    <span class="site-state-item-count">68</span>
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -3181,8 +3137,6 @@ $$B_0, B_1, …, B_n$$
       
     
       
-        
-      
     
       
     
@@ -3200,46 +3154,6 @@ $$B_0, B_1, …, B_n$$
     
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 

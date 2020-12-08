@@ -374,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/22/08-CPU管理5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/动态规划提高课04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -394,7 +394,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/05/22/08-CPU管理5/" class="post-title-link" itemprop="url">08_CPU管理5</a>
+                <a href="/2020/05/29/动态规划提高课04/" class="post-title-link" itemprop="url">动态规划提高课04</a>
               
             
           </h1>
@@ -419,13 +419,23 @@
                 
               
 
-              <time title="Created: 2020-05-22 23:38:44 / Modified: 23:41:57" itemprop="dateCreated datePublished" datetime="2020-05-22T23:38:44+08:00">2020-05-22</time>
+              <time title="Created: 2020-05-29 18:16:16" itemprop="dateCreated datePublished" datetime="2020-05-29T18:16:16+08:00">2020-05-29</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-06-05 18:34:12" itemprop="dateModified" datetime="2020-06-05T18:34:12+08:00">2020-06-05</time>
+              </span>
             
           
 
@@ -438,7 +448,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/操作系统/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
 
                 
                 
@@ -456,8 +466,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/05/22/08-CPU管理5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/22/08-CPU管理5/" itemprop="commentCount"></span>
+                <a href="/2020/05/29/动态规划提高课04/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/29/动态规划提高课04/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -491,27 +501,22 @@
         
           
             <p>
-              CPU管理5信号量的代码实现
+              ##状态压缩DP
+一般分为两大类：
 
-在内核中定义一个结构体数组，结构体中的每一项存储以下内容：
+棋盘式(基于连通性)一般是给一个棋盘，然后摆放东西，问方案数、最大值、最小值之类，如蒙德里安的梦想题目
+集合式：哈密顿路径问题等
 
-信号量的名字，方便多个用户进程通过名字访问同一个信号量
-信号量的值
-在当前信号量上阻塞的进程队列。
-
-同时，操作系统还需要提供一下的西系统调用：
-
-按照名字创建一个信号量
-P操作
-V操作
-
-在实现P, V操
+DP的本质是利用一个状态表示一类的方案。
+状压DP是用二进制来表示状态，用位运算来枚举状态之间的转移。
+骑士原题链接
+解题思路可以
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/05/22/08-CPU管理5/#more" rel="contents">
+              <a class="btn" href="/2020/05/29/动态规划提高课04/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -571,7 +576,7 @@ V操作
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/22/07-CPU管理4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/动态规划提高课03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -591,7 +596,7 @@ V操作
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/05/22/07-CPU管理4/" class="post-title-link" itemprop="url">07_CPU管理4</a>
+                <a href="/2020/05/29/动态规划提高课03/" class="post-title-link" itemprop="url">动态规划提高课03</a>
               
             
           </h1>
@@ -616,382 +621,7 @@ V操作
                 
               
 
-              <time title="Created: 2020-05-22 23:35:21 / Modified: 23:38:32" itemprop="dateCreated datePublished" datetime="2020-05-22T23:35:21+08:00">2020-05-22</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/操作系统/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/05/22/07-CPU管理4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/22/07-CPU管理4/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              CPU管理4–进程间合作让多个进程合理有序地执行，需要使用信号量来进行辅助。
-比如死机是一个进程，售票员是一个进程。每个进程都有自己的一套执行序列。
-
-
-司机运行的时候，必须等待着来自售票员发出的信号，才能够继续执行启动车辆的指令。
-当售票员把门关上的时候，就会给司机发送一个信号，告诉司机可以启动了
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/05/22/07-CPU管理4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/22/06-CPU管理3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daohui Wang">
-      <meta itemprop="description" content="Nothing">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wangdh'blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/05/22/06-CPU管理3/" class="post-title-link" itemprop="url">06_CPU管理3</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-05-22 23:33:31 / Modified: 23:36:01" itemprop="dateCreated datePublished" datetime="2020-05-22T23:33:31+08:00">2020-05-22</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/操作系统/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/05/22/06-CPU管理3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/22/06-CPU管理3/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              CPU管理3 – CPU调度策略当计算机中有多个任务处于就绪态，那么该如何选择哪一个进程来进行运行呢？这就是进程调度要解决的问题。
-一些直观的算法：
-
-FIFO，谁先来谁先执行，但是如果一个任务本来就是执行一个非常简单的事情，让他等那么久就不是很合适。(周转时间指标)
-Priority？为了解决上面
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/05/22/06-CPU管理3/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/22/leetcode专题01-链表/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daohui Wang">
-      <meta itemprop="description" content="Nothing">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wangdh'blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/05/22/leetcode专题01-链表/" class="post-title-link" itemprop="url">leetcode专题01_链表</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-05-22 10:15:04 / Modified: 21:30:04" itemprop="dateCreated datePublished" datetime="2020-05-22T10:15:04+08:00">2020-05-22</time>
+              <time title="Created: 2020-05-29 00:31:57 / Modified: 18:16:02" itemprop="dateCreated datePublished" datetime="2020-05-29T00:31:57+08:00">2020-05-29</time>
             </span>
           
 
@@ -1028,8 +658,8 @@ Priority？为了解决上面
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/05/22/leetcode专题01-链表/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/22/leetcode专题01-链表/" itemprop="commentCount"></span>
+                <a href="/2020/05/29/动态规划提高课03/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/29/动态规划提高课03/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1063,16 +693,17 @@ Priority？为了解决上面
         
           
             <p>
-              01. 删除链表的倒数第N个节点原题链接
-解题思路快慢指针法，让一个指针先向前走N步，然后加入第二个指针，两个指针同步前进。由于可能要删除第一个节点，所以可以加入头结点，避免特判。
-时间复杂度O(N)
-C++代码/** * Definition for singly-linked list. * s
+              状态机模型大盗阿福原题链接
+解题思路在考虑每个物品的时候，由于其选不选对于后面的决策是有影响的，所以需要一个多余的状态来记录其是否被选。
+dp[i][0]表示第i个物品不选的最大价值，dp[i][1]表示选了第i个物品的最大价值。
+则有如下状态转移方程：
+$$dp[i][0] = max(dp[i-
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/05/22/leetcode专题01-链表/#more" rel="contents">
+              <a class="btn" href="/2020/05/29/动态规划提高课03/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1132,7 +763,7 @@ C++代码/** * Definition for singly-linked list. * s
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/18/动态规划提高课02/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/28/统计信号处理05-矩估计/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1152,7 +783,7 @@ C++代码/** * Definition for singly-linked list. * s
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/05/18/动态规划提高课02/" class="post-title-link" itemprop="url">动态规划提高课02</a>
+                <a href="/2020/05/28/统计信号处理05-矩估计/" class="post-title-link" itemprop="url">统计信号处理05--矩估计</a>
               
             
           </h1>
@@ -1177,7 +808,7 @@ C++代码/** * Definition for singly-linked list. * s
                 
               
 
-              <time title="Created: 2020-05-18 11:28:14" itemprop="dateCreated datePublished" datetime="2020-05-18T11:28:14+08:00">2020-05-18</time>
+              <time title="Created: 2020-05-28 22:19:30" itemprop="dateCreated datePublished" datetime="2020-05-28T22:19:30+08:00">2020-05-28</time>
             </span>
           
 
@@ -1192,7 +823,7 @@ C++代码/** * Definition for singly-linked list. * s
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-05-29 00:31:36" itemprop="dateModified" datetime="2020-05-29T00:31:36+08:00">2020-05-29</time>
+                <time title="Modified: 2020-05-30 16:53:52" itemprop="dateModified" datetime="2020-05-30T16:53:52+08:00">2020-05-30</time>
               </span>
             
           
@@ -1206,7 +837,7 @@ C++代码/** * Definition for singly-linked list. * s
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/统计信号处理/" itemprop="url" rel="index"><span itemprop="name">统计信号处理</span></a></span>
 
                 
                 
@@ -1224,8 +855,8 @@ C++代码/** * Definition for singly-linked list. * s
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/05/18/动态规划提高课02/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/18/动态规划提高课02/" itemprop="commentCount"></span>
+                <a href="/2020/05/28/统计信号处理05-矩估计/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/28/统计信号处理05-矩估计/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1259,18 +890,19 @@ C++代码/** * Definition for singly-linked list. * s
         
           
             <p>
-              背包模型将一个问题转化为背包问题的关键是什么是体积，什么是价值。
-01. 采药原题链接
-解题思路01背包问题，同时使用滚动数组进行空间优化，注意内层循环遍历的顺序，避免覆盖。
-时间复杂度O(MT)
-空间复杂度O(T)
-C++代码#include&lt;iostream&gt;using namesp
-              ...
+              利用带估计参数和观测数据的各级矩之间的关系，从而建立方程组进行求解。
+
+
+
+
+通常可以使用矩估计来对估计量进行初始化，然后利用初始化的结果进行迭代求解等等。
+经典估计理论总结
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/05/18/动态规划提高课02/#more" rel="contents">
+              <a class="btn" href="/2020/05/28/统计信号处理05-矩估计/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1330,7 +962,7 @@ C++代码#include&lt;iostream&gt;using namesp
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/05-CPU管理2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/28/统计信号处理04-最小二乘估计/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1350,7 +982,7 @@ C++代码#include&lt;iostream&gt;using namesp
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/05/15/05-CPU管理2/" class="post-title-link" itemprop="url">05_CPU管理2</a>
+                <a href="/2020/05/28/统计信号处理04-最小二乘估计/" class="post-title-link" itemprop="url">统计信号处理04--最小二乘估计</a>
               
             
           </h1>
@@ -1375,7 +1007,771 @@ C++代码#include&lt;iostream&gt;using namesp
                 
               
 
-              <time title="Created: 2020-05-15 23:47:42" itemprop="dateCreated datePublished" datetime="2020-05-15T23:47:42+08:00">2020-05-15</time>
+              <time title="Created: 2020-05-28 21:44:02 / Modified: 22:19:01" itemprop="dateCreated datePublished" datetime="2020-05-28T21:44:02+08:00">2020-05-28</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/统计信号处理/" itemprop="url" rel="index"><span itemprop="name">统计信号处理</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2020/05/28/统计信号处理04-最小二乘估计/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/28/统计信号处理04-最小二乘估计/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              最小二乘估计在前面的估计方法，如CRLB、一般线性模型、充分统计量、最大似然估计，都需要知道观测数据的似然函数。如果没有似然函数的话，最小二乘是一种方法。最佳线性无偏估计需要知道一阶矩和二阶矩。
+最小二乘的思想是，通过选择参数，使得在这个参数下，信号和观测数据的均方误差最小。
+
+
+线性最小二乘
+
+
+
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/05/28/统计信号处理04-最小二乘估计/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/28/统计信号处理03-最大似然估计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daohui Wang">
+      <meta itemprop="description" content="Nothing">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangdh'blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/05/28/统计信号处理03-最大似然估计/" class="post-title-link" itemprop="url">统计信号处理03--最大似然估计</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-05-28 19:12:29 / Modified: 21:42:57" itemprop="dateCreated datePublished" datetime="2020-05-28T19:12:29+08:00">2020-05-28</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/统计信号处理/" itemprop="url" rel="index"><span itemprop="name">统计信号处理</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2020/05/28/统计信号处理03-最大似然估计/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/28/统计信号处理03-最大似然估计/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              最大似然估计有些时候直接通过CRLB和充分统计量求解MVU估计量是非常困难的。最大似然估计是一种比较方便的方法。
+最大似然估计是选择使观测数据以最大概率出现的带估计的参数值。
+MVU估计量的思想是，使得估计量和真值之间的误差平方的均值最小。两者是不同的思路。
+
+
+
+
+
+
+MLE是渐近无偏。在某些情况
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/05/28/统计信号处理03-最大似然估计/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/28/统计信号处理02-最小方差无偏估计II/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daohui Wang">
+      <meta itemprop="description" content="Nothing">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangdh'blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/05/28/统计信号处理02-最小方差无偏估计II/" class="post-title-link" itemprop="url">统计信号处理02--最小方差无偏估计II</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-05-28 17:46:11 / Modified: 21:42:43" itemprop="dateCreated datePublished" datetime="2020-05-28T17:46:11+08:00">2020-05-28</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/统计信号处理/" itemprop="url" rel="index"><span itemprop="name">统计信号处理</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2020/05/28/统计信号处理02-最小方差无偏估计II/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/28/统计信号处理02-最小方差无偏估计II/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              充分统计量结束CRLB寻找MVU并不总是可行的。
+
+不满足正则条件
+满足正则条件、但是CRLB不易求解，或者MVU达不到CRLB
+
+充分统计量是另一个方法
+
+充分统计量：包含原始数据有关带估计参数所有信息的统计量
+
+如何判断这个统计量是否包含所有信息呢？从观测数据的PDF出发。
+
+
+充分统计量并不唯
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/05/28/统计信号处理02-最小方差无偏估计II/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/28/统计信号处理01-最小方差无偏估计I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daohui Wang">
+      <meta itemprop="description" content="Nothing">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangdh'blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/05/28/统计信号处理01-最小方差无偏估计I/" class="post-title-link" itemprop="url">统计信号处理01--最小方差无偏估计I</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-05-28 16:01:29 / Modified: 21:42:45" itemprop="dateCreated datePublished" datetime="2020-05-28T16:01:29+08:00">2020-05-28</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/统计信号处理/" itemprop="url" rel="index"><span itemprop="name">统计信号处理</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2020/05/28/统计信号处理01-最小方差无偏估计I/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/28/统计信号处理01-最小方差无偏估计I/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              绪论信号的估计：从观测到的信号，建立接收到的数据到要估计的量之间的数学关系，需要求出参数的值是多少。
+信号的检测：从观测到的信号，判断出其属于的类别，有还是没有，有的话属于哪一类。
+区分冠状病毒的种类：检测
+通过信号判断目标的距离：估计
+最小方差无偏估计估计就是根据观测数据来确定未知参数(待估计参数
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/05/28/统计信号处理01-最小方差无偏估计I/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/内存管理-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daohui Wang">
+      <meta itemprop="description" content="Nothing">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangdh'blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/05/27/内存管理-03/" class="post-title-link" itemprop="url">内存管理-03</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-05-27 14:57:13" itemprop="dateCreated datePublished" datetime="2020-05-27T14:57:13+08:00">2020-05-27</time>
             </span>
           
 
@@ -1390,7 +1786,7 @@ C++代码#include&lt;iostream&gt;using namesp
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-05-22 23:33:49" itemprop="dateModified" datetime="2020-05-22T23:33:49+08:00">2020-05-22</time>
+                <time title="Modified: 2020-05-28 01:36:38" itemprop="dateModified" datetime="2020-05-28T01:36:38+08:00">2020-05-28</time>
               </span>
             
           
@@ -1422,8 +1818,8 @@ C++代码#include&lt;iostream&gt;using namesp
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/05/15/05-CPU管理2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/15/05-CPU管理2/" itemprop="commentCount"></span>
+                <a href="/2020/05/27/内存管理-03/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/27/内存管理-03/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1457,17 +1853,17 @@ C++代码#include&lt;iostream&gt;using namesp
         
           
             <p>
-              CPU管理21. 用户级线程进程 = 资源 + 指令执行序列
-由于进程切换的过程总，需要将各个资源进行维护，所以消耗较大。有些时候可能希望多个指令序列对应着一份资源。也就是将资源和指令序列解耦合。一个资源+多个指令执行序列。这个时候就引入了线程的概念。
+              内存管理3内存换入
 
-
-在线程进行切换的时候，只需要维护好寄存器影
+在用户眼中，其具有4G大且规整的内存可以供用户使用。用户可以随意只用这些内存。但是真实的物理内存可能并没有这么大。那么如何能够虚拟出这么大的内存呢？
+这就是需要换入换出操作。程序当前使用哪一部分，就将这一部分换入内存。
+可以把虚拟内存看做是仓库，物理内存看做是店面。需要什么，没
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/05/15/05-CPU管理2/#more" rel="contents">
+              <a class="btn" href="/2020/05/27/内存管理-03/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1527,7 +1923,7 @@ C++代码#include&lt;iostream&gt;using namesp
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/04-CPU管理1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/内存管理-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1547,7 +1943,7 @@ C++代码#include&lt;iostream&gt;using namesp
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/05/15/04-CPU管理1/" class="post-title-link" itemprop="url">04_CPU管理1</a>
+                <a href="/2020/05/27/内存管理-02/" class="post-title-link" itemprop="url">内存管理-02</a>
               
             
           </h1>
@@ -1572,13 +1968,23 @@ C++代码#include&lt;iostream&gt;using namesp
                 
               
 
-              <time title="Created: 2020-05-15 23:45:56 / Modified: 23:47:18" itemprop="dateCreated datePublished" datetime="2020-05-15T23:45:56+08:00">2020-05-15</time>
+              <time title="Created: 2020-05-27 14:57:09" itemprop="dateCreated datePublished" datetime="2020-05-27T14:57:09+08:00">2020-05-27</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-06-16 10:34:25" itemprop="dateModified" datetime="2020-06-16T10:34:25+08:00">2020-06-16</time>
+              </span>
             
           
 
@@ -1609,8 +2015,8 @@ C++代码#include&lt;iostream&gt;using namesp
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/05/15/04-CPU管理1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/15/04-CPU管理1/" itemprop="commentCount"></span>
+                <a href="/2020/05/27/内存管理-02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/27/内存管理-02/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1644,18 +2050,15 @@ C++代码#include&lt;iostream&gt;using namesp
         
           
             <p>
-              CPU管理11. 直观想法及问题解决计算机的本质就是不断地进行取指执行,当计算机上电的那一颗开始，一切的动作都是按照预先设定好的来进行。
-一条指令的执行可以分为五个步骤：
-
-取指：取出PC指针对应地址处的指令
-译码：翻译指令，产生对应的各个模块的控制信号等
-访存：访问内存中的某个地址，取出对应的数据
+              内存管理02多级页表与快表对内存进行分页，然后存储虚拟地址的页表好，从而找到其对一个的物理页框号。
+页下，则空间利用率高，但是如果页下，那么项数就会多，页表就会很大。如何放置页表？
+页面尺寸4k, 地址32位，则一共有2^20个页面。每个表项4个字节，则需要4M内存。每个进程需要存储一个这样的映射关
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/05/15/04-CPU管理1/#more" rel="contents">
+              <a class="btn" href="/2020/05/27/内存管理-02/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1715,7 +2118,7 @@ C++代码#include&lt;iostream&gt;using namesp
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/03-操作系统历史/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/内存管理-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1735,7 +2138,7 @@ C++代码#include&lt;iostream&gt;using namesp
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/05/15/03-操作系统历史/" class="post-title-link" itemprop="url">03_操作系统历史</a>
+                <a href="/2020/05/27/内存管理-01/" class="post-title-link" itemprop="url">内存管理-01</a>
               
             
           </h1>
@@ -1760,7 +2163,7 @@ C++代码#include&lt;iostream&gt;using namesp
                 
               
 
-              <time title="Created: 2020-05-15 23:43:47 / Modified: 23:45:20" itemprop="dateCreated datePublished" datetime="2020-05-15T23:43:47+08:00">2020-05-15</time>
+              <time title="Created: 2020-05-27 14:57:04 / Modified: 14:58:52" itemprop="dateCreated datePublished" datetime="2020-05-27T14:57:04+08:00">2020-05-27</time>
             </span>
           
 
@@ -1797,8 +2200,8 @@ C++代码#include&lt;iostream&gt;using namesp
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/05/15/03-操作系统历史/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/15/03-操作系统历史/" itemprop="commentCount"></span>
+                <a href="/2020/05/27/内存管理-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/27/内存管理-01/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1832,385 +2235,15 @@ C++代码#include&lt;iostream&gt;using namesp
         
           
             <p>
-              操作系统简史
-早期的计算机是只用来进行计算任务的，当有多个作业需要完成的时候，这些作业一个一个被送入
-计算机进行执行，只有一个简单的监控系统来进行监控。
-
-然后计算机开始进入了各个行业，如科学计算、银行等。这个时候需要让一台计算机做很多事，如IO、计算等。如果还按照之前的模式来进行处理的话，如果当前
+              内存管理01如何使用内存？
+程序要想运行，首先需要将其加载到内存中，放在内存中的某个位置，然后将PC指针指向其第一条指令，这样就可以运行程序。
+程序中具有一些地址信息。如果直接将程序加载到内存中，这样会导致跳转的地址并不正确。如下如所示的call 40指令。如果直接放到内存中，那么运行到这条指令的时
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/05/15/03-操作系统历史/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/02-系统调用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daohui Wang">
-      <meta itemprop="description" content="Nothing">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wangdh'blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/05/15/02-系统调用/" class="post-title-link" itemprop="url">02_系统调用</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-05-15 23:40:44 / Modified: 23:43:24" itemprop="dateCreated datePublished" datetime="2020-05-15T23:40:44+08:00">2020-05-15</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/操作系统/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/05/15/02-系统调用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/15/02-系统调用/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              02.系统调用1. 什么是接口接口是操作系统对底层的分装之后，对上层软件暴露的接口。连接上层用户和底层，屏蔽不必要的细节。
-操作系统接口就是系统调用，就是操作系统提供的一些函数。如fork,open,write,read。
-POSIX说明了操作系统需要对上层应用提供什么接口，实现什么功能。只要实现的
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/05/15/02-系统调用/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/01-操作系统启动/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daohui Wang">
-      <meta itemprop="description" content="Nothing">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wangdh'blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/05/15/01-操作系统启动/" class="post-title-link" itemprop="url">01_操作系统启动</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-05-15 23:34:44 / Modified: 23:40:24" itemprop="dateCreated datePublished" datetime="2020-05-15T23:34:44+08:00">2020-05-15</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/操作系统/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/05/15/01-操作系统启动/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/15/01-操作系统启动/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              01 操作系统启动1. 什么是操作系统计算机硬件由很多设备组成，比如CPU、内存、磁盘、输入输出设备等等。如果程序员或者普通用户直接在这些硬件上进行操作，那无疑计算机不会像现在这样普及。所以操作系统就像是给硬件穿上了一件衣服。它替我们管理系统资源(CPU, 内存等)，同时抽象出各种接口供上层开发人员
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/05/15/01-操作系统启动/#more" rel="contents">
+              <a class="btn" href="/2020/05/27/内存管理-01/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -2259,7 +2292,7 @@ POSIX说明了操作系统需要对上层应用提供什么接口，实现什么
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2301,7 +2334,7 @@ POSIX说明了操作系统需要对上层应用提供什么接口，实现什么
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">151</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2509,7 +2542,9 @@ POSIX说明了操作系统需要对上层应用提供什么接口，实现什么
                     
                       
                     
-                    <span class="site-state-item-count">68</span>
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -3114,11 +3149,11 @@ POSIX说明了操作系统需要对上层应用提供什么接口，实现什么
   
     
       
-    
-      
-    
-      
         
+      
+    
+      
+    
       
     
       

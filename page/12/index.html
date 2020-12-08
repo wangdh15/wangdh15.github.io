@@ -374,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/区间合并/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/15/树型DP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -394,7 +394,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/03/27/区间合并/" class="post-title-link" itemprop="url">区间合并</a>
+                <a href="/2020/04/15/树型DP/" class="post-title-link" itemprop="url">树型DP</a>
               
             
           </h1>
@@ -419,7 +419,7 @@
                 
               
 
-              <time title="Created: 2020-03-27 17:00:39" itemprop="dateCreated datePublished" datetime="2020-03-27T17:00:39+08:00">2020-03-27</time>
+              <time title="Created: 2020-04-15 14:02:37" itemprop="dateCreated datePublished" datetime="2020-04-15T14:02:37+08:00">2020-04-15</time>
             </span>
           
 
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-07-08 01:52:13" itemprop="dateModified" datetime="2020-07-08T01:52:13+08:00">2020-07-08</time>
+                <time title="Modified: 2020-05-23 12:21:48" itemprop="dateModified" datetime="2020-05-23T12:21:48+08:00">2020-05-23</time>
               </span>
             
           
@@ -466,8 +466,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/03/27/区间合并/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/27/区间合并/" itemprop="commentCount"></span>
+                <a href="/2020/04/15/树型DP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/15/树型DP/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -501,17 +501,17 @@
         
           
             <p>
-              区间合并问题的描述是输入一些区间，求这些区间的并集有多少个。
-解题方法是先按照区间左端点对所有的区间进行排序，然后从左到右进行处理。
-维护当前区间，如果新区间的左端点在维护区间的右侧，则结果+1。
-然后动态维护当前区间即可。
-#include &lt;iostream&gt;#include &lt
+              树型DP主要是在树上做DP，一般的子问题是定义在子树上的问题。某课树的问题的解可以由其子问题的解得到。
+一般是使用dfs进行处理。
+1. 树的重心原题链接
+解题思路可以求解出每个点删除之后的结果，然后去最大的最小。
+无向数可以定一个遍历顺序。当删除一个节点之后，这个节点的孩子的节点数可以得到。那么剩
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/03/27/区间合并/#more" rel="contents">
+              <a class="btn" href="/2020/04/15/树型DP/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -571,7 +571,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/离散化/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/14/状态压缩DP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -591,7 +591,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/03/27/离散化/" class="post-title-link" itemprop="url">离散化</a>
+                <a href="/2020/04/14/状态压缩DP/" class="post-title-link" itemprop="url">状态压缩DP</a>
               
             
           </h1>
@@ -616,192 +616,7 @@
                 
               
 
-              <time title="Created: 2020-03-27 10:44:36 / Modified: 16:04:24" itemprop="dateCreated datePublished" datetime="2020-03-27T10:44:36+08:00">2020-03-27</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/03/27/离散化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/27/离散化/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              1. 离散化思想数据出现的范围很大，但是数据的量比较小，需要将数据中的每个数据映射到一个小数。
-同时满足保序性(小数映射到小数，大数映射到大数)。
-为什么需要离散化。有些时候需要利用数据来找到下标。数比较小的时候可以直接将每个数映射到下标，但是树比较大的话就不太行。但是因为数据的量又是比较小的，所以
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/03/27/离散化/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/位运算/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daohui Wang">
-      <meta itemprop="description" content="Nothing">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wangdh'blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/03/26/位运算/" class="post-title-link" itemprop="url">位运算</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-03-26 23:31:04" itemprop="dateCreated datePublished" datetime="2020-03-26T23:31:04+08:00">2020-03-26</time>
+              <time title="Created: 2020-04-14 15:26:29" itemprop="dateCreated datePublished" datetime="2020-04-14T15:26:29+08:00">2020-04-14</time>
             </span>
           
 
@@ -816,7 +631,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-07-07 23:13:11" itemprop="dateModified" datetime="2020-07-07T23:13:11+08:00">2020-07-07</time>
+                <time title="Modified: 2020-08-10 19:07:48" itemprop="dateModified" datetime="2020-08-10T19:07:48+08:00">2020-08-10</time>
               </span>
             
           
@@ -848,8 +663,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/03/26/位运算/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/26/位运算/" itemprop="commentCount"></span>
+                <a href="/2020/04/14/状态压缩DP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/14/状态压缩DP/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -883,13 +698,13 @@
         
           
             <p>
-              基础x &amp; y  # x 与 y各位做与运算x | y  # x 与 y各位做或运算x ^ y  # x 与 y各位做异或运算， 一个数与0异或是自己，自己和自己异或是0x &amp; 1  # 判断 x 的奇偶性x &amp; (-x)  # 取出 x 的二进制表示的最后一个1所在的位置，
+              状态压缩DP对于某些问题，我们需要在动态规划的状态中记录一个集合。保存某种“轮廓信息”，以便进行状态转移。若集合的大小不超过N，集合中的每个元素都是小鱼K的自然数，则可以将这种集合看做一个N位K进制数，以一个$[0, K^N-1]$之间的十进制整数的形式作为DP状态中的一维。这种将集合转化为整数记录
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/03/26/位运算/#more" rel="contents">
+              <a class="btn" href="/2020/04/14/状态压缩DP/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -949,7 +764,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/双指针/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/合并K个有序链表，设计推特/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -969,7 +784,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/03/26/双指针/" class="post-title-link" itemprop="url">双指针</a>
+                <a href="/2020/04/13/合并K个有序链表，设计推特/" class="post-title-link" itemprop="url">合并K个有序链表，设计推特</a>
               
             
           </h1>
@@ -994,7 +809,194 @@
                 
               
 
-              <time title="Created: 2020-03-26 23:00:19" itemprop="dateCreated datePublished" datetime="2020-03-26T23:00:19+08:00">2020-03-26</time>
+              <time title="Created: 2020-04-13 16:42:52 / Modified: 22:24:07" itemprop="dateCreated datePublished" datetime="2020-04-13T16:42:52+08:00">2020-04-13</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2020/04/13/合并K个有序链表，设计推特/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/13/合并K个有序链表，设计推特/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              1. 合并K个有序链表原题链接
+思路1 逐个比较，堆优化借鉴合并两个有序链表的思想，可以使用k个指针，每个指针指向一个链表，然后每步比较所有链表中
+值，找到最小的那一个，添加到结果中即可。
+时间复杂度O(NK)， 空间复杂度O(1)
+但是能不能比较高效地得到一堆元素中的较小值？考虑到每次都是增加一个
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/13/合并K个有序链表，设计推特/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/Python数据结构总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daohui Wang">
+      <meta itemprop="description" content="Nothing">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangdh'blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/04/13/Python数据结构总结/" class="post-title-link" itemprop="url">Python数据结构总结</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-04-13 15:14:48" itemprop="dateCreated datePublished" datetime="2020-04-13T15:14:48+08:00">2020-04-13</time>
             </span>
           
 
@@ -1009,7 +1011,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-05-23 12:43:02" itemprop="dateModified" datetime="2020-05-23T12:43:02+08:00">2020-05-23</time>
+                <time title="Modified: 2020-06-16 10:34:39" itemprop="dateModified" datetime="2020-06-16T10:34:39+08:00">2020-06-16</time>
               </span>
             
           
@@ -1041,8 +1043,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/03/26/双指针/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/26/双指针/" itemprop="commentCount"></span>
+                <a href="/2020/04/13/Python数据结构总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/13/Python数据结构总结/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1076,16 +1078,15 @@
         
           
             <p>
-              1. 双指针算法双指针算法一般是将暴力遍历的算法通过观察一些规律，从而将复杂度从降为线性复杂度的方法。
-维护两个指针，指针内部的区间满足某些性质或者两个指针指向的数据满足某些性质(有序数组两数和的问题)。
-2. 最长不重复子序列
-维护一个数组，记录当前区间各个数字出现的次数，移动右边指针的时候判断移
+              主要是总结各种Python内置的数据结构的API，方便刷题使用
+堆和优先队列利用heapqheapq内部是维护列表实现的。提供了一下堆的常用操作。常用的API如下所示：
+import heapq# heapq实现堆是最小堆，没有最大堆# 根据已有的list创建一个最小堆a = [2,1,5,-10,
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/03/26/双指针/#more" rel="contents">
+              <a class="btn" href="/2020/04/13/Python数据结构总结/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1145,7 +1146,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/一维二维前缀和、查分/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/SVM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1165,7 +1166,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/03/26/一维二维前缀和、查分/" class="post-title-link" itemprop="url">一维二维前缀和、差分</a>
+                <a href="/2020/04/10/SVM/" class="post-title-link" itemprop="url">SVM</a>
               
             
           </h1>
@@ -1190,7 +1191,7 @@
                 
               
 
-              <time title="Created: 2020-03-26 20:44:06" itemprop="dateCreated datePublished" datetime="2020-03-26T20:44:06+08:00">2020-03-26</time>
+              <time title="Created: 2020-04-10 10:09:28" itemprop="dateCreated datePublished" datetime="2020-04-10T10:09:28+08:00">2020-04-10</time>
             </span>
           
 
@@ -1205,7 +1206,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-08-10 19:21:03" itemprop="dateModified" datetime="2020-08-10T19:21:03+08:00">2020-08-10</time>
+                <time title="Modified: 2020-04-13 16:24:06" itemprop="dateModified" datetime="2020-04-13T16:24:06+08:00">2020-04-13</time>
               </span>
             
           
@@ -1219,7 +1220,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
 
                 
                 
@@ -1237,8 +1238,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/03/26/一维二维前缀和、查分/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/26/一维二维前缀和、查分/" itemprop="commentCount"></span>
+                <a href="/2020/04/10/SVM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/10/SVM/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1272,17 +1273,13 @@
         
           
             <p>
-              概述前缀操作和差分操作是两个互逆操作。求数据区间和能够转化为前缀和的单点操作。对数据区间增减可以转化为
-对差分的单点操作，从而提高效率。
-但是这种数据结构不支持对一个数据单点操作，并高效地支持区间和操作。要想同时拥有对数据的单点操作和区间和操作，
-需要使用树状数组的数据结构。
-1. 一维前缀和前缀和
-              ...
+              
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/03/26/一维二维前缀和、查分/#more" rel="contents">
+              <a class="btn" href="/2020/04/10/SVM/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1342,7 +1339,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/高精度/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/EM算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1362,7 +1359,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/03/26/高精度/" class="post-title-link" itemprop="url">高精度</a>
+                <a href="/2020/04/10/EM算法/" class="post-title-link" itemprop="url">EM算法</a>
               
             
           </h1>
@@ -1387,7 +1384,7 @@
                 
               
 
-              <time title="Created: 2020-03-26 18:59:53" itemprop="dateCreated datePublished" datetime="2020-03-26T18:59:53+08:00">2020-03-26</time>
+              <time title="Created: 2020-04-10 10:09:20" itemprop="dateCreated datePublished" datetime="2020-04-10T10:09:20+08:00">2020-04-10</time>
             </span>
           
 
@@ -1402,7 +1399,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-06-21 23:51:26" itemprop="dateModified" datetime="2020-06-21T23:51:26+08:00">2020-06-21</time>
+                <time title="Modified: 2020-04-19 15:50:54" itemprop="dateModified" datetime="2020-04-19T15:50:54+08:00">2020-04-19</time>
               </span>
             
           
@@ -1416,7 +1413,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
 
                 
                 
@@ -1434,8 +1431,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/03/26/高精度/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/26/高精度/" itemprop="commentCount"></span>
+                <a href="/2020/04/10/EM算法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/10/EM算法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1469,14 +1466,15 @@
         
           
             <p>
-              1. 高精度加法高精度加法就直接模拟，数的存储逆过来，因为计算需要从后往前计算。
-#include &lt;iostream&gt;#include &lt;vector&gt;using namespace std;const  int N = 1e5+10;vector&lt;int&gt;  
+              1. 最大似然估计MLE最大似然估计的思想是，知道模型的具体形式，现在有了观测数据，我们希望求模型的参数，使得在这组参数下，观测数据出现的概率是最大的。用数学公式表达就是
+$$\hat{\theta} = argmax_{\theta} P(x;\theta)$$
+当观测样本之间是相互独立的时候，一
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/03/26/高精度/#more" rel="contents">
+              <a class="btn" href="/2020/04/10/EM算法/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1536,7 +1534,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/二分代码模板/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/05/LRU、LFU缓存机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1556,7 +1554,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/03/26/二分代码模板/" class="post-title-link" itemprop="url">二分代码模板</a>
+                <a href="/2020/04/05/LRU、LFU缓存机制/" class="post-title-link" itemprop="url">LRU、LFU缓存机制</a>
               
             
           </h1>
@@ -1581,7 +1579,7 @@
                 
               
 
-              <time title="Created: 2020-03-26 15:42:18" itemprop="dateCreated datePublished" datetime="2020-03-26T15:42:18+08:00">2020-03-26</time>
+              <time title="Created: 2020-04-05 22:01:59" itemprop="dateCreated datePublished" datetime="2020-04-05T22:01:59+08:00">2020-04-05</time>
             </span>
           
 
@@ -1596,179 +1594,8 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-07-08 10:55:18" itemprop="dateModified" datetime="2020-07-08T10:55:18+08:00">2020-07-08</time>
+                <time title="Modified: 2020-04-23 14:51:29" itemprop="dateModified" datetime="2020-04-23T14:51:29+08:00">2020-04-23</time>
               </span>
-            
-          
-
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/03/26/二分代码模板/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/26/二分代码模板/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              1. 二分查找二分查找使用的范围是，给定一个解的范围，中间存在一个边界，使得这个边界左边的一边是满足的，另一边是不满足的，
-二分能够找到这个边界在什么位置。
-比如在一个非递减的数组中查找到某个数字的最左侧的位置或者最右侧的位置。
-但是二分查找能够写对是不是很容易的。其实最重要的就是考虑两个元素的时候
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/03/26/二分代码模板/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/快排、归并排序代码模板/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daohui Wang">
-      <meta itemprop="description" content="Nothing">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wangdh'blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/03/26/快排、归并排序代码模板/" class="post-title-link" itemprop="url">快排、归并排序代码模板</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-03-26 01:05:48 / Modified: 01:16:38" itemprop="dateCreated datePublished" datetime="2020-03-26T01:05:48+08:00">2020-03-26</time>
-            </span>
-          
-
-          
-            
-
             
           
 
@@ -1799,8 +1626,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/03/26/快排、归并排序代码模板/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/26/快排、归并排序代码模板/" itemprop="commentCount"></span>
+                <a href="/2020/04/05/LRU、LFU缓存机制/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/05/LRU、LFU缓存机制/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1834,13 +1661,17 @@
         
           
             <p>
-              1. 快速排序模板#include &lt;iostream&gt;using namespace std;const  int N = 1e6+10;int n;int q[N];void quick_sort(int q[], int l, int r)&#123;  if (l &gt;= r
+              1. LRU机制实现原题链接
+解题思路散列表和双向链表联合使用
+使用散列表可以在O(1)的时间利用key找到对应的节点，双向链表维护的是节点的访问次序，当访问了一个节点
+将其在双向链表中删除，并添加到链表头或者链表尾中， 容量满之后只需要删除链表头或者链表尾的元素即可
+时间复杂度O(1)， 空间复杂
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/03/26/快排、归并排序代码模板/#more" rel="contents">
+              <a class="btn" href="/2020/04/05/LRU、LFU缓存机制/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1900,7 +1731,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/树状数组/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/29/区间DP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -1920,7 +1751,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/03/24/树状数组/" class="post-title-link" itemprop="url">树状数组</a>
+                <a href="/2020/03/29/区间DP/" class="post-title-link" itemprop="url">区间DP</a>
               
             
           </h1>
@@ -1945,7 +1776,7 @@
                 
               
 
-              <time title="Created: 2020-03-24 19:17:13" itemprop="dateCreated datePublished" datetime="2020-03-24T19:17:13+08:00">2020-03-24</time>
+              <time title="Created: 2020-03-29 13:13:25" itemprop="dateCreated datePublished" datetime="2020-03-29T13:13:25+08:00">2020-03-29</time>
             </span>
           
 
@@ -1960,7 +1791,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-07-03 17:26:12" itemprop="dateModified" datetime="2020-07-03T17:26:12+08:00">2020-07-03</time>
+                <time title="Modified: 2020-07-08 01:52:09" itemprop="dateModified" datetime="2020-07-08T01:52:09+08:00">2020-07-08</time>
               </span>
             
           
@@ -1992,8 +1823,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/03/24/树状数组/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/24/树状数组/" itemprop="commentCount"></span>
+                <a href="/2020/03/29/区间DP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/29/区间DP/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2027,16 +1858,16 @@
         
           
             <p>
-              树状数组1. 前缀有一种数据结构能够通过一些预处理能够得到任意区间[l, r]的数字的和。这就是通过
-构造前缀数组，数组中存放的位置是当前下标之前的所有数字之和。同样，类似的数据结构
-可以拓展到更高的维度。用于求二维矩阵任意子块的所有元素的和。
-但是这种数据结构面临着一个问题就是元素根性问题。如果原
+              区间DP区间DP的状态表示的是一个区间。f[i, j] 表示i-j的区间的某个集合。
+状态表示的集合是什么，考察的集合的属性是什么。
+合并石子题目链接
+状态表示: f[i, j] 表示将区间i-j的石子合并的所有可能的方法状态属性： 所有合并方法中的代价的最小值集合划分： 考虑最后一次的边界是什么，
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/03/24/树状数组/#more" rel="contents">
+              <a class="btn" href="/2020/03/29/区间DP/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -2096,7 +1927,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/JVM-7-虚拟机字节码执行引擎/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/28/字典树Trie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -2116,7 +1947,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/22/JVM-7-虚拟机字节码执行引擎/" class="post-title-link" itemprop="url">JVM-7-虚拟机字节码执行引擎</a>
+                <a href="/2020/03/28/字典树Trie/" class="post-title-link" itemprop="url">字典树Trie</a>
               
             
           </h1>
@@ -2141,13 +1972,23 @@
                 
               
 
-              <time title="Created: 2019-08-22 16:10:11 / Modified: 21:16:37" itemprop="dateCreated datePublished" datetime="2019-08-22T16:10:11+08:00">2019-08-22</time>
+              <time title="Created: 2020-03-28 23:42:05" itemprop="dateCreated datePublished" datetime="2020-03-28T23:42:05+08:00">2020-03-28</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-07-06 16:51:43" itemprop="dateModified" datetime="2020-07-06T16:51:43+08:00">2020-07-06</time>
+              </span>
             
           
 
@@ -2160,7 +2001,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
 
                 
                 
@@ -2178,8 +2019,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/08/22/JVM-7-虚拟机字节码执行引擎/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/22/JVM-7-虚拟机字节码执行引擎/" itemprop="commentCount"></span>
+                <a href="/2020/03/28/字典树Trie/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/28/字典树Trie/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2213,17 +2054,213 @@
         
           
             <p>
-              字节码执行引擎
-虚拟机和物理机都具有代码执行能力，但是物理机的执行引擎是直接建立在处理器、硬件、指令集合操作系统层面上的，而虚拟机的执行引擎是由自己实现的。所以虚拟机可以自行指定指令集和执行引擎的结构体系，而且能够执行那些不被硬件直接支持的指令集格式。
+              Trie树Trie树是高效存储和查询字符串集合的数据结构，能够压缩相同字符的公共前缀。将字符串集合存储成树形结构，并在字符串结尾处进行标记。在查询的时候直接从根节点向下搜索即可。
 
 
-所有的Java虚拟机的执行引擎从外观看起来
+Trie字符串统计原题链接
+解题思路模板题，使用数组模拟链表
+C++代码#include &lt;iostream&
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/08/22/JVM-7-虚拟机字节码执行引擎/#more" rel="contents">
+              <a class="btn" href="/2020/03/28/字典树Trie/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/28/单调栈与单调队列/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daohui Wang">
+      <meta itemprop="description" content="Nothing">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangdh'blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/03/28/单调栈与单调队列/" class="post-title-link" itemprop="url">单调栈与单调队列</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-03-28 13:41:34" itemprop="dateCreated datePublished" datetime="2020-03-28T13:41:34+08:00">2020-03-28</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-06-11 00:16:59" itemprop="dateModified" datetime="2020-06-11T00:16:59+08:00">2020-06-11</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2020/03/28/单调栈与单调队列/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/28/单调栈与单调队列/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              1. 思想先用栈或者队列暴力求解，然后看栈或者队列中是否有某些元素一定不会被输出(后输入的元素满足某些性质是不是会让前面某些在考虑范围内的元素一定满足某些性质或者屏蔽掉某些元素)，然后再看栈或者队列是否有序，最后看是否可以优化(查找极值或者二分查找某个元素等)。
+
+单调栈: 一般是求左边或者右边第一
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/03/28/单调栈与单调队列/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -2272,7 +2309,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2314,7 +2351,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">151</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2522,7 +2559,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">68</span>
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -3135,6 +3174,8 @@
       
     
       
+        
+      
     
       
     
@@ -3148,6 +3189,46 @@
     
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
