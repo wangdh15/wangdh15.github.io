@@ -110,7 +110,8 @@
 <meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/6.png">
 <meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/7.png">
 <meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/8.png">
-<meta property="og:updated_time" content="2020-12-09T14:36:07.337Z">
+<meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/9.png">
+<meta property="og:updated_time" content="2020-12-10T08:42:28.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件系统总结">
 <meta name="twitter:description" content="文件系统总结1. IO设备常见的IO设备可以抽象成如下的模型。设备对外暴露了一些接口，比如状态寄存器，指令寄存器和数据等。 外界通过对这些寄存器进行赋值，来向设备发送指令，读取写入数据，获取设备状态等。这是IO设备对外界的抽象。同时设备会有一些协议，说明各种操作需要将各个寄存器设定的状态，也可以看做是设备编程说明书。 比如以下四步：  等待设备就绪 将数据写到Data部分 将合适的指令写到Comm">
@@ -426,13 +427,23 @@
                 
               
 
-              <time title="Created: 2020-12-09 16:06:06 / Modified: 22:36:07" itemprop="dateCreated datePublished" datetime="2020-12-09T16:06:06+08:00">2020-12-09</time>
+              <time title="Created: 2020-12-09 16:06:06" itemprop="dateCreated datePublished" datetime="2020-12-09T16:06:06+08:00">2020-12-09</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-12-10 16:42:28" itemprop="dateModified" datetime="2020-12-10T16:42:28+08:00">2020-12-10</time>
+              </span>
             
           
 
@@ -659,6 +670,28 @@
 <p>同时在对文件内容进行更改的时候，也并不是立即就IO到文件中，而是先对缓冲区进行写，等达到一定大小了在一次IO到磁盘中。</p>
 <p>同时积累多次写系统可以对这些写的次序进行调度，提高IO的性能。同时有些写操作可能相互抵消，比如先创建再删除一个文件。</p>
 <p>如果不希望缓冲，可以调用一些系统调用刷新缓冲区，或者使用底层的接口。</p>
+<p>###4. Crash Consistency</p>
+<p>由于系统可能在任意一个时刻崩溃，比如发生断电等故障。如何保证文件系统的一致性是一个问题。</p>
+<p>比如对一个文件进行修改，要修改它的<code>inode</code>， <code>data bitmap</code>以及对应的数据块。磁盘在一次IO的过程中不能将所有的信息原子的写入。</p>
+<p>如果写入了一部分信息，那么就会导致磁盘上的状态和我们希望的不一致。</p>
+<p>解决这个问题有两个思路：</p>
+<ol>
+<li>在每次加载文件系统的时候，对整个磁盘的文件系统进行扫描诊断，去除不一致的信息，但是效率太慢。</li>
+<li>在修改内容的时候，先写日志，然后再修改内容。如果发生故障的话，可以根据日志的内容对磁盘进行恢复。</li>
+</ol>
+<p>下面是一种操作：</p>
+<ol>
+<li>首先写数据块。</li>
+<li>然后将元数据的修改写入日志：将日志开始标记以及元数据块写入log中。</li>
+<li>提交日志。将日志的结束块写入log中，表示事务已经被提交了。</li>
+<li>checkpoint metedata：将元数据的信息更新到文件系统的最终位置。</li>
+<li>释放这一个日志。将这个事务块从日志超级块中释放。</li>
+</ol>
+<p><img src="/2020/12/09/文件系统总结/9.png" alt="image-20201210163821463"></p>
+<p>这里先写数据，再写元数据的顺序是不可以更改的。</p>
+<blockquote>
+<p>this rule of “write the pointed to object before the  object with the pointer to it “ is at the core of crash consistency, and is exploited even further by other crash consistency schemes.</p>
+</blockquote>
 
       
     </div>
