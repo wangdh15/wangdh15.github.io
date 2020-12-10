@@ -111,7 +111,13 @@
 <meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/7.png">
 <meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/8.png">
 <meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/9.png">
-<meta property="og:updated_time" content="2020-12-10T08:42:28.368Z">
+<meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/10.png">
+<meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/11.png">
+<meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/12.png">
+<meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/13.png">
+<meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/14.png">
+<meta property="og:image" content="http://yoursite.com/2020/12/09/文件系统总结/15.png">
+<meta property="og:updated_time" content="2020-12-10T15:16:34.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件系统总结">
 <meta name="twitter:description" content="文件系统总结1. IO设备常见的IO设备可以抽象成如下的模型。设备对外暴露了一些接口，比如状态寄存器，指令寄存器和数据等。 外界通过对这些寄存器进行赋值，来向设备发送指令，读取写入数据，获取设备状态等。这是IO设备对外界的抽象。同时设备会有一些协议，说明各种操作需要将各个寄存器设定的状态，也可以看做是设备编程说明书。 比如以下四步：  等待设备就绪 将数据写到Data部分 将合适的指令写到Comm">
@@ -442,7 +448,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-12-10 16:42:28" itemprop="dateModified" datetime="2020-12-10T16:42:28+08:00">2020-12-10</time>
+                <time title="Modified: 2020-12-10 23:16:34" itemprop="dateModified" datetime="2020-12-10T23:16:34+08:00">2020-12-10</time>
               </span>
             
           
@@ -692,6 +698,16 @@
 <blockquote>
 <p>this rule of “write the pointed to object before the  object with the pointer to it “ is at the core of crash consistency, and is exploited even further by other crash consistency schemes.</p>
 </blockquote>
+<h3 id="5-磁盘布局"><a href="#5-磁盘布局" class="headerlink" title="5. 磁盘布局"></a>5. 磁盘布局</h3><p><a href="https://www.cnblogs.com/cxuanBlog/p/12565601.html" target="_blank" rel="noopener">参考文献</a></p>
+<img src="/2020/12/09/文件系统总结/10.png" alt="image-20201210200417598" style="zoom:67%;">
+
+<p><img src="/2020/12/09/文件系统总结/11.png" alt="image-20201210200439895"></p>
+<p><img src="/2020/12/09/文件系统总结/12.png" alt="image-20201210200457137"></p>
+<h3 id="6-虚拟文件系统"><a href="#6-虚拟文件系统" class="headerlink" title="6. 虚拟文件系统"></a>6. 虚拟文件系统</h3><p><a href="https://www.cnblogs.com/cxuanBlog/p/12565601.html" target="_blank" rel="noopener">参考文献</a></p>
+<p><img src="/2020/12/09/文件系统总结/13.png" alt="image-20201210201018303"></p>
+<p><img src="/2020/12/09/文件系统总结/14.png" alt="image-20201210201036678"></p>
+<img src="/2020/12/09/文件系统总结/15.png" alt="image-20201210201057759" style="zoom: 33%;">
+
 
       
     </div>
@@ -1109,7 +1125,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统总结"><span class="nav-number">1.</span> <span class="nav-text">文件系统总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-IO设备"><span class="nav-number">1.1.</span> <span class="nav-text">1. IO设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-文件与目录抽象"><span class="nav-number">1.2.</span> <span class="nav-text">2. 文件与目录抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-一个简单的文件系统"><span class="nav-number">1.3.</span> <span class="nav-text">3. 一个简单的文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Inode"><span class="nav-number">1.3.1.</span> <span class="nav-text">Inode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何在inode中记录数据块存储的位置"><span class="nav-number">1.3.2.</span> <span class="nav-text">如何在inode中记录数据块存储的位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目录组织"><span class="nav-number">1.3.3.</span> <span class="nav-text">目录组织</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读写某个文件的过程"><span class="nav-number">1.3.4.</span> <span class="nav-text">读写某个文件的过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存"><span class="nav-number">1.3.5.</span> <span class="nav-text">缓存</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统总结"><span class="nav-number">1.</span> <span class="nav-text">文件系统总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-IO设备"><span class="nav-number">1.1.</span> <span class="nav-text">1. IO设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-文件与目录抽象"><span class="nav-number">1.2.</span> <span class="nav-text">2. 文件与目录抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-一个简单的文件系统"><span class="nav-number">1.3.</span> <span class="nav-text">3. 一个简单的文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Inode"><span class="nav-number">1.3.1.</span> <span class="nav-text">Inode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何在inode中记录数据块存储的位置"><span class="nav-number">1.3.2.</span> <span class="nav-text">如何在inode中记录数据块存储的位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目录组织"><span class="nav-number">1.3.3.</span> <span class="nav-text">目录组织</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读写某个文件的过程"><span class="nav-number">1.3.4.</span> <span class="nav-text">读写某个文件的过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存"><span class="nav-number">1.3.5.</span> <span class="nav-text">缓存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-磁盘布局"><span class="nav-number">1.4.</span> <span class="nav-text">5. 磁盘布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-虚拟文件系统"><span class="nav-number">1.5.</span> <span class="nav-text">6. 虚拟文件系统</span></a></li></ol></li></ol></div>
             
 
           </div>
