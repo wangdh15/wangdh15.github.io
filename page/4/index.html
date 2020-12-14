@@ -374,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/桥模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/面向对象设计原则/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -394,7 +394,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/11/14/桥模式/" class="post-title-link" itemprop="url">桥模式</a>
+                <a href="/2020/11/14/面向对象设计原则/" class="post-title-link" itemprop="url">面向对象设计原则</a>
               
             
           </h1>
@@ -456,8 +456,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/11/14/桥模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/桥模式/" itemprop="commentCount"></span>
+                <a href="/2020/11/14/面向对象设计原则/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/面向对象设计原则/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -491,20 +491,17 @@
         
           
             <p>
-              桥模式由于某些类型的固有的逻辑，使得他们有两个变化的维度，或者多个变化的维度。
-举个例子，比如要实现一个通信软件的类，这个类需要以下的功能：
+              1. 依赖倒置原则(DIP)
+高层模块(稳定)不应该依赖底层模块的变化，二者都应该依赖于抽象(稳定)
+抽象(稳定)不应该依赖实现细节变化，实现细节应该依赖于抽象(稳定)
 
-登录，发送消息，接受消息。
-底层的，相互连接，发送数据包。
-
-这个软件需要运行在PC平台，手机平台，TV平台等，对于不同的平台，底层的这些实现是不同的。
-这
+mainForm  ----&gt; Line/Rectangle     ×  (稳定)             （不稳定）m
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/11/14/桥模式/#more" rel="contents">
+              <a class="btn" href="/2020/11/14/面向对象设计原则/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -564,7 +561,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/模板方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/享元模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -584,7 +581,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/11/14/模板方法/" class="post-title-link" itemprop="url">模板方法</a>
+                <a href="/2020/11/14/享元模式/" class="post-title-link" itemprop="url">享元模式</a>
               
             
           </h1>
@@ -609,13 +606,23 @@
                 
               
 
-              <time title="Created: 2020-11-14 23:34:44 / Modified: 20:25:48" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
+              <time title="Created: 2020-11-14 23:34:44" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-12-08 16:02:42" itemprop="dateModified" datetime="2020-12-08T16:02:42+08:00">2020-12-08</time>
+              </span>
             
           
 
@@ -646,8 +653,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/11/14/模板方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/模板方法/" itemprop="commentCount"></span>
+                <a href="/2020/11/14/享元模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/享元模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -681,17 +688,16 @@
         
           
             <p>
-              模板方法在软件构建的过程中，对于一项任务，通常有稳定的整体操作结构，但各个子步骤有很多改变的需求，或者子任务无法与任务的整体结构同时实现。比如在开发框架的时候。
-如何在确定操作结构的前提下，灵活应对各个子步骤的变化，或者晚期实现需求。
-下面是一个例子。
+              享元模式1 问题软件系统采用纯粹面向对象的时候，有大量细颗粒度的对象会很快充斥在系统中，从而带来很高的运行时代码，只要是内存方面的代码。比如字符串，整数这种在程序中大量存在的对象。
+如何能够避免大量细颗粒度对象问题的同时，让外部客户端程序仍然能够透明地使用面向对象的方式来进行操作。
 
-在设计的时候，将主要的流程在框架中写好，然后
+享元模式通过共
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/11/14/模板方法/#more" rel="contents">
+              <a class="btn" href="/2020/11/14/享元模式/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -887,6 +893,196 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/2020/11/14/中介者模式/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/桥模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daohui Wang">
+      <meta itemprop="description" content="Nothing">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wangdh'blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/11/14/桥模式/" class="post-title-link" itemprop="url">桥模式</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-11-14 23:34:44 / Modified: 20:25:48" itemprop="dateCreated datePublished" datetime="2020-11-14T23:34:44+08:00">2020-11-14</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2020/11/14/桥模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/桥模式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              桥模式由于某些类型的固有的逻辑，使得他们有两个变化的维度，或者多个变化的维度。
+举个例子，比如要实现一个通信软件的类，这个类需要以下的功能：
+
+登录，发送消息，接受消息。
+底层的，相互连接，发送数据包。
+
+这个软件需要运行在PC平台，手机平台，TV平台等，对于不同的平台，底层的这些实现是不同的。
+这
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/11/14/桥模式/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -2108,192 +2304,6 @@ $$B_0, B_1, …, B_n$$
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/22/计算机网络08-链路层/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daohui Wang">
-      <meta itemprop="description" content="Nothing">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wangdh'blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/07/22/计算机网络08-链路层/" class="post-title-link" itemprop="url">计算机网络08-链路层</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-07-22 09:51:27 / Modified: 11:39:14" itemprop="dateCreated datePublished" datetime="2020-07-22T09:51:27+08:00">2020-07-22</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机网络/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/07/22/计算机网络08-链路层/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/22/计算机网络08-链路层/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              链路层链路层主要解决的问题是分组如何通过构成端到端的通信路径的各段链路。前面讨论的传输层和网络层都只是逻辑上发送过去，但是真正发送数据还是需要靠底层的链路层和物理层。物理层对于程序员来说没有太大理解的必要（电子本科的我已经学够了。。。）只考虑链路层是如何进行传输的。如下图中的蓝色的部分。
-
-
-链路层
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/07/22/计算机网络08-链路层/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2340,7 +2350,7 @@ $$B_0, B_1, …, B_n$$
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">153</span>
+                    <span class="site-state-item-count">154</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2556,7 +2566,9 @@ $$B_0, B_1, …, B_n$$
                     
                       
                     
-                    <span class="site-state-item-count">72</span>
+                      
+                    
+                    <span class="site-state-item-count">73</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -3173,9 +3185,9 @@ $$B_0, B_1, …, B_n$$
       
     
       
-        
-      
     
+      
+        
       
     
       
