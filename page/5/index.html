@@ -570,7 +570,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/代理模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/原型模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daohui Wang">
@@ -590,7 +590,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/11/14/代理模式/" class="post-title-link" itemprop="url">代理模式</a>
+                <a href="/2020/11/14/原型模式/" class="post-title-link" itemprop="url">原型模式</a>
               
             
           </h1>
@@ -662,8 +662,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2020/11/14/代理模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/代理模式/" itemprop="commentCount"></span>
+                <a href="/2020/11/14/原型模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/原型模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -697,14 +697,14 @@
         
           
             <p>
-              代理模式问题在某些情况下，一个客户不能或者不想直接访问另一个对象，有可能是这个对象在远程服务器，远程对象比较大，或者有一些安全原因需要屏蔽客户端直接访问真实对象，如某单位的内部数据库等。
-某与某些原因，需要给某个对象提供一个代理以控制对该对象的访问，访问对象不适合或者并不能直接引用目标对象，这个时候
+              原型模式有些对象在创建的时候可能需要花费较高的代价，比如类初始化的时候需要消耗非常多的资源，加载硬盘，访问数据库等。而且把一个对象要提供给其它对象访问的时候，各个调用者可能都需要修改其值或者状态。这个时候可以保存一个对象的原型，然后再每次请求的时候通过在这个原型上克隆出一个新的对象返回。
+在实际的项
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2020/11/14/代理模式/#more" rel="contents">
+              <a class="btn" href="/2020/11/14/原型模式/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -2670,7 +2670,7 @@ $$B_0, B_1, …, B_n$$
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

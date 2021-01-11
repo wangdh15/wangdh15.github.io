@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="wangdh&#39;blogs">
 <meta property="og:description" content="GDB常用命令(未完持续补充)如果希望用GDB进行调试的话，需要在编译的时候加入-g，使得保留符号表。 01 启动与退出123gdb a.out  # 加载a.out可执行程序run &amp;lt;p1&amp;gt; &amp;lt;p2&amp;gt; ... # 执行，相当于a.out p1 p2quit   # 退出  02 打断点12b &amp;lt;fun_name&amp;gt; # 在函数fun_name的地方加断点b *0">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-12-21T12:21:29.963Z">
+<meta property="og:updated_time" content="2021-01-11T15:25:21.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GDB常用命令">
 <meta name="twitter:description" content="GDB常用命令(未完持续补充)如果希望用GDB进行调试的话，需要在编译的时候加入-g，使得保留符号表。 01 启动与退出123gdb a.out  # 加载a.out可执行程序run &amp;lt;p1&amp;gt; &amp;lt;p2&amp;gt; ... # 执行，相当于a.out p1 p2quit   # 退出  02 打断点12b &amp;lt;fun_name&amp;gt; # 在函数fun_name的地方加断点b *0">
@@ -417,13 +417,23 @@
                 
               
 
-              <time title="Created: 2020-12-21 18:06:06 / Modified: 20:21:29" itemprop="dateCreated datePublished" datetime="2020-12-21T18:06:06+08:00">2020-12-21</time>
+              <time title="Created: 2020-12-21 18:06:06" itemprop="dateCreated datePublished" datetime="2020-12-21T18:06:06+08:00">2020-12-21</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-01-11 23:25:21" itemprop="dateModified" datetime="2021-01-11T23:25:21+08:00">2021-01-11</time>
+              </span>
             
           
 
@@ -499,11 +509,14 @@
 
 <h3 id="02-打断点"><a href="#02-打断点" class="headerlink" title="02 打断点"></a>02 打断点</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b &lt;fun_name&gt; # 在函数fun_name的地方加断点</span><br><span class="line">b *0x7c00  # 在虚拟内存0x7c00的地方打断点，运行到这个地址的时候就停止</span><br></pre></td></tr></table></figure>
 
-<h3 id="03-执行"><a href="#03-执行" class="headerlink" title="03 执行"></a>03 执行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s  # 源码单步执行</span><br><span class="line">si # 汇编单步执行</span><br><span class="line">c  # 持续运行到下一个断点</span><br></pre></td></tr></table></figure>
+<h3 id="03-执行"><a href="#03-执行" class="headerlink" title="03 执行"></a>03 执行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s  # 源码单步执行，遇到函数的话进入</span><br><span class="line">si # 汇编单步执行，遇到函数进入</span><br><span class="line">n  # 源码单步执行，遇到函数不跳入</span><br><span class="line">ni # 汇编单步执行，遇到函数不跳入</span><br><span class="line">c  # 持续运行到下一个断点</span><br></pre></td></tr></table></figure>
 
-<h3 id="04-显式汇编、源码"><a href="#04-显式汇编、源码" class="headerlink" title="04 显式汇编、源码"></a>04 显式汇编、源码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">layout split  # 同时显式汇编以及源码</span><br><span class="line">layout sam  # 显式汇编</span><br><span class="line">layout src  # 显式源码</span><br><span class="line"></span><br><span class="line">Ctrl + L  # 刷新屏幕，有些时候会发生错位</span><br></pre></td></tr></table></figure>
+<h3 id="04-显式汇编、源码"><a href="#04-显式汇编、源码" class="headerlink" title="04 显式汇编、源码"></a>04 显式汇编、源码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">layout split  # 同时显式汇编以及源码</span><br><span class="line">layout asm  # 显式汇编</span><br><span class="line">layout src  # 显式源码</span><br><span class="line"></span><br><span class="line">Ctrl + L  # 刷新屏幕，有些时候会发生错位</span><br></pre></td></tr></table></figure>
 
 <h3 id="05-查看信息"><a href="#05-查看信息" class="headerlink" title="05 查看信息"></a>05 查看信息</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">p &lt;var_name&gt;  # 查看变量var_name的值</span><br><span class="line">p $eax  # 查看eax寄存器的值</span><br><span class="line">p *0x7c00  # 查看地址0x7c00地方的值</span><br><span class="line">watch  </span><br><span class="line">info registers  # 查看当前所有寄存器的值</span><br><span class="line">info + others  # 将others替换为其它关键字可以查看很多其它的信息，比如当前打的断点信息等等</span><br><span class="line">							 # 可以查阅手册或者直接在gdb中输入info查看提示信息</span><br><span class="line">info stack / bt / backtrace  # 查看调用栈信息</span><br></pre></td></tr></table></figure>
+
+<p>###06 查看内存值</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>## gdb help 信息</span><br><span class="line">(gdb) help x</span><br><span class="line">Examine memory: x/FMT ADDRESS.</span><br><span class="line">ADDRESS is an expression for the memory address to examine.</span><br><span class="line">FMT is a repeat count followed by a format letter and a size letter.</span><br><span class="line">Format letters are o(octal), x(hex), d(decimal), u(unsigned decimal),</span><br><span class="line">  t(binary), f(float), a(address), i(instruction), c(char) and s(string).</span><br><span class="line">Size letters are b(byte), h(halfword), w(word), g(giant, 8 bytes).</span><br><span class="line">The specified number of objects of the specified size are printed</span><br><span class="line">according to the format.</span><br><span class="line">Defaults for format and size letters are those previously used.</span><br><span class="line">Default count is 1.  Default address is following last thing printed</span><br><span class="line">with this command or "print".</span><br><span class="line">(gdb) x /6cb 0x804835c //打印地址0x804835c起始的内存内容，连续6个字节，以字符格式输出。</span><br><span class="line"><span class="meta">#</span>## </span><br><span class="line"><span class="meta">#</span> example</span><br><span class="line">x /6cb 0x804835c //打印地址0x804835c起始的内存内容，连续6个字节，以字符格式输出。</span><br><span class="line">x /sb 0x402400   // 打印地址0x402400起始的字符串，遇到\0为止</span><br><span class="line">x /52db 0x402400  // 打印0x402400开始的52字节的内容，每个自己的内容按照10进制展示</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>### print</span><br><span class="line">print [[OPTION]... --] [/FMT] [EXP]  // 其中FMT没有x中的count和size letters</span><br><span class="line"><span class="meta">#</span> example</span><br><span class="line">print /s (cha*)$rdi   // %rdi寄存器中存放着一个内存地址，将这个内存地址转为(char*)，然后打印这个地方开始的字符串。和 x /s $rdi 一样的效果</span><br></pre></td></tr></table></figure>
 
 
       
@@ -959,7 +972,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
