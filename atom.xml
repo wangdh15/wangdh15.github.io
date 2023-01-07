@@ -6,7 +6,7 @@
   <link href="http://wangdh15.github.io/atom.xml" rel="self"/>
   
   <link href="http://wangdh15.github.io/"/>
-  <updated>2023-01-07T08:13:13.930Z</updated>
+  <updated>2023-01-07T08:17:01.365Z</updated>
   <id>http://wangdh15.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试</title>
-    <link href="http://wangdh15.github.io/2023/01/07/%E6%B5%8B%E8%AF%95/"/>
-    <id>http://wangdh15.github.io/2023/01/07/%E6%B5%8B%E8%AF%95/</id>
+    <title>测试博客</title>
+    <link href="http://wangdh15.github.io/2023/01/07/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://wangdh15.github.io/2023/01/07/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</id>
     <published>2023-01-07T07:24:21.000Z</published>
-    <updated>2023-01-07T08:13:13.930Z</updated>
+    <updated>2023-01-07T08:17:01.365Z</updated>
     
     
       
@@ -35,6 +35,10 @@
     
     
     
+    <category term="测试博客" scheme="http://wangdh15.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="测试博客" scheme="http://wangdh15.github.io/tags/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
