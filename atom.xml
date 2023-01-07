@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>保持成长</title>
   
-  
+  <subtitle>Stay hungry, Stay foolish, Keep curiosity</subtitle>
   <link href="http://wangdh15.github.io/atom.xml" rel="self"/>
   
   <link href="http://wangdh15.github.io/"/>
@@ -10,7 +10,7 @@
   <id>http://wangdh15.github.io/</id>
   
   <author>
-    <name>wangdh15</name>
+    <name>王道烩</name>
     
   </author>
   
