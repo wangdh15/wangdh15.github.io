@@ -6,7 +6,7 @@
   <link href="http://wangdh15.github.io/atom.xml" rel="self"/>
   
   <link href="http://wangdh15.github.io/"/>
-  <updated>2023-01-07T07:41:55.965Z</updated>
+  <updated>2023-01-07T08:13:13.930Z</updated>
   <id>http://wangdh15.github.io/</id>
   
   <author>
@@ -17,27 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Clean Code随记</title>
-    <link href="http://wangdh15.github.io/2023/01/07/Clean-Code%E9%9A%8F%E8%AE%B0/"/>
-    <id>http://wangdh15.github.io/2023/01/07/Clean-Code%E9%9A%8F%E8%AE%B0/</id>
+    <title>测试</title>
+    <link href="http://wangdh15.github.io/2023/01/07/%E6%B5%8B%E8%AF%95/"/>
+    <id>http://wangdh15.github.io/2023/01/07/%E6%B5%8B%E8%AF%95/</id>
     <published>2023-01-07T07:24:21.000Z</published>
-    <updated>2023-01-07T07:41:55.965Z</updated>
+    <updated>2023-01-07T08:13:13.930Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Clean-Code-读书&quot;&gt;&lt;a href=&quot;#Clean-Code-读书&quot; class=&quot;headerlink&quot; title=&quot;Clean Code 读书&quot;&gt;&lt;/a&gt;Clean Code 读书&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;h2 id=&quot;测试图片&quot;&gt;&lt;a href=&quot;#测试图片&quot; class=&quot;headerlink&quot; title=&quot;测试图片&quot;&gt;&lt;/a&gt;测试图片&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/../imgs/clean-code/test.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;测试代码&quot;&gt;&lt;a</summary>
         
       
     
     
     
-    <category term="读书笔记" scheme="http://wangdh15.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="clean code" scheme="http://wangdh15.github.io/tags/clean-code/"/>
     
   </entry>
   
