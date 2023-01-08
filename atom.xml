@@ -6,7 +6,7 @@
   <link href="http://wangdh15.github.io/atom.xml" rel="self"/>
   
   <link href="http://wangdh15.github.io/"/>
-  <updated>2023-01-07T08:17:01.365Z</updated>
+  <updated>2023-01-08T12:22:24.392Z</updated>
   <id>http://wangdh15.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《clean code》简记</title>
+    <link href="http://wangdh15.github.io/2023/01/08/%E3%80%8Aclean-code%E3%80%8B%E7%AE%80%E8%AE%B0/"/>
+    <id>http://wangdh15.github.io/2023/01/08/%E3%80%8Aclean-code%E3%80%8B%E7%AE%80%E8%AE%B0/</id>
+    <published>2023-01-08T12:21:25.000Z</published>
+    <updated>2023-01-08T12:22:24.392Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;代码整洁之道&quot;&gt;&lt;a href=&quot;#代码整洁之道&quot; class=&quot;headerlink&quot; title=&quot;代码整洁之道&quot;&gt;&lt;/a&gt;代码整洁之道&lt;/h1&gt;&lt;h2 id=&quot;1-名称&quot;&gt;&lt;a href=&quot;#1-名称&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://wangdh15.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="clean code" scheme="http://wangdh15.github.io/tags/clean-code/"/>
+    
+  </entry>
   
   <entry>
     <title>测试博客</title>
